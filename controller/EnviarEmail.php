@@ -1,7 +1,7 @@
 <?php
 
-include_once ('../constants.php');
-include_once ('../connection/Connection.php');
+include_once ('constants.php');
+include_once ('connection/Connection.php');
 
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
@@ -13,9 +13,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require ('../libs/vendor/phpmailer/phpmailer/src/Exception.php');
-require ('../libs/vendor/phpmailer/phpmailer/src/PHPMailer.php');
-require ('../libs/vendor/phpmailer/phpmailer/src/SMTP.php');
+require ('libs/vendor/phpmailer/phpmailer/src/Exception.php');
+require ('libs/vendor/phpmailer/phpmailer/src/PHPMailer.php');
+require ('libs/vendor/phpmailer/phpmailer/src/SMTP.php');
 
 class EnviarEmail
 {

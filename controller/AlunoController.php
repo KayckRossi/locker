@@ -11,7 +11,7 @@ class AlunoController {
             include_once 'model/Aluno.php';
             include_once 'dao/AlunoDAO.php';
             include_once 'controller/Filter.php';
-            include_once '../controller/EnviarEmail.php';
+            include_once 'controller/EnviarEmail.php';
     
             $email =  new EnviarEmail();
         
