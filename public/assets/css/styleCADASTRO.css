@@ -13,7 +13,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background:  #201b2c;
+    background:  #201b2c;    
+    color: white;
     font-family: 'Noto Sans', sans-serif;
 }
 
@@ -24,18 +25,13 @@ body {
     width: 80%;
     height: 80vh;
     display: flex;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 212);
-    
+    justify-content: center;/*usado para centralizar o formulário*/
+    align-items: center;/*usado para centralizar o formulário
+    e retirei a border*/
 }
+/*imagem excluida*/
 
-.form-image {
-    
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    background-color: #fdfff9d7;
-    padding: 1rem;
-}
+
 .span-required{
     font-size:12px;
     margin: 3px 0 0 1px; 
@@ -105,7 +101,7 @@ body {
     display: flex;
     flex-wrap:wrap;
     justify-content:space-between;
-    padding: 1.1rem 0.1rem ; /*alterei aqui para mexer na altura e no espaço dos campos */
+    padding: 1.5rem 0rem ; /*alterei aqui para mexer na altura e no espaço dos campos */
 }
 
 .input-box{
@@ -145,7 +141,7 @@ body {
 .periodo-group{
     display: flex;
     justify-content: space-between;
-    margin-top: 0.62;
+    margin-top: 0.5;
     padding: 0 0.5rem;
 }
 
@@ -237,7 +233,7 @@ input[type="number"] {
     }
 }
 
-@media screen and (max-width:1046px){
+@media screen and (max-width:1115px){
     .container{
         width: 90%;
         height: auto;
@@ -246,8 +242,10 @@ input[type="number"] {
         flex-direction: column;
         overflow-y: scroll;
         flex-wrap: nowrap;
-        max-height: 10rem;
+        max-height: 12rem;
         padding-right: 5rem;
+        margin-top: 20px;
+       
     }
 
     .periodo-input{
@@ -263,7 +261,7 @@ input[type="number"] {
     }
 }
 
-@media screen and (max-width:1440px) {
+@media screen and (max-width:1400px) {
     .form-image{
         display:none;
     }
@@ -284,8 +282,13 @@ input[type="number"] {
         flex-direction: column;
         overflow-y: scroll;
         flex-wrap: nowrap;
-        max-height: 10rem;
+        max-height: 12rem;
         padding-right: 5rem;
+        margin-top: 20px;
+       
+    }
+    .cadastrar-button button {
+        margin-top: 10px;
     }
 }
 @media screen and (max-width:530px){
@@ -301,3 +304,5 @@ input[type="number"] {
         padding-right: 5rem;
     }
 }
+
+/*media query alterada*/

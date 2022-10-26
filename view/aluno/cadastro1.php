@@ -1,23 +1,20 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="../../public\assets\css\styleCADASTRO.css">
+   <link rel="stylesheet" href="public\assets\css\styleCADASTRO.css">
     <title>Formulário Cadastro</title>
 </head>
 <body>
-
-
     <div class="container">
 <!--b.o no css, ver isso amanhã-->
-        <div class="form-image">
-            <img src="../../public\assets\img\undraw_security_re_a2rk.svg" width="50%" height="100%" alt="public\assets\img\undraw_security_re_a2rk.svg"/>
-        </div>
-       
+<!-- id="Forms" -->
         <div class="form" >
-            <form id="Forms" action="/cadastro" method="POST">
+            <form action="/cadastro" method="POST" >
                 <div class="form-header">
 
                     <div class="title">
@@ -32,24 +29,28 @@
                 <div class="input-group">
                     <div class="input-box">
                         <label for="firstname" class="form-label" >Nome</label>
-                        <input type="text" name="nome" id="firstname" placeholder="DIGITE SEU NOME" class="input required" oninput="nameValidate();">
+                        <input type="text" name="Name" id="firstname" placeholder="DIGITE SEU NOME" class="input required" oninput="nameValidate();">
                         
                         <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
 
                     </div>
+                    <div class="input-box">
+                        <label for="lastname" class="form-label" >Sobrenome</label>
+                        <input type="text" name="sobrenome" id="lastname" placeholder="DIGITE SEU SOBRENOME" class="input required" oninput="sobreValidate();">
+                        
+                        <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
 
-
-
+                    </div>
                     <div class="input-box">
                         <label for="RM">RM</label>
-                        <input type="number" name="rm" id="rm" placeholder="ex:21134" class="input required" oninput="rmValidate();"> 
+                        <input type="number" name="RM" id="number" placeholder="ex:21134" class="input required" oninput="rmValidate();"> 
                         
                         <span class="span-required">Digite um RM validos</span>
                     </div>
 
                     <div class="input-box">
                         <label for="password" class="form-label">Senha</label>
-                        <input type="password" name="senha" id="password" placeholder="DIGITE UMA SENHA" class="input required" oninput="senhaValidate();" >
+                        <input type="password" name="password" id="password" placeholder="DIGITE UMA SENHA" class="input required" oninput="senhaValidate();" >
                         
                         <span class="span-required">Senha com no mínimo 8 caracteres</span>
 
@@ -65,7 +66,7 @@
 
                     <div class="input-box">
                         <label for="number">Celular</label>
-                        <input type="number" name="telefone" id="celular" placeholder="(xx) xxxx-xxxx" class="input required" oninput="TelValidate();">
+                        <input type="number" name="Name" id="telefone" placeholder="(xx) xxxx-xxxx" class="input required" oninput="TelValidate();">
 
                         <span class="span-required">Numero invalido</span>
 
@@ -85,16 +86,7 @@
                         <span class="span-required">CPF invalido</span>
                     </div>
 
-                    <div class="input-box">
-                        <label for="sobrenome" class="form-label" >Sobrenome</label>
-                        <input type="text" name="sobrenome" id="sobrenome" placeholder="DIGITE SEU NOME" class="input required" oninput="sobreValidate();">
-                        
-                        <span class="span-required">Sobrenome deve ter no mínimo 4 caracteres</span>
-
-                    </div>
-
-<!-- 
-                    <div class="input-box">
+                    <!-- <div class="input-box">
                         <label for="cursos">Curso</label>
                         <select name="cursos" id="cursos" placeholder="ESCOLHA SEU CURSO" required>
                             <option value="administração-integral">Administração Integral</option>
@@ -105,39 +97,37 @@
                             <option value="administração">Química Noite</option>
                             <option value="administração">Desenvolvimento de Sistemas</option>
                         </select>
+                    </div>
+
+                    <div class="periodo-inputs">
+                        <div class="periodo-title">
+                            <h6>PERÍODO</h6>
+                        </div>
+    
+                        <div class="periodo-group">
+                            <div class="periodo-input">
+                                <input type="radio" name="periodo" id="integral">
+                                <label for="integral">Integral</label>
+                            </div>
+    
+                            <div class="periodo-input">
+                                <input type="radio" name="periodo" id="tarde">
+                                <label for="tarde">Tarde</label>
+                            </div>
+    
+                            <div class="periodo-input">
+                                <input type="radio" name="periodo" id="noite">
+                                <label for="noite">Noite</label>
+                            </div>
+                        </div>
                     </div> -->
 
+                    
                 </div>
 
-                <!-- <div class="periodo-inputs">
-                    <div class="periodo-title">
-                        <h6>PERÍODO</h6>
-                    </div>
-
-                    <div class="periodo-group">
-                        <div class="periodo-input">
-                            <input type="radio" name="periodo" id="integral">
-                            <label for="integral">Integral</label>
-                        </div>
-
-                        <div class="periodo-input">
-                            <input type="radio" name="periodo" id="tarde">
-                            <label for="tarde">Tarde</label>
-                        </div>
-
-                        <div class="periodo-input">
-                            <input type="radio" name="periodo" id="noite">
-                            <label for="noite">Noite</label>
-                        </div>
-                    </div>
-                </div> -->
-
-                < <div class="cadastrar-button">
-                    <button type="submit" id="enviar" name="cadastrar">Cadastrar</button>
-                </div> 
-                
-
-              <!-- <button type="submit" name="cadastrar">Cadastrar</button> -->
+                <div class="cadastrar-button">
+                <button type="submit" name="cadastrar">Cadastrar</button>
+                </div>
             </form>
         </div>
 
@@ -185,59 +175,60 @@
         }
     }
 
-    function rmValidate(){
-        if(campos[1].value.length==5)
+    function sobreValidate(){
+        if (campos[1].value.length<3)
+        {
+            setError(1);
+        } 
+        else
         {
             RemoveError(1);
         }
+    }
+
+    function rmValidate(){
+        if(campos[2].value.length==5)
+        {
+            RemoveError(2);
+        }
         else
         {
-            setError(1);
+            setError(2);
         }
     }
 
      function senhaValidate(){
-         if (campos[2].value.length<8)
+         if (campos[3].value.length<8)
          {
-             setError(2);
+             setError(3);
          }
          else
          {
-             RemoveError(2);
+             RemoveError(3);
          }
      }
         //corrigido bug da array , tava comparando a arr3 com a arr1 , a certa é 3==2
      function confirmValidate(){
-         if (campos[3].value==campos[2].value){
-             RemoveError(3);
+         if (campos[4].value==campos[3].value){
+             RemoveError(4);
          }
          else{
-             setError(3);
+             setError(4);
          }
 
      }
 
      function TelValidate(){
-         if(campos[4].value.length==11){
-            RemoveError(4);
+         if(campos[5].value.length==11){
+            RemoveError(5);
     }
         else{
-            setError(4);
+            setError(5);
         }
      }
 
      function emailValidate(){
-        if (emailRegex.test(campos[5].value))
-        {
-            RemoveError(5);
-        }
-        else
-        {
-           setError(5);
-        }
-    }
-    function cpfValidate(){
-        if (cpfRegex.test(campos[6].value))
+        if (emailRegex.test(campos[6].value))
         {
             RemoveError(6);
         }
@@ -246,15 +237,14 @@
            setError(6);
         }
     }
-
-    function sobreValidate(){
-        if (campos[7].value.length<4)
-        {
-            setError(7);
-        } 
-        else
+    function cpfValidate(){
+        if (cpfRegex.test(campos[7].value))
         {
             RemoveError(7);
+        }
+        else
+        {
+           setError(7);
         }
     }
 

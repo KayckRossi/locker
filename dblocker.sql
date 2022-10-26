@@ -24,7 +24,7 @@ CREATE TABLE curso (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     codigo_curso CHAR(2) NOT NULL UNIQUE,
     nome VARCHAR(50) NOT NULL,
-    duracao TINYINT(1) NOT NULL,
+    duracao TINYINT(1) NOT NULL
 
 );
 
@@ -99,9 +99,11 @@ CREATE TABLE aluguel (
 
     CONSTRAINT fk_locacao_aluno FOREIGN KEY (id_aluno) REFERENCES aluno(id),
     CONSTRAINT fk_locacao_armario FOREIGN KEY (id_armario) REFERENCES armario(id)
---CONSTRAINT fk_locacao_compartilhamento FOREIGN KEY (id_locacao) REFERENCES compartilhamento(id)
+
 
 );
+
+--CONSTRAINT fk_locacao_compartilhamento FOREIGN KEY (id_locacao) REFERENCES compartilhamento(id)
 
 /* CREATE TABLE compartilhamento (
 
