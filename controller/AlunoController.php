@@ -3,8 +3,9 @@
 class AlunoController {
 
     public static function cadastrar() {
-
+        
         if (isset($_POST['cadastrar'])) {
+            //echo 'Validação:<br><pre>';
 
             include_once 'connection/Connection.php';
             include_once 'model/Pessoa.php';
@@ -63,7 +64,7 @@ class AlunoController {
                 }
 
             //=========================================================
-    
+     
     echo $purl;
             
             $aluno = new Aluno();
@@ -82,7 +83,8 @@ class AlunoController {
         
         }
         
-        include_once 'view/aluno/cadastro.php';
+        //include_once 'view/aluno/cadastro.php';
+        include_once 'view/aluno/cadastro1.php';
 
 
     }
