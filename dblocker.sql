@@ -95,7 +95,7 @@ CREATE TABLE aluguel (
     data_locacao DATE NOT NULL,
     situacao_locacao TINYINT(1),
     id_aluno INT NOT NULL,
-    id_armario INT NOT NULL
+    id_armario INT NOT NULL,
 
     CONSTRAINT fk_locacao_aluno FOREIGN KEY (id_aluno) REFERENCES aluno(id),
     CONSTRAINT fk_locacao_armario FOREIGN KEY (id_armario) REFERENCES armario(id)

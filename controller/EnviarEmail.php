@@ -87,7 +87,7 @@ class EnviarEmail
             //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send();
-            echo 'Mensagem Enviada<br>';
+            //echo 'Mensagem Enviada<br>';
 
 
 

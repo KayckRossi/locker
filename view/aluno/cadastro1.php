@@ -29,7 +29,7 @@
                 <div class="input-group">
                     <div class="input-box">
                         <label for="firstname" class="form-label" >Nome</label>
-                        <input type="text" name="Name" id="firstname" placeholder="DIGITE SEU NOME" class="input required" oninput="nameValidate();">
+                        <input type="text" name="nome" id="firstname" placeholder="DIGITE SEU NOME" class="input required" oninput="nameValidate();">
                         
                         <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
 
@@ -43,14 +43,14 @@
                     </div>
                     <div class="input-box">
                         <label for="RM">RM</label>
-                        <input type="number" name="RM" id="number" placeholder="ex:21134" class="input required" oninput="rmValidate();"> 
+                        <input type="number" name="rm" id="number" placeholder="ex:21134" class="input required" oninput="rmValidate();"> 
                         
                         <span class="span-required">Digite um RM validos</span>
                     </div>
 
                     <div class="input-box">
                         <label for="password" class="form-label">Senha</label>
-                        <input type="password" name="password" id="password" placeholder="DIGITE UMA SENHA" class="input required" oninput="senhaValidate();" >
+                        <input type="password" name="senha" id="password" placeholder="DIGITE UMA SENHA" class="input required" oninput="senhaValidate();" >
                         
                         <span class="span-required">Senha com no mínimo 8 caracteres</span>
 
@@ -66,7 +66,7 @@
 
                     <div class="input-box">
                         <label for="number">Celular</label>
-                        <input type="number" name="Name" id="telefone" placeholder="(xx) xxxx-xxxx" class="input required" oninput="TelValidate();">
+                        <input type="number" name="telefone" id="telefone" placeholder="(xx) xxxx-xxxx" class="input required" oninput="TelValidate();">
 
                         <span class="span-required">Numero invalido</span>
 
