@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="public\assets\css\styleCADASTRO.css">
+   
     <title>Formulário Cadastro</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
                         <h1>Cadastro</h1>
                     </div>
                     <div class="login-button">
-                        <button><a href="#">Logar</a></button>
+                        <button><a href="/login">Logar</a></button>
                     </div>
 
                 </div>
@@ -29,28 +30,28 @@
                 <div class="input-group">
                     <div class="input-box">
                         <label for="firstname" class="form-label" >Nome</label>
-                        <input type="text" name="nome" id="firstname" placeholder="DIGITE SEU NOME" class="input required" oninput="nameValidate();">
+                        <input type="text" name="nome" id="firstname" placeholder="DIGITE SEU NOME" required class="input required" oninput="nameValidate();">
                         
                         <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
 
                     </div>
                     <div class="input-box">
                         <label for="lastname" class="form-label" >Sobrenome</label>
-                        <input type="text" name="sobrenome" id="lastname" placeholder="DIGITE SEU SOBRENOME" class="input required" oninput="sobreValidate();">
+                        <input type="text" name="sobrenome" id="lastname" placeholder="DIGITE SEU SOBRENOME" required class="input required" oninput="sobreValidate();">
                         
                         <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
 
                     </div>
                     <div class="input-box">
                         <label for="RM">RM</label>
-                        <input type="number" name="rm" id="number" placeholder="ex:21134" class="input required" oninput="rmValidate();"> 
+                        <input type="number" name="rm" id="number" placeholder="ex:21134" class="input required" required oninput="rmValidate();"> 
                         
                         <span class="span-required">Digite um RM validos</span>
                     </div>
 
                     <div class="input-box">
                         <label for="password" class="form-label">Senha</label>
-                        <input type="password" name="senha" id="password" placeholder="DIGITE UMA SENHA" class="input required" oninput="senhaValidate();" >
+                        <input type="password" name="senha" id="password" placeholder="DIGITE UMA SENHA" required class="input required" oninput="senhaValidate();" >
                         
                         <span class="span-required">Senha com no mínimo 8 caracteres</span>
 
@@ -58,7 +59,7 @@
 
                     <div class="input-box">
                         <label for="password" class="form-label">Confirmação/senha</label>
-                        <input type="password" name="password" id="confirmpassword" placeholder="CONFIRME SUA SENHA" class="input required" oninput="confirmValidate();">
+                        <input type="password" name="password" id="confirmpassword" placeholder="CONFIRME SUA SENHA" required class="input required" oninput="confirmValidate();">
                         
                         <span class="span-required">Senha devem ser compatíveis</span>
 
@@ -66,7 +67,7 @@
 
                     <div class="input-box">
                         <label for="number">Celular</label>
-                        <input type="number" name="telefone" id="telefone" placeholder="(xx) xxxx-xxxx" class="input required" oninput="TelValidate();">
+                        <input type="number" name="telefone" id="telefone" placeholder="(xx) xxxx-xxxx" required class="input required" oninput="TelValidate();">
 
                         <span class="span-required">Numero invalido</span>
 
@@ -74,14 +75,14 @@
 
                     <div class="input-box">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" name="email" id="email" placeholder="DIGITE SEU EMAIL" class="input required" oninput="emailValidate();">
+                        <input type="email" name="email" id="email" placeholder="DIGITE SEU EMAIL" required class="input required" oninput="emailValidate();">
 
                         <span class="span-required">Email invalido</span>
                     </div>
                      
                     <div class="input-box">
                         <label for="cpf" class="form-label">CPF</label>
-                        <input type="number" name="cpf" id="cpf" placeholder="DIGITE SEU CPF" class="input required" oninput="cpfValidate();">
+                        <input type="number" name="cpf" id="cpf" placeholder="DIGITE SEU CPF" required class="input required" oninput="cpfValidate();">
 
                         <span class="span-required">CPF invalido</span>
                     </div>
@@ -141,7 +142,7 @@
     const  emailRegex =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const cpfRegex = /^([0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}|[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2})$/;
 
-    form.addEventListener('', (event) => {
+    form.addEventListener('submit', (event) => {
         event.preventDefault();
         nameValidate();
         senhaValidate();

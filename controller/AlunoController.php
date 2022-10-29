@@ -55,17 +55,17 @@ class AlunoController {
                 //tentando achar um lugar certo para instanciar a classe EnviarEmail
                 $email_usu = $_POST['email'];
 
-                $resultado = $email->confirmarEmail($email_usu, $purl);
+                $email->confirmarEmail($email_usu, $purl);
 
-                if($resultado = true){
-                    echo 'Email Enviado Para confirmação<br>';
+                if($email = true){
+                    
                 }else{
                     echo 'Ocorreu um Erro no envio do email';
                 }
 
             //=========================================================
      
-    echo $purl;
+            //echo $purl;
             
             $aluno = new Aluno();
         

@@ -78,8 +78,7 @@ passos : 1. conectar ao bd
 
             //echo '<br><br>';
 
-            $cpf_aluno = $data['cpf'];
-
+                      
             //echo($cpf_aluno);
 
             // $data = $stmt->fetch(PDO::FETCH_NUM);
@@ -95,8 +94,8 @@ passos : 1. conectar ao bd
 
             if ($result == 0) {
 
-                $erro = '<div class="alert alert-danger" role="alert">
-                Não Existe nenhum registro com este purl, verifique novamente sua caixa de email
+                $erro = '<div class="alert alert-warning" role="alert">
+                Não é possivel usar o mesmo link de confirmação duas vezes
             </div> ';
 
                 echo ($erro);
@@ -115,6 +114,12 @@ passos : 1. conectar ao bd
                 echo ($erro);
                 return false;
             }
+
+
+
+           
+                $cpf_aluno = $data['cpf'];
+       
             //atualizar os dados do cliente apos clicar no link CAMPOS ativo e purl Aonde o CPF unico extraido existe
             $update = 'UPDATE aluno SET purl = :purl , ativo = :ativo WHERE cpf = :cpf';
 
@@ -126,7 +131,7 @@ passos : 1. conectar ao bd
             $stmt->execute();
 
 
-            $sucess = $sucesso = '<div class="alert alert-success" role="alert">
+            $sucess = '<div class="alert alert-success" role="alert">
                                    A VALIDAÇÃO FOI EFETUADA COM SUCESSO, VOCE SERA REDIRECIONADO PARA A PAGINA DE LOGIN EM 10 SEGUNDOS
                                   </div>';
 
