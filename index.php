@@ -24,7 +24,6 @@ switch($url) {
         AuthenticationController::sair();
     break;
 
-
     case '/confirmaremail':
         include 'view/confirmaremail.php';
     break;    
