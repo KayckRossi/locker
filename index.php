@@ -26,11 +26,10 @@ switch($url) {
 
     case '/confirmaremail':
         include 'view/confirmaremail.php';
-    break;    
-
+    break; 
+       
     case '/cadastro':
         AlunoController::cadastrar();
-
     break;
 
     case '/meu-cadastro':
@@ -89,11 +88,25 @@ switch($url) {
         ArmarioController::listar();
     break;
 
+    case '/armarios':
+        ArmarioController::listarSelecao();
+    break;
+    
+    case '/alterar-armario':
+        ArmarioController::alterar();
+    break;
+
+
+    case '/excluir-armario':
+        ArmarioController::excluir();
+    break;
+
     default:
-        echo "Erro 404";       
+        echo "Erro 404";
     break;
     
 }
+
 
 
 
