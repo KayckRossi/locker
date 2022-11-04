@@ -1,0 +1,67 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+section {
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.lockers form {
+    font-family: var(--primary-font);
+    font-size: 1.4rem;
+    grid-area: right;
+    justify-self: right;
+}
+
+.lockers form label {
+    display: none;
+}
+
+.lockers select {
+    padding: .6rem;
+    border-radius: 1.5rem;
+    margin: 2rem 1rem 1rem;
+    background-color: #11ca6d;
+    color: rgb(0, 0, 0);
+    font-family: var(--primary-font);
+    font-size: .9rem;
+    font-weight: 600;
+    outline: none;
+}
+
+.lockers select option {
+    background-color: #fafafa;
+    color: #424242;
+    font-family: var(--primary-font);
+    font-weight: 400;
+    outline: none;
+}

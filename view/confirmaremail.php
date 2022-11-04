@@ -2,19 +2,9 @@
 
 include('controller/ConfEmail.php');
 
-
-
-
-
-
-
  $verify = new ConfEmail();
  $verify->confirmarPurl();
  $resultado = $verify->validarEmail();
-
-
-
-   
 
 ?>
 

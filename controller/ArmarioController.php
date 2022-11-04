@@ -96,7 +96,8 @@ class ArmarioController {
 
         }
         
-        include 'view/armarios/armarios.php';
+        //include 'view/armarios/armarios.php';
+          include 'view/armarios/armarios2.php';
         
     }
 
