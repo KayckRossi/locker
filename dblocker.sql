@@ -104,6 +104,10 @@ CREATE TABLE aluguel (
 
 SET AUTOCOMMIT = 0;
 
+
+ALTER TABLE `aluno` ADD `purl` VARCHAR(12) NULL DEFAULT NULL AFTER `sobrenome`;
+ALTER TABLE `aluno` ADD `ativo` VARCHAR(1) NULL DEFAULT '0' AFTER `purl`;
+
 INSERT INTO curso (codigo_curso, nome, duracao) VALUES
 ('C', 'Administração Integral', 6),
 ('B', 'Nutrição e Dietética Integral', 6),

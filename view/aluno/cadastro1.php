@@ -79,6 +79,14 @@
 
                         <span class="span-required">Email invalido</span>
                     </div>
+
+
+                    <div class="input-box">
+	                        <label for="email" class="form-label">Confirme Email</label>
+	                        <input type="email" name="confemail" id="email" placeholder="DIGITE SEU EMAIL" class="input required" oninput="confirmEmail();">
+	
+	                        <span class="span-required">Os campos de email devem ser iguais</span>
+	                    </div>
                      
                     <div class="input-box">
                         <label for="cpf" class="form-label">CPF</label>
@@ -151,7 +159,8 @@
         emailValidate();
         rmValidate();
         cpfValidate();
-        sobreValidate(); 
+        sobreValidate();
+        confirmEmail(); 
     }
     );
 
@@ -238,6 +247,16 @@
            setError(6);
         }
     }
+
+    function confirmEmail(){
+	         if (campos[7].value==campos[6].value){
+	             RemoveError(7);
+         }
+	         else{
+	             setError(7);
+	         }
+	
+	     }
     function cpfValidate(){
         if (cpfRegex.test(campos[7].value))
         {

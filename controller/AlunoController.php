@@ -34,7 +34,7 @@ class AlunoController {
         
             $data = $filter->validate($_POST, $filters);
         
-           // echo 'Validação:<br><pre>' , var_dump($data) , '</pre>';
+            echo 'Validação:<br><pre>' , var_dump($data) , '</pre>';
         
             $filters = array(
                 'cpf' => FILTER_UNSAFE_RAW,
@@ -48,7 +48,7 @@ class AlunoController {
         
             $data = $filter->sanitize($_POST, $filters);
         
-           //echo 'Sanitização:<br><pre>' , var_dump($data) , '</pre>';
+           echo 'Sanitização:<br><pre>' , var_dump($data) , '</pre>';
 
             //============================================================
                 
@@ -65,7 +65,7 @@ class AlunoController {
 
             //=========================================================
      
-            //echo $purl;
+            echo $purl;
             
             $aluno = new Aluno();
         
