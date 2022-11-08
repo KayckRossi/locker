@@ -158,6 +158,31 @@ class ArmarioDAO {
         }
 
     }
+
+
+    public function readQuantity(){
+
+        try {
+
+            $sql = 'SELECT Count(id) = :id FROM  armario';
+
+            $stmt = Connection::getConnection()->prepare($sql);
+
+            $stmt->bindValue(':id', 'id');
+
+            $stmt->execute()->fetchAll(PDO::FETCH_ASSOC);
+
+            return $stmt;
+
+            
+                        
+
+        } catch (Exception $e) {
+
+            echo 'Erro ao tentar excluir armário.<br>' . $e . '<br>';
+
+        }
+    }
         
 }
 

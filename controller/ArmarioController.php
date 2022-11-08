@@ -96,8 +96,8 @@ class ArmarioController {
 
         }
         
-        //include 'view/armarios/armarios.php';
-          include 'view/armarios/armarios2.php';
+        include 'view/armarios/armarios.php';
+          
         
     }
 
@@ -181,6 +181,28 @@ class ArmarioController {
         }
 
         header('Location: /listar-armario');
+
+    }
+
+    public static function contarArmarios(){
+        
+        
+        require_once 'session.php';
+        
+        include_once 'connection/Connection.php';
+        include_once 'model/Armario.php';
+        include_once 'dao/ArmarioDAO.php';
+        include_once 'controller/Filter.php';
+
+        $count =  new ArmarioDAO();
+        $count->readQuantity();
+
+        echo $stmt;
+        
+
+
+        include 'view/armarios/armarios.php';
+
 
     }
 
