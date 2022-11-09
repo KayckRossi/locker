@@ -164,18 +164,16 @@ class ArmarioDAO {
 
         try {
 
-            $sql = 'SELECT Count(id) = :id FROM  armario';
+            $sql = 'SELECT Count(id) FROM  armario';
 
             $stmt = Connection::getConnection()->prepare($sql);
 
-            $stmt->bindValue(':id', 'id');
+            $stmt->execute();
 
-            $stmt->execute()->fetchAll(PDO::FETCH_ASSOC);
+            $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            return $stmt;
-
-            
-                        
+            return $data;
+          
 
         } catch (Exception $e) {
 

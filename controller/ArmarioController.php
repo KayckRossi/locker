@@ -91,6 +91,11 @@ class ArmarioController {
             $armariodao = new ArmarioDAO();
             
             $armarios = $armariodao->readSelection($local);
+
+      
+   
+    
+            //var_dump($armariodao->readQuantity());
         
             //echo '<pre>' , var_dump($armarios) , '</pre>';
 
@@ -192,13 +197,10 @@ class ArmarioController {
         include_once 'connection/Connection.php';
         include_once 'model/Armario.php';
         include_once 'dao/ArmarioDAO.php';
-        include_once 'controller/Filter.php';
-
-        $count =  new ArmarioDAO();
-        $count->readQuantity();
-
-        echo $stmt;
+       
+        $counter = new ArmarioDAO();
         
+        var_dump($counter->readQuantity());
 
 
         include 'view/armarios/armarios.php';

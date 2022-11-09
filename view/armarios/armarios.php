@@ -15,7 +15,7 @@
     <section class="lockers">
         <div class="section-header">
             <h1>Armários</h1>
-
+            
             <form action="/armarios" method="POST">
                 <label for="local">Local</label>
 

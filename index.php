@@ -101,6 +101,12 @@ switch($url) {
         ArmarioController::excluir();
     break;
 
+    case '/dashboard':
+        FuncionarioController::dashBoard();
+    break;
+
+ 
+
     default:
         echo "Erro 404";
     break;
