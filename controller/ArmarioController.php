@@ -189,24 +189,5 @@ class ArmarioController {
 
     }
 
-    public static function contarArmarios(){
-        
-        
-        require_once 'session.php';
-        
-        include_once 'connection/Connection.php';
-        include_once 'model/Armario.php';
-        include_once 'dao/ArmarioDAO.php';
-       
-        $counter = new ArmarioDAO();
-        
-        var_dump($counter->readQuantity());
-
-
-        include 'view/armarios/armarios.php';
-
-
-    }
-
 }
 

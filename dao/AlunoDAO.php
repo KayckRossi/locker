@@ -175,6 +175,29 @@ class AlunoDAO {
         }
 
     }
+
+
+    public function countActive(){
+
+        try {
+
+            $sql = 'SELECT Count(id) FROM  aluno WHERE ativo = 1';
+
+            $stmt = Connection::getConnection()->prepare($sql);
+
+            $stmt->execute();
+
+            $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            return $data["Count(id)"];
+          
+
+        } catch (Exception $e) {
+
+            echo 'Erro ao tentar contar os alunos ativos.<br>' . $e . '<br>';
+
+        }
+    }
         
 }
 

@@ -222,6 +222,5 @@ class AlunoController {
 
     }
 
-
 }
 

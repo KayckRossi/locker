@@ -5,6 +5,7 @@ include 'controller/FuncionarioController.php';
 include 'controller/ArmarioController.php';
 include 'controller/CursoController.php';
 include 'controller/AuthenticationController.php';
+include 'controller/DashController.php';
 
 
 
@@ -102,11 +103,9 @@ switch($url) {
     break;
 
     case '/dashboard':
-        FuncionarioController::dashBoard();
-    break;
-
+        DashController::Overview();
+    break;  
  
-
     default:
         echo "Erro 404";
     break;
