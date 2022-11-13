@@ -55,6 +55,7 @@ class AlunoDAO {
 
             $aluno = new Aluno();
 
+            $aluno->setId($data['id']);
             $aluno->setCpf($data['cpf']);
             $aluno->setEmail($data['email']);
             $aluno->setSenha($data['senha']);
@@ -62,7 +63,6 @@ class AlunoDAO {
             $aluno->setSobrenome($data['sobrenome']);
             $aluno->setTelefone($data['telefone']);
             $aluno->setRm($data['rm']);
-            $aluno->setId($data['id']);
             
             return $aluno;
 

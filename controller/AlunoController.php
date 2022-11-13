@@ -104,6 +104,7 @@ class AlunoController {
         $aluno->setId($_SESSION['id']);
 
         $alunodao = new AlunoDAO();
+
         $aluno = $alunodao->read($aluno->getId());
         
         //echo '<pre>' , var_dump($alunos) , '</pre>';
@@ -188,6 +189,7 @@ class AlunoController {
         }
         
         header('Location: /meu-cadastro');
+        die();
 
     }
 
@@ -208,6 +210,7 @@ class AlunoController {
             echo '<br><pre>' , var_dump($data) , '</pre>'; 
 
             $aluno = new Aluno();
+            
             $aluno->setId($data['id']);
 
             echo '<br><pre>' , var_dump($aluno) , '</pre>';
@@ -219,6 +222,7 @@ class AlunoController {
         }
 
         header('Location: /listar-aluno');
+        die();
 
     }
 
