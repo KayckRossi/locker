@@ -100,10 +100,10 @@ class AluguelDAO {
         $aluguel = new Aluguel();
 
         $aluguel->setId($row['id']);
-        $aluguel->setSituacao($row['data']);
-        $aluguel->setIdAluno($row['situacao']);
-        $aluguel->setIdArmario($row['id_aluno']);
-        $aluguel->setIdAluno($row['id_armario']);
+        $aluguel->setData($row['data']);
+        $aluguel->setSituacao($row['situacao']);
+        $aluguel->setIdAluno($row['id_aluno']);
+        $aluguel->setIdArmario($row['id_armario']);
         $aluguel->setIdPlano($row['id_plano']);
 
         return $aluguel;
@@ -179,6 +179,34 @@ class AluguelDAO {
         }
 
     } */
+
+    public function countRent(){
+
+        try {
+
+            $sql = 'SELECT * FROM aluguel';
+
+            $stmt = Connection::getConnection()->prepare($sql);
+
+            $stmt->execute();
+
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($data as $row) {
+
+                $list[] = $this->list($row);
+
+            }
+
+
+            return $list;
+
+        } catch (Exception $e) {
+
+            echo 'Erro ao tentar contar aluguel.<br>' . $e . '<br>';
+
+        }
+    }
         
 }
 
