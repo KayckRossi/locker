@@ -48,15 +48,41 @@
             $alugueldao =  new AluguelDAO();
             $counterRent = $alugueldao->countRent();
             
-            
-            
-            
-            
-           
-    
+
             include 'view/dashboard/dashboard.php';
     
         } 
+
+        public static function excluir_aluguel(){
+
+            require_once 'session.php';
+
+             (isset($_POST['excluir'])) {
+
+                include_once 'connection/Connection.php';
+                include_once 'model/Aluguel.php';
+                include_once 'dao/AluguelDAO.php';
+                include_once 'controller/AluguelController.php';
+    
+                $data = $_POST;
+    
+                echo '<br><pre>' , var_dump($data) , '</pre>'; 
+    
+                $aluguel = new AluguelDAO();
+                
+                $aluguel->setId($data['id']);
+    
+                echo '<br><pre>' , var_dump($aluno) , '</pre>';
+    
+                $alunodao = new AlunoDAO();
+    
+                $alunodao->delete($aluno);
+    
+            }
+    
+            header('Location: /dashboard');
+            die();
+        }
 
     
     

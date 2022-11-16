@@ -77,11 +77,11 @@
 
             <thead class="thead-dark">
               <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Situacao</th>
-                <th scope="col">Id aluno</th>
-                <th scope="col">Id countR</th>
-                <th scope="col">Id plano</th>
+                <th scope="col">Nome</th>
+                <th scope="col">RM</th>
+                <th scope="col">Armario</th>
+                <th scope="col">Confirmar</th>
+                <th scope="col">Excluir</th>
 
               </tr>
             </thead>
@@ -95,11 +95,24 @@
                  foreach ($counterRent as $countR) {
                   
                   echo "<tr>
-                  <td>{$countR->getId()}</td>
-                  <td>{$countR->getSituacao()}</td>
                   <td>{$countR->getIdAluno()}</td>
+                  <td>{$countR->getSituacao()}</td>
                   <td>{$countR->getIdArmario()}</td>
-                  <td>{$countR->getIdPlano()}</td>
+
+                  <td>
+                  <form action='/excluir-aluno' method='POST'>
+                      <input type='hidden' name='id' value='{$countR->getId}'>
+                      <button class='confirmar' type='submit' name='Aceitar'>Confirmar</button>
+                  </form>
+                  </td>
+
+                  <td>
+                  <form action='/excluir-aluguel' method='POST'>
+                      <input type='hidden' name='id' value='{$countR->getId}'>
+                      <button class='excluir' type='submit' name='Excluir'>Excluir</button>
+                  </form>
+                  </td>
+
                         </tr>";
 
                   
@@ -162,10 +175,10 @@
         <div class="col-md-9 .col-md-push-3"></div>
         <div class="card" style="width: 100%; margin-top: 2rem; border-radius: 1rem; ">
           <div class="card-header" style="display:flex; justify-content: center; color: black; ">
-            <h4> Status totais de countRs </h4>
+            <h4> Status totais de ARMARIOS </h4>
           </div>
           <ul class="list-group list-group-flush" style="color:black ;">
-            <li class="list-group-item">Total de countRs <?php print_r($counter->count()); ?></li>
+            <li class="list-group-item">Total de armarios <?php print_r($counter->count()); ?></li>
             <li class="list-group-item">Armarios disponiveis <?php print_r($counterDisp->countDisp()); ?></li>
             <li class="list-group-item">Armarios Alugados <?php print_r($counterAlug->countAlug()); ?></li>
             <li class="list-group-item">Armarios Indisponiveis <?php print_r($counterIndisp->countIndisp()); ?></li>
