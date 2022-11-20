@@ -114,9 +114,16 @@ switch($url) {
         DashController::Overview();
     break;
     
-    case '/excluir-aluguel':
-        DashController::excluir_aluguel();
-    break;    
+    case '/aceitar-aluguel':
+        DashController::AttAluguel();
+    break;
+
+    case '/negar-aluguel':
+        DashController::NegarAluguel();
+    break;
+    
+    
+    
  
     default:
         echo "Erro 404";

@@ -211,6 +211,8 @@ class AluguelDAO {
             $stmt->bindValue(':id_plano', $aluguel->getIdPlano(), PDO::PARAM_INT);
             $stmt->bindValue(':id', $aluguel->getId(), PDO::PARAM_INT);
 
+            echo '<pre>' , var_dump($stmt) , '</pre>';
+
             return $stmt->execute();
 
         } catch (Exception $e) {
@@ -218,8 +220,10 @@ class AluguelDAO {
             echo 'Erro ao tentar atualizar aluguel.<br>' . $e . '<br>';
 
         }
-
     }
+
+
+    
 
     public function delete(Aluguel $aluguel) {
 
@@ -268,7 +272,7 @@ class AluguelDAO {
 
         try {
 
-            $sql = 'SELECT * FROM aluguel';
+            $sql = 'SELECT * FROM `aluguel` WHERE situacao = "reservado"';
 
             $stmt = Connection::getConnection()->prepare($sql);
 
@@ -291,7 +295,128 @@ class AluguelDAO {
 
         }
     }
+
+
+    public function Attupdate(Aluguel $aluguel) {
+
+        try {
+
+            $sql = 'UPDATE aluguel SET situacao = :situacao
+            WHERE id = :id';
+            
+            $sql1 = 'UPDATE armario SET situacao = "alugado" 
+            WHERE id = :idarmario';
+               
+
+            
+
+            $stmt = Connection::getConnection()->prepare($sql);
+            $stmt1 = Connection::getConnection()->prepare($sql1);
+
+            
+            $stmt->bindValue(':situacao', $aluguel->getSituacao(), PDO::PARAM_STR);            
+            $stmt->bindValue(':id', $aluguel->getId(), PDO::PARAM_INT);
+            $stmt1->bindValue(':idarmario', $aluguel->getIdArmario(), PDO::PARAM_INT);
+
+          
+            $stmt->execute();
+            $stmt1->execute();
+
+            return;
+
+        } catch (Exception $e) {
+
+            echo 'Erro ao tentar atualizar aluguel.<br>' . $e . '<br>';
+
+        }
+    }
+
+    public function negarAluguel(Aluguel $aluguel) {
+
+        try {
+
+            $sql = 'UPDATE aluguel SET situacao = :situacao
+            WHERE id = :id';
+            
+            $sql1 = 'UPDATE armario SET situacao = "disponível" 
+            WHERE id = :idarmario';
+               
+
+            
+
+            $stmt = Connection::getConnection()->prepare($sql);
+            $stmt1 = Connection::getConnection()->prepare($sql1);
+
+            
+            $stmt->bindValue(':situacao', $aluguel->getSituacao(), PDO::PARAM_STR);            
+            $stmt->bindValue(':id', $aluguel->getId(), PDO::PARAM_INT);
+            $stmt1->bindValue(':idarmario', $aluguel->getIdArmario(), PDO::PARAM_INT);
+
+          
+            $stmt->execute();
+            $stmt1->execute();
+
+            return;
+
+        } catch (Exception $e) {
+
+            echo 'Erro ao tentar negar aluguel.<br>' . $e . '<br>';
+
+        }
+    }
+
+    public function countActive(){
+
+        try {
+
+            $sql = 'SELECT Count(id) FROM  aluguel WHERE situacao = "ativo"';
+
+            $stmt = Connection::getConnection()->prepare($sql);
+
+            $stmt->execute();
+
+            $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            return $data["Count(id)"];
+          
+
+        } catch (Exception $e) {
+
+            echo 'Erro ao tentar contar os alugueis ativos.<br>' . $e . '<br>';
+
+        }
+    }
+
+    public function aluguelPendente(){
+
+        try {
+
+            $sql = 'SELECT Count(id) FROM  aluguel WHERE situacao = "reservado"';
+
+            $stmt = Connection::getConnection()->prepare($sql);
+
+            $stmt->execute();
+
+            $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            return $data["Count(id)"];
+          
+
+        } catch (Exception $e) {
+
+            echo 'Erro ao tentar contar os alugueis ativos.<br>' . $e . '<br>';
+
+        }
+    }
+    
+
+
+
+
+        }
+
+     
         
-}
+
 
 ?>

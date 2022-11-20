@@ -7,14 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../public/assets/css/all.css">
   <link rel="stylesheet" href="../../public/assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="../../public/assets/plugins/bootstrap-4.5.3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../public/assets/plugins/fontawesome-free-6.2.0-web/css/all.min.css">
   <title>LockEtec</title>
-
-  <style>
-
-
-  </style>
 </head>
 
 <body>
@@ -29,7 +25,7 @@
 
       <!-- inicio do Escopo da pagina -->
       <?php include "headerdash.php" ?>
-      <!-- final-->     
+      <!-- final-->
 
       <div class="main-content">
         <div class="container">
@@ -38,7 +34,7 @@
               <div class="card" style="width: 18rem; padding: 1rem; margin-top: 2rem; border-radius: 10px; ">
                 <div class="card-body ">
                   <h5 class="card-title text-center ">Alugueis ativos</h5>
-                  <p class="card-text text-center">teste</p>
+                  <p class="card-text text-center"><?php print_r($aluguelAtivo->countActive()); ?></p>
 
                 </div>
               </div>
@@ -58,13 +54,14 @@
               <div class="card" style="width: 18rem; padding: 1rem;  margin-top: 2rem; border-radius: 10px;">
                 <div class="card-body">
                   <h5 class="card-title text-center">Alugueis Pendentes</h5>
-                  <p class="card-text text-center">teste</p>
+                  <p class="card-text text-center"><?php print_r($aluguelReservado->aluguelPendente()); ?></p>
 
                 </div>
               </div>
             </div>
           </div>
         </div>
+
 
         <div class="col-md-9 .col-md-push-3"></div>
         <div class="card" style="width: 100%; margin-top: 2rem; border-radius: 1rem;">
@@ -73,13 +70,14 @@
           </div>
 
 
-          <table class="table ">
+          <table class="table">
 
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Nome</th>
                 <th scope="col">RM</th>
                 <th scope="col">Armario</th>
+                <th scope="col">Situação</th>
                 <th scope="col">Confirmar</th>
                 <th scope="col">Excluir</th>
 
@@ -88,38 +86,45 @@
 
             <tbody>
 
-              
-                 <?php
-                     
-                     
-                 foreach ($counterRent as $countR) {
-                  
-                  echo "<tr>
-                  <td>{$countR->getIdAluno()}</td>
-                  <td>{$countR->getSituacao()}</td>
-                  <td>{$countR->getIdArmario()}</td>
 
-                  <td>
-                  <form action='/excluir-aluno' method='POST'>
-                      <input type='hidden' name='id' value='{$countR->getId}'>
-                      <button class='confirmar' type='submit' name='Aceitar'>Confirmar</button>
+              <?php foreach ($counterRent as $countR) { ?>
+
+                <?php echo "<tr>" ?>
+
+                <td> <?php echo $countR->getIdAluno() ?> </td>
+                <td> <?php echo $countR->getSituacao() ?> </td>
+                <td> <?php echo $countR->getIdArmario() ?> </td>
+                <td> <?php echo $countR->getSituacao() ?> </td>
+
+                <td>
+                  <form action="/aceitar-aluguel" method='POST'>
+                  <input type='hidden' name='id' value='<?php echo $countR->getId() ?>'>
+                  <input type='hidden' name='idArmario' value='<?php echo $countR->getIdArmario() ?>'>
+        
+                  <button type="submit" class="btn btn-success btn-sm" name="confirmar">Confirmar</button>
                   </form>
-                  </td>
+                </td>
 
-                  <td>
-                  <form action='/excluir-aluguel' method='POST'>
-                      <input type='hidden' name='id' value='{$countR->getId}'>
-                      <button class='excluir' type='submit' name='Excluir'>Excluir</button>
+                <td>
+                  <form action="/negar-aluguel" method='POST'>
+                  <input type='hidden' name='id' value='<?php echo $countR->getId() ?>'>
+                  <input type='hidden' name='idArmario' value='<?php echo $countR->getIdArmario() ?>'>
+        
+                  <button type="submit" class="btn btn-danger btn-sm" name="negar">Negar</button>
                   </form>
-                  </td>
+                </td>
 
-                        </tr>";
 
-                  
-                 }
-                
-                 
-                ?> 
+
+
+              <?php "</tr>";
+              }  ?>
+
+
+
+
+
+
 
               <!-- 
                                    <td>Guilherme</td>
@@ -131,10 +136,10 @@
                                   </td>
                                    
                                   <td>
-                                  <button type="button" class="btn btn-danger btn-sm">Excluir</button>                              
+                                  <bu tton type="button" class="btn btn-danger btn-sm">Excluir</button>                             
                                   </td> -->
 
-                                  
+
 
 
             </tbody>
@@ -172,6 +177,8 @@
 
         </div>
 
+
+
         <div class="col-md-9 .col-md-push-3"></div>
         <div class="card" style="width: 100%; margin-top: 2rem; border-radius: 1rem; ">
           <div class="card-header" style="display:flex; justify-content: center; color: black; ">
@@ -194,7 +201,10 @@
 
 
 
-  <script src="../../public/assets/plugins/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
   <script src="../../public/assets/plugins/fontawesome-free-6.2.0-web/js/all.min.js"></script>
 </body>
 

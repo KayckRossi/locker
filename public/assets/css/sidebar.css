@@ -8,7 +8,7 @@ div.flex-dashboard {
 sidebar {
     display: block;
     height: 100%;
-    width: 300px;
+    width: 200px; /* tamanho do menu/altera aqui o tamanho*/
     background-color:rgb(54, 55, 64);
 } 
 
@@ -16,7 +16,7 @@ main {
     display: block;
     height: 100%;
     background-color: #ccc;
-    width: calc(100% - 300px);
+    width: calc(100% - 200px); /*alter o tamamho do menu*/
 } 
 
 
