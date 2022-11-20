@@ -272,7 +272,16 @@ class AluguelDAO {
 
         try {
 
-            $sql = 'SELECT * FROM `aluguel` WHERE situacao = "reservado"';
+            $sql = 'SELECT aluno.nome AS AlunoNome, aluno.rm as AlunoRm, armario.secao as ArmarioSecao,
+            armario.numero as ArmarioNum, armario.situacao AS ArmarioSituacao, armario.id as ArmarioID, 
+            aluguel.situacao as AluguelSituacao, aluguel.id AS AluguelID 
+            FROM aluguel
+            INNER JOIN aluno ON aluguel.id_aluno = aluno.id 
+            INNER JOIN armario on aluguel.id_armario = armario.id WHERE aluguel.situacao = "reservado"';
+
+            // $sql = 'SELECT aluno.nome, aluno.rm, armario.secao, armario.numero, aluguel.situacao 
+            // FROM aluguel INNER JOIN aluno ON aluguel.id_aluno = aluno.id 
+            // INNER JOIN armario on aluguel.id_armario = armario.id';
 
             $stmt = Connection::getConnection()->prepare($sql);
 
@@ -282,7 +291,7 @@ class AluguelDAO {
 
             foreach ($data as $row) {
 
-                $list[] = $this->list($row);
+                $list[] = $this->tableList($row);
 
             }
 
@@ -294,6 +303,29 @@ class AluguelDAO {
             echo 'Erro ao tentar contar aluguel.<br>' . $e . '<br>';
 
         }
+    }
+
+    private function tableList($row) {
+
+        $aluno = new Aluno();
+        $aluno->setNome($row['AlunoNome']);
+        $aluno->setRm($row['AlunoRm']);
+
+        $armario = new Armario();
+        $armario->setId($row['ArmarioID']);
+        $armario->setSecao($row['ArmarioSecao']);
+        $armario->setNumero($row['ArmarioNum']);
+        $armario->setSituacao($row['ArmarioSituacao']);
+
+        $aluguel = new Aluguel();
+        $aluguel->setSituacao($row['AluguelSituacao']);
+        $aluguel->setId($row['AluguelID']);
+
+
+        
+
+        return  array($aluno, $armario, $aluguel);
+
     }
 
 

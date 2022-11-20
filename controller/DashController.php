@@ -47,6 +47,9 @@
             //contador de alugueis em espera para gerar lista 
             $alugueldao =  new AluguelDAO();
             $counterRent = $alugueldao->countRent();
+            
+
+            
 
             //contador de alugueis ativos
             $aluguelAtivo =  new AluguelDao();
@@ -107,8 +110,8 @@
 
         }
 
-              header('Location: /dashboard');
-              die();
+              //header('Location: /dashboard');
+              //die();
             
 
         }
