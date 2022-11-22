@@ -258,13 +258,13 @@
 	
 	     }
     function cpfValidate(){
-        if (cpfRegex.test(campos[7].value))
+        if (cpfRegex.test(campos[8].value))
         {
-            RemoveError(7);
+            RemoveError(8);
         }
         else
         {
-           setError(7);
+           setError(8);
         }
     }
 
