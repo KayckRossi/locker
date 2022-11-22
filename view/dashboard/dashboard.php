@@ -27,7 +27,7 @@
       <?php include "headerdash.php" ?>
       <!-- final-->
    
-
+    
       
       <div class="main-content">
         <div class="container">
@@ -80,6 +80,8 @@
                 <th scope="col">RM</th>
                 <th scope="col">Armario</th>
                 <th scope="col">Situação</th>
+                <th scope="col">Plano</th>
+                <th scope="col">Valor</th>
                 <th scope="col">Confirmar</th>
                 <th scope="col">Excluir</th>
 
@@ -96,6 +98,8 @@
                 <td> <?php echo $countR[0]->getRm() ?> </td>
                 <td> <?php echo $countR[1]->getSecao() ?><?php echo $countR[1]->getNumero()?> </td>
                 <td> <?php echo $countR[2]->getSituacao() ?> </td>
+                <td> <?php echo $countR[3]->getPlano() ?> </td>
+                <td> <?php echo $countR[3]->getValor() ?> </td>
 
                 <td>
                   <form action="/aceitar-aluguel" method='POST'>

@@ -111,15 +111,15 @@ switch($url) {
     break;
 
     case '/dashboard':
-        DashController::Overview();
+        DashController::overview();
     break;
     
     case '/aceitar-aluguel':
-        DashController::AttAluguel();
+        DashController::aceitarAluguel();
     break;
 
     case '/negar-aluguel':
-        DashController::NegarAluguel();
+        DashController::negarAluguel();
     break;
     
     

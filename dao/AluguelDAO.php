@@ -272,12 +272,22 @@ class AluguelDAO {
 
         try {
 
+
+
             $sql = 'SELECT aluno.nome AS AlunoNome, aluno.rm as AlunoRm, armario.secao as ArmarioSecao,
             armario.numero as ArmarioNum, armario.situacao AS ArmarioSituacao, armario.id as ArmarioID, 
-            aluguel.situacao as AluguelSituacao, aluguel.id AS AluguelID 
+            aluguel.situacao as AluguelSituacao, aluguel.id AS AluguelID, plano.plano as Plano, plano.valor AS PlanoValor 
             FROM aluguel
+            INNER JOIN plano ON aluguel.id_plano = plano.id
             INNER JOIN aluno ON aluguel.id_aluno = aluno.id 
-            INNER JOIN armario on aluguel.id_armario = armario.id WHERE aluguel.situacao = "reservado"';
+            INNER JOIN armario on aluguel.id_armario = armario.id WHERE aluguel.situacao = "reservado";';
+
+            // $sql = 'SELECT aluno.nome AS AlunoNome, aluno.rm as AlunoRm, armario.secao as ArmarioSecao,
+            // armario.numero as ArmarioNum, armario.situacao AS ArmarioSituacao, armario.id as ArmarioID, 
+            // aluguel.situacao as AluguelSituacao, aluguel.id AS AluguelID 
+            // FROM aluguel
+            // INNER JOIN aluno ON aluguel.id_aluno = aluno.id 
+            // INNER JOIN armario on aluguel.id_armario = armario.id WHERE aluguel.situacao = "reservado"';
 
             // $sql = 'SELECT aluno.nome, aluno.rm, armario.secao, armario.numero, aluguel.situacao 
             // FROM aluguel INNER JOIN aluno ON aluguel.id_aluno = aluno.id 
@@ -321,10 +331,11 @@ class AluguelDAO {
         $aluguel->setSituacao($row['AluguelSituacao']);
         $aluguel->setId($row['AluguelID']);
 
+        $plano = new Plano();
+        $plano->setPlano($row['Plano']);
+        $plano->setValor($row['PlanoValor']);
 
-        
-
-        return  array($aluno, $armario, $aluguel);
+        return  array($aluno, $armario, $aluguel, $plano);
 
     }
 

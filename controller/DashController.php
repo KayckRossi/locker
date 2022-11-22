@@ -5,7 +5,7 @@
 
 
 
-        public static function Overview(){
+        public static function overview(){
         
         
             require_once 'session.php';
@@ -21,6 +21,10 @@
 
             include_once 'dao/AluguelDAO.php';
             include_once 'model/Aluguel.php';
+
+            include_once 'dao/Plano.php';
+            include_once 'model/Plano.php';
+
 
             
     
@@ -66,7 +70,7 @@
         } 
 
 
-        public static function AttAluguel(){
+        public static function aceitarAluguel(){
 
             require_once 'session.php';
             
@@ -116,7 +120,7 @@
 
         }
 
-        public static function NegarAluguel(){
+        public static function negarAluguel(){
 
             require_once 'session.php';
             
@@ -160,8 +164,8 @@
 
         }
 
-              //header('Location: /dashboard');
-              //die();
+              header('Location: /dashboard');
+              die();
             
 
         }
