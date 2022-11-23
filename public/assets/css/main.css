@@ -2,14 +2,14 @@ main {
     display: block;
     height: 100%;
     background-color: #ccc;
-	width: calc(100% - 200px); /*altera o tamamho do menu*/
+    width: calc(100% - 200px);/*altera o tamamho do menu*/
 } 
 
 main .main-content{
     padding: 30px;
     width: 100%;
     height: calc(100% - 90px); 
-   overflow: auto;
+   	overflow: auto;
 }
 
 .main-content::-webkit-scrollbar-track
@@ -55,6 +55,6 @@ main .main-content{
 	border-radius: 5px;	
 }
 
-.list-group-item :hover{
-	/* display: none; */
-}
+/* .list-group-item :hover{
+	display: none;
+} */
