@@ -7,7 +7,7 @@
                 <ul>
                     <li>
                         <i class="fa-solid fa-house"></i>
-                        <a href="#">Geral</a>
+                        <a href="dashboard.php">Geral</a>
                     </li>
                     <li>
                         <i class="fa-solid fa-user-graduate"></i>

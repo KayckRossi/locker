@@ -27,161 +27,223 @@
       <!-- inicio do Escopo da pagina -->
       <?php include "headerdash.php" ?>
       <!-- final-->
+      <div class="main-content">
+        <div class="container">
 
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cadastrar" data-whatever="@mdo">Cadastrar</button>
+          <div class="row">
 
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#atualizar" data-whatever="@mdo">Atualizar</button>
+            <button type="button" class="btn-cadastrar" data-toggle="modal" data-target="#cadastrar" data-whatever="@mdo">Cadastrar</button>
 
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#excluir" data-whatever="@mdo">Excluir</button>
+            <button type="button" class="btn-excluir" data-toggle="modal" data-target="#excluir" data-whatever="@mdo">Excluir</button>
 
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pesquisar" data-whatever="@mdo">Pesquisar</button>
+            <button type="button" class="btn-atualizar" data-toggle="modal" data-target="#atualizar" data-whatever="@mdo">Atualizar</button>
 
-      <!-- Começo Modal-Cadastrar -->
+            <button type="button" class="btn-pesquisar" data-toggle="modal" data-target="#pesquisar" data-whatever="@mdo">Pesquisar</button>
 
-      <div class="modal fade" id="cadastrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="Label-cadastrar">Cadastrar</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                <span aria-hidden="true">&times;</span>
-              </button>
+          </div>
+        </div>
+
+        <!-- Começo Modal-Cadastrar -->
+
+        <div class="modal fade" id="cadastrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="Label-cadastrar">Cadastrar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <form>
+
+                    <div class="form-group">
+                      <label for="recebe-nome" class="col-form-label">Nome:</label>
+                      <input type="text" class="form-control" id="recebe-name">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recebe-sobrenome" class="col-form-label">Sobrenome:</label>
+                      <input type="text" class="form-control" id="recebe-sobrenome">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recebe-email" class="col-form-label">Email:</label>
+                      <input type="text" class="form-control" id="recebe-email">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recebe-rm" class="col-form-label">RM:</label>
+                      <input type="text" class="form-control" id="recebe-rm">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="cadastro-cpf" class="col-form-label">CPF:</label>
+                      <input type="number" class="form-control" id="cadastro-cpf">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recebe-contato" class="col-form-label">Contato:</label>
+                      <input type="number" class="form-control" id="recebe-contato">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recebe-senha" class="col-form-label">Senha:</label>
+                      <input type="number" class="form-control" id="recebe-senha">
+                    </div>
+
+                  </form>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">Enviar</button>
+              </div>
             </div>
-            <div class="modal-body">
-              <form>
+          </div>
+        </div>
+
+        <!-- Final Modal-Cadastrar -->
+
+        <!-- Começo Modal-excluir -->
+
+        <div class="modal fade" id="excluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="Label-Excluir">Excluir</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
                 <form>
 
                   <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Nome:</label>
-                    <input type="text" class="form-control" id="recipient-name">
+                    <label for="excluir-email" class="col-form-label">Email:</label>
+                    <input type="text" class="form-control" id="excluir-email">
                   </div>
 
                   <div class="form-group">
-                    <label for="message-text" class="col-form-label">Sobrenome:</label>
-                    <input type="text" class="form-control" id="recipient-name">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="message-text" class="col-form-label">Email:</label>
-                    <input type="text" class="form-control" id="recipient-name">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="message-text" class="col-form-label">RM:</label>
-                    <input type="text" class="form-control" id="recipient-name">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="message-text" class="col-form-label">CPF:</label>
-                    <input type="text" class="form-control" id="recipient-name">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="message-text" class="col-form-label">Contato:</label>
-                    <input type="text" class="form-control" id="recipient-name">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="message-text" class="col-form-label">Senha:</label>
-                    <input type="text" class="form-control" id="recipient-name">
+                    <label for="excluir-cpf" class="col-form-label">CPF:</label>
+                    <input type="number" class="form-control" id="excluir-cpf">
                   </div>
 
                 </form>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-              <button type="button" class="btn btn-primary">Enviar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Começo Modal-Atualizar -->
-
-      <div class="modal fade" id="atualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">isso ai</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Destinatário:</label>
-                  <input type="text" class="form-control" id="recipient-name">
-                </div>
-                <div class="form-group">
-                  <label for="message-text" class="col-form-label">Mensagem:</label>
-                  <textarea class="form-control" id="message-text"></textarea>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-              <button type="button" class="btn btn-primary">Enviar</button>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">Enviar</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Começo Modal Excluir -->
+        <!-- Final Modal-excluir -->
 
-      <div class="modal fade" id="excluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Nova mensagem</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
 
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-              <button type="button" class="btn btn-primary">Enviar</button>
+        <!-- Começo Modal Atualizar -->
+
+        <div class="modal fade" id="atualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="Label-atualizar">Atualizar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <form>
+
+                    <div class="form-group">
+                      <label for="recebe-nome" class="col-form-label">Nome:</label>
+                      <input type="text" class="form-control" id="recebe-name">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recebe-sobrenome" class="col-form-label">Sobrenome:</label>
+                      <input type="text" class="form-control" id="recebe-sobrenome">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recebe-email" class="col-form-label">Email:</label>
+                      <input type="text" class="form-control" id="recebe-email">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recebe-rm" class="col-form-label">RM:</label>
+                      <input type="text" class="form-control" id="recebe-rm">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="cadastro-cpf" class="col-form-label">CPF:</label>
+                      <input type="number" class="form-control" id="cadastro-cpf">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recebe-contato" class="col-form-label">Contato:</label>
+                      <input type="number" class="form-control" id="recebe-contato">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recebe-senha" class="col-form-label">Senha:</label>
+                      <input type="number" class="form-control" id="recebe-senha">
+                    </div>
+
+                  </form>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">Enviar</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Começo Modal-Pesquisar -->
+        <!-- Final Modal Atualizar -->
 
-      <div class="modal fade" id="pesquisar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Nova mensagem</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Destinatário:</label>
-                  <input type="text" class="form-control" id="recipient-name">
-                </div>
-                <div class="form-group">
-                  <label for="message-text" class="col-form-label">Mensagem:</label>
-                  <textarea class="form-control" id="message-text"></textarea>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-              <button type="button" class="btn btn-primary">Enviar</button>
+        <!-- Começo Modal-Pesquisar -->
+
+        <div class="modal fade" id="pesquisar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="Label-pesquisar">Pesquisar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+
+                  <div class="form-group">
+                    <label for="recebe-email" class="col-form-label">Email:</label>
+                    <input type="text" class="form-control" id="recebe-email">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recebe-rm" class="col-form-label">RM:</label>
+                    <input type="text" class="form-control" id="recebe-rm">
+                  </div>
+
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">Enviar</button>
+              </div>
             </div>
           </div>
         </div>
+
+          <!-- Final Modal-Pesquisar -->
+
+          
       </div>
-
-
     </main>
   </div>
 

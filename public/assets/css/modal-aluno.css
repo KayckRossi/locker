@@ -1,6 +1,33 @@
-#Label-cadastrar{
+#Label-cadastrar,
+#Label-Excluir,
+#Label-atualizar {
     color: black;
     text-align: center;
     justify-content: space-between;
     padding-left: 12rem;
+    font-size: x-large;
+}
+
+.btn-cadastrar,
+.btn-excluir,
+.btn-atualizar,
+.btn-pesquisar {
+    display:inline;
+    height: 5rem;
+    width: 10rem;
+    background-color: #007BFF;
+    flex-direction: row;
+    text-align: center;
+    justify-items: space-between;
+    margin-left: 6rem;
+    border-radius: 10px 10px 5px 5px;
+}
+
+.btn-cadastrar,
+.btn-excluir,
+.btn-atualizar,
+.btn-pesquisar,
+p {
+    font-size: 1rem;
+    color: #fff;
 }
