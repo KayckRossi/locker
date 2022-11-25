@@ -20,7 +20,7 @@
     text-align: center;
     justify-items: space-between;
     margin-left: 6rem;
-    border-radius: 10px 10px 5px 5px;
+    border-radius: 10px 10px 10px 10px;
 }
 
 .btn-cadastrar,
@@ -30,4 +30,13 @@
 p {
     font-size: 1rem;
     color: #fff;
+}
+
+#tabela-aluno{
+    border-radius: 10px 10px 10px 10px;
+    border: 3px solid black;
+}
+
+#div-aluno{
+    padding: 5rem;
 }

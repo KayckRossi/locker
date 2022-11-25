@@ -50,7 +50,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="Label-cadastrar">Cadastrar</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Salvar">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
@@ -97,8 +97,8 @@
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary">Enviar</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+                <button type="button" class="btn btn-danger">Fechar</button>
               </div>
             </div>
           </div>
@@ -113,7 +113,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="Label-Excluir">Excluir</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Salvar">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
@@ -133,8 +133,8 @@
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary">Enviar</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+                <button type="button" class="btn btn-danger">Fechar</button>
               </div>
             </div>
           </div>
@@ -150,7 +150,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="Label-atualizar">Atualizar</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Salvar">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
@@ -197,8 +197,8 @@
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary">Enviar</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+                <button type="button" class="btn btn-danger">Fechar</button>
               </div>
             </div>
           </div>
@@ -213,7 +213,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="Label-pesquisar">Pesquisar</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Salvar">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
@@ -233,17 +233,39 @@
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary">Enviar</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+                <button type="button" class="btn btn-danger">Fechar</button>
               </div>
             </div>
           </div>
         </div>
 
-          <!-- Final Modal-Pesquisar -->
+        <!-- Final Modal-Pesquisar -->
 
-          
-      </div>
+        <div class="col-md-9 .col-md-push-3"></div>
+        <div class="card" style="width: 100%; margin-top: 2rem; border-radius: 1rem;">
+          <div class="card-header" style="display:flex; justify-content: center; color: black; ">
+            <h4>Pendencia de solicitações de alugueis</h4>
+          </div>
+          <table class="table">
+
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Sobrenome</th>
+                <th scope="col">Email</th>
+                <th scope="col">CPF</th>
+                <th scope="col">RM</th>
+                <th scope="col">Contato</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Excluir</th>
+
+              </tr>
+            </thead>
+        </div>
+
+
+
     </main>
   </div>
 
