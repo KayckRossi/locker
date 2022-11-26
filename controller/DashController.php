@@ -22,8 +22,9 @@
             include_once 'dao/AluguelDAO.php';
             include_once 'model/Aluguel.php';
 
-            include_once 'dao/Plano.php';
+            include_once 'dao/PlanoDAO.php';
             include_once 'model/Plano.php';
+            
 
 
             
