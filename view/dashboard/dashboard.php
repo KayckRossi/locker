@@ -26,9 +26,9 @@
       <!-- inicio do Escopo da pagina -->
       <?php include "headerdash.php" ?>
       <!-- final-->
-   
-    
-      
+
+
+
       <div class="main-content">
         <div class="container">
           <div class="row">
@@ -96,26 +96,26 @@
                 <?php echo "<tr>" ?>
                 <td> <?php echo $countR[0]->getNome(); ?> </td>
                 <td> <?php echo $countR[0]->getRm() ?> </td>
-                <td> <?php echo $countR[1]->getSecao() ?><?php echo $countR[1]->getNumero()?> </td>
+                <td> <?php echo $countR[1]->getSecao() ?><?php echo $countR[1]->getNumero() ?> </td>
                 <td> <?php echo $countR[2]->getSituacao() ?> </td>
                 <td> <?php echo $countR[3]->getPlano() ?> </td>
                 <td> <?php echo $countR[3]->getValor() ?> </td>
 
                 <td>
                   <form action="/aceitar-aluguel" method='POST'>
-                  <input type='hidden' name='id' value='<?php echo $countR[2]->getId() ?>'>
-                  <input type='hidden' name='idArmario' value='<?php echo $countR[1]->getId() ?>'>
-        
-                  <button type="submit" class="btn btn-success btn-sm" name="confirmar">Confirmar</button>
+                    <input type='hidden' name='id' value='<?php echo $countR[2]->getId() ?>'>
+                    <input type='hidden' name='idArmario' value='<?php echo $countR[1]->getId() ?>'>
+
+                    <button type="submit" class="btn btn-success btn-sm" name="confirmar">Confirmar</button>
                   </form>
                 </td>
 
                 <td>
                   <form action="/negar-aluguel" method='POST'>
-                  <input type='hidden' name='id' value='<?php echo $countR[2]->getId() ?>'>
-                  <input type='hidden' name='idArmario' value='<?php echo $countR[1]->getId() ?>'>
-        
-                  <button type="submit" class="btn btn-danger btn-sm" name="negar">Negar</button>
+                    <input type='hidden' name='id' value='<?php echo $countR[2]->getId() ?>'>
+                    <input type='hidden' name='idArmario' value='<?php echo $countR[1]->getId() ?>'>
+
+                    <button type="submit" class="btn btn-danger btn-sm" name="negar">Negar</button>
                   </form>
                 </td>
 
@@ -199,10 +199,9 @@
       </div>
 
 
-  
+  </div>
   </main>
   </div>
-  
 
 
 

@@ -32,6 +32,8 @@
 
           <div class="row">
 
+          
+
             <button type="button" class="btn-cadastrar" data-toggle="modal" data-target="#cadastrar" data-whatever="@mdo">Cadastrar</button>
 
             <button type="button" class="btn-excluir" data-toggle="modal" data-target="#excluir" data-whatever="@mdo">Excluir</button>
@@ -70,7 +72,7 @@
 
                     <div class="form-group">
                       <label for="recebe-email" class="col-form-label">Email:</label>
-                      <input type="text" class="form-control" id="recebe-email">
+                      <input type="email" class="form-control" id="recebe-email">
                     </div>
 
                     <div class="form-group">
@@ -98,7 +100,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
-                <button type="button" class="btn btn-danger">Fechar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
               </div>
             </div>
           </div>
@@ -134,7 +136,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
-                <button type="button" class="btn btn-danger">Fechar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
               </div>
             </div>
           </div>
@@ -198,7 +200,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
-                <button type="button" class="btn btn-danger">Fechar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
               </div>
             </div>
           </div>
@@ -234,7 +236,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
-                <button type="button" class="btn btn-danger">Fechar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
               </div>
             </div>
           </div>

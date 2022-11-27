@@ -16,8 +16,8 @@
     height: 5rem;
     width: 10rem;
     background-color: #007BFF;
-    flex-direction: row;
-    text-align: center;
+    /* flex-direction: row; */
+    /* text-align: center; */
     justify-items: space-between;
     margin-left: 6rem;
     border-radius: 10px 10px 10px 10px;
@@ -28,8 +28,10 @@
 .btn-atualizar,
 .btn-pesquisar,
 p {
-    font-size: 1rem;
-    color: #fff;
+    font-size: 20px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
 }
 
 #tabela-aluno{
@@ -37,6 +39,6 @@ p {
     border: 3px solid black;
 }
 
-#div-aluno{
+/* #div-aluno{
     padding: 5rem;
-}
+} */

@@ -8,8 +8,8 @@ main {
 main .main-content{
     padding: 30px;
     width: 100%;
-    height: calc(100% - 90px); 
-   	overflow: auto;
+    height: calc(100% - 90px);
+    overflow: auto;
 }
 
 .main-content::-webkit-scrollbar-track
