@@ -1,7 +1,7 @@
 .cadastro-armario,
 .armario-excluir{
     display:inline;
-    height: 5rem;
+    height: 4rem;
     width: 10rem;
     background-color: #007BFF;
     flex-direction: row;
@@ -10,12 +10,13 @@
     margin-left: 22rem;
     margin-right: -20rem;
     border-radius: 10px 10px 10px 10px;
+    border: none;
 }
 
 .cadastro-armario,
 .armario-excluir, p{
     font-size: 20px;
-    color: rgb(2, 1, 1);
+    color: #FFF;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
@@ -31,4 +32,8 @@
 
 .btn-modais{
     padding-top: 2rem;
+}
+
+.btn-modais :hover{
+    background-color: #004fa3;
 }
