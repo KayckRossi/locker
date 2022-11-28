@@ -204,6 +204,78 @@ class AlunoDAO {
 
         }
     }
+
+
+    public function createADM(Aluno $aluno) {
+
+        //echo '<pre>' , var_dump($aluno) , '</pre>';
+
+        try {
+
+            $sql = 'START TRANSACTION;
+            INSERT INTO aluno (rm, cpf, email, senha, nome, sobrenome, purl, ativo)
+            VALUES (:rm, :cpf, :email, :senha, :nome, :sobrenome, :purl, :ativo);
+            SELECT LAST_INSERT_ID() INTO @id;
+            INSERT INTO telefone_aluno (telefone, id_aluno)
+            VALUES(:telefone, @id);
+            COMMIT;';
+
+            $stmt = Connection::getConnection()->prepare($sql);
+
+            $stmt->bindValue(':rm', $aluno->getRm(), PDO::PARAM_INT);
+            $stmt->bindValue(':cpf', $aluno->getCpf(), PDO::PARAM_STR);
+            $stmt->bindValue(':email', $aluno->getEmail(), PDO::PARAM_STR);
+            $stmt->bindValue(':senha', $aluno->getSenha(), PDO::PARAM_STR);
+            $stmt->bindValue(':nome', $aluno->getNome(), PDO::PARAM_STR);
+            $stmt->bindValue(':sobrenome', $aluno->getSobrenome(), PDO::PARAM_STR);
+            $stmt->bindValue(':telefone', $aluno->getTelefone(), PDO::PARAM_STR);
+            $stmt->bindValue(':purl', $aluno->getPurl(), PDO::PARAM_STR);
+            $stmt->bindValue(':ativo', $aluno->getAtivo(), PDO::PARAM_STR);
+
+            return $stmt->execute();
+
+        } catch (Exception $e) {
+
+            echo 'Erro ao inserir aluno.<br>' . $e . '<br>';
+
+        }
+
+    }
+
+    public function admReadAll() {
+
+        try {
+            $sql = 'SELECT aluno.id, rm, cpf, email, nome, sobrenome, telefone
+            FROM aluno INNER JOIN telefone_aluno telefone
+            ON aluno.id = telefone.id_aluno
+            ORDER BY nome ASC';
+
+            $stmt = Connection::getConnection()->prepare($sql);
+
+            $stmt->execute();
+
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            $list = array();
+
+            foreach ($data as $row) {
+
+                $list[] = $this->list($row);
+
+            }
+
+            return $list;
+
+        } catch (Exception $e) {
+
+            echo 'Erro ao selecionar alunos.<br>' . $e . '<br>';
+
+        }
+
+    }
+
+
+    
         
 }
 

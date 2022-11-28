@@ -115,8 +115,8 @@
 
         }
 
-              //header('Location: /dashboard');
-              //die();
+              header('Location: /dashboard');
+              die();
             
 
         }

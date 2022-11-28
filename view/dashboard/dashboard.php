@@ -125,60 +125,9 @@
               <?php "</tr>";
               }  ?>
 
-
-
-
-
-
-
-              <!-- 
-                                   <td>Guilherme</td>
-                                  <td>25111</td>
-                                  <td>F12</td>
-
-                                  <td>
-                                  <button type="button" class="btn btn-success btn-sm">Confirmar</button>                              
-                                  </td>
-                                   
-                                  <td>
-                                  <bu tton type="button" class="btn btn-danger btn-sm">Excluir</button>                             
-                                  </td> -->
-
-
-
-
             </tbody>
 
           </table>
-
-
-
-
-
-          <!-- <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Guilherme Kishida | RM : 00001
-                      <button type="submit" class="button-aprovado"><i class="fa-solid fa-check"></i></button>
-                      <button type="submit" class="button-negado"><i class="fa-solid fa-xmark"></i></button>
-                  </li>
-                  <li class="list-group-item">Erick Guimarães | RM : 00002
-                      <button type="submit" class="button-aprovado"><i class="fa-solid fa-check"></i></button>
-                      <button type="submit" class="button-negado"><i class="fa-solid fa-xmark"></i></button>
-                  </li>
-                  <li class="list-group-item">Ana Luiza | RM :  00004
-                      <button type="submit" class="button-aprovado"><i class="fa-solid fa-check"></i></button>
-                      <button type="submit" class="button-negado"><i class="fa-solid fa-xmark"></i></button>
-                  </li>
-                  <li class="list-group-item">Kayk Oliveira | Rm : 00005
-                      <button type="submit" class="button-aprovado"><i class="fa-solid fa-check"></i></button>
-                      <button type="submit" class="button-negado"><i class="fa-solid fa-xmark"></i></button>
-                  </li>
-                  <li class="list-group-item">Erik Sech  | RM : 00006
-                      <button type="submit" class="button-aprovado"><i class="fa-solid fa-check"></i></button>
-                      <button type="submit" class="button-negado"><i class="fa-solid fa-xmark"></i></button>
-                  </li>
-                </ul>  -->
-
-
 
         </div>
 
@@ -197,6 +146,8 @@
           </ul>
         </div>
       </div>
+
+      
 
 
   </div>

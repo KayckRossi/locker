@@ -7,6 +7,7 @@ include 'controller/CursoController.php';
 include 'controller/AluguelController.php';
 include 'controller/AuthenticationController.php';
 include 'controller/AdmAuthenticationController.php';
+include 'controller/DashAlunoController.php';
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -131,7 +132,15 @@ switch($url) {
     case '/negar-aluguel':
         DashController::negarAluguel();
     break;
-    
+
+    case '/dashboard/aluno':
+        DashAlunoController::dashAluno();
+    break;
+
+    case '/dash-cad-aluno':
+        DashAlunoController::dashAlunoCadastrar();
+    break;    
+
     default:
         echo "Erro 404";
     break;
