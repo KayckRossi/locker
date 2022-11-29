@@ -159,14 +159,59 @@
                                     <div class="modal-body">
                                         <form>
 
-                                            <div class="form-group">
-                                                <h2>Confirmar exclusão do armário do sistema?</h2>
-                                            </div>
+                                        <div class="form-group">
+                                                    <label for="recebe-seção" class="col-form-label">Seção:</label>
+                                                    <input type="text" class="form-control" id="recebe-seção">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="quantidade-armarios" class="col-form-label">Quantidade:</label>
+                                                    <select class="form-control" id="quantidade-armarios">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="recebe-proximidade" class="col-form-label">Proximidade:</label>
+                                                    <select class="form-control" id="recebe-proximidade">
+                                                        <option>Corredor Química</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="recebe-andar" class="col-form-label">Andar:</label>
+                                                    <select class="form-control" id="recebe-proximidade">
+                                                        <option>Inferior</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="cadastro-cpf" class="col-form-label">Situação:</label>
+                                                    <select class="form-control" id="recebe-proximidade">
+                                                        <option>Disponivel</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                </div>
 
                                         </form>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+                                        <button type="button" class="btn btn-success">Salvar</button>
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                                     </div>
                                 </div>
@@ -174,56 +219,6 @@
                         </div>
 
                         <!-- Final Modal-excluir -->
-                    </div>
-                </div>
-
-
-
-                <!-- Começo tabela-alunos -->
-                <div class="col-md-9 .col-md-push-3"></div>
-                <div class="card" style="width: 100%; margin-top: 2rem; border-radius: 1rem;">
-                    <div class="card-header" style="display:flex; justify-content: center; color: black; ">
-                        <h4>Lista de armários</h4>
-                    </div>
-                    <table class="table">
-
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">Seção+Número</th>
-                                <th scope="col">Proximidade</th>
-                                <th scope="col">Andar</th>
-                                <th scope="col">Situação</th>
-                                <th scope="col">Editar</th>
-                                <th scope="col">Excluir</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#alterar" data-whatever="@mdo">Alterar</button></td>
-                                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#apagar" data-whatever="@mdo">Apagar</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#alterar" data-whatever="@mdo">Alterar</button></td>
-                                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#apagar" data-whatever="@mdo">Apagar</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#alterar" data-whatever="@mdo">Alterar</button></td>
-                                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#apagar" data-whatever="@mdo">Apagar</button></td>
-                            </tr>
-                        </tbody>
 
                         <!-- Começo modal-alterar -->
 
@@ -280,7 +275,7 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="cadastro-cpf" class="col-form-label">Piso:</label>
+                                                    <label for="cadastro-cpf" class="col-form-label">Andar:</label>
                                                     <select class="form-control" id="recebe-proximidade">
                                                         <option>Inferior</option>
                                                         <option>2</option>
@@ -300,7 +295,9 @@
                                 </div>
                             </div>
                         </div>
-                        
+
+                        <!-- final modal-alterar -->
+
                         <!-- Começo modal-apagar/tabela -->
 
                         <div class="modal fade" id="apagar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -329,6 +326,57 @@
                             </div>
                         </div>
                         <!-- Final modal-apagar/tabela -->
+                    </div>
+                </div>
+
+
+
+                <!-- Começo tabela-alunos -->
+                <div class="col-md-9 .col-md-push-3"></div>
+                <div class="card" style="width: 100%; margin-top: 2rem; border-radius: 1rem;">
+                    <div class="card-header" style="display:flex; justify-content: center; color: black; ">
+                        <h4>Lista de armários</h4>
+                    </div>
+                    <table class="table">
+
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Seção+Número</th>
+                                <th scope="col">Proximidade</th>
+                                <th scope="col">Andar</th>
+                                <th scope="col">Situação</th>
+                                <th scope="col">Editar</th>
+                                <th scope="col">Excluir</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#alterar" data-whatever="@mdo">Alterar</button></td>
+                                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#apagar" data-whatever="@mdo">Apagar</button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                                <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#alterar" data-whatever="@mdo">Alterar</button></td>
+                                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#apagar" data-whatever="@mdo">Apagar</button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                                <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#alterar" data-whatever="@mdo">Alterar</button></td>
+                                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#apagar" data-whatever="@mdo">Apagar</button></td>
+                            </tr>
+                        </tbody>
+
 
                 </div>
                 <!-- Final tabela-alunos -->

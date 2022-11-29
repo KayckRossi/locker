@@ -141,6 +141,12 @@ switch($url) {
         DashAlunoController::dashAlunoCadastrar();
     break;    
 
+    case '/dashboard/armarios':
+        include 'view\dashboard\armarios.php';
+    break; 
+
+
+
     default:
         echo "Erro 404";
     break;
