@@ -32,8 +32,6 @@
 
           <div class="row">
 
-          
-
             <button type="button" class="btn-cadastrar" data-toggle="modal" data-target="#cadastrar" data-whatever="@mdo">Cadastrar</button>
 
             <button type="button" class="btn-excluir" data-toggle="modal" data-target="#excluir" data-whatever="@mdo">Excluir</button>
@@ -57,51 +55,52 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form>
-                  <form>
+                
+                <form  action='/dash-cad-aluno' method='POST'>
 
                     <div class="form-group">
                       <label for="recebe-nome" class="col-form-label">Nome:</label>
-                      <input type="text" class="form-control" id="recebe-name">
+                      <input type="text" name="nome" class="form-control" id="recebe-name">
                     </div>
 
                     <div class="form-group">
                       <label for="recebe-sobrenome" class="col-form-label">Sobrenome:</label>
-                      <input type="text" class="form-control" id="recebe-sobrenome">
+                      <input type="text" name="sobrenome" class="form-control" id="recebe-sobrenome">
                     </div>
 
                     <div class="form-group">
                       <label for="recebe-email" class="col-form-label">Email:</label>
-                      <input type="email" class="form-control" id="recebe-email">
+                      <input type="email" name="email" class="form-control" id="recebe-email">
                     </div>
-
+               
                     <div class="form-group">
                       <label for="recebe-rm" class="col-form-label">RM:</label>
-                      <input type="text" class="form-control" id="recebe-rm">
+                      <input type="number" name="rm" class="form-control" id="recebe-rm">
                     </div>
 
                     <div class="form-group">
                       <label for="cadastro-cpf" class="col-form-label">CPF:</label>
-                      <input type="number" class="form-control" id="cadastro-cpf">
+                      <input type="number" name="cpf" class="form-control" id="cadastro-cpf">
                     </div>
 
                     <div class="form-group">
                       <label for="recebe-contato" class="col-form-label">Contato:</label>
-                      <input type="number" class="form-control" id="recebe-contato">
+                      <input type="" name="telefone" class="form-control" id="recebe-contato">
                     </div>
 
                     <div class="form-group">
                       <label for="recebe-senha" class="col-form-label">Senha:</label>
-                      <input type="number" class="form-control" id="recebe-senha">
+                      <input type="number" name="senha" class="form-control" id="recebe-senha">
                     </div>
 
-                  </form>
+                  
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" name="cadastrar" class="btn btn-success">Cadastrar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                    </div>
                 </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-              </div>
             </div>
           </div>
         </div>
@@ -135,8 +134,9 @@
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+                <button type="submit" name="excluir" class="btn btn-success">Excluir</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                
               </div>
             </div>
           </div>
@@ -200,7 +200,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-danger">Fechar</button>
               </div>
             </div>
           </div>
@@ -236,7 +236,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-danger">Fechar</button>
               </div>
             </div>
           </div>
@@ -247,23 +247,39 @@
         <div class="col-md-9 .col-md-push-3"></div>
         <div class="card" style="width: 100%; margin-top: 2rem; border-radius: 1rem;">
           <div class="card-header" style="display:flex; justify-content: center; color: black; ">
-            <h4>Pendencia de solicitações de alugueis</h4>
+            <h4>Alunos Cadastrados</h4>
           </div>
+
           <table class="table">
 
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Nome</th>
                 <th scope="col">Sobrenome</th>
-                <th scope="col">Email</th>
-                <th scope="col">CPF</th>
                 <th scope="col">RM</th>
+                <th scope="col">CPF</th>
+                <th scope="col">E-MAIL</th>
                 <th scope="col">Contato</th>
                 <th scope="col">Editar</th>
                 <th scope="col">Excluir</th>
 
               </tr>
             </thead>
+
+            <tbody>
+
+
+              
+              
+               
+
+            </tbody>
+
+
+
+
+
+            </table>
         </div>
 
 

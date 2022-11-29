@@ -24,6 +24,7 @@
 
             include_once 'dao/PlanoDAO.php';
             include_once 'model/Plano.php';
+            
 
 
             
@@ -114,8 +115,8 @@
 
         }
 
-              //header('Location: /dashboard');
-              //die();
+              header('Location: /dashboard');
+              die();
             
 
         }

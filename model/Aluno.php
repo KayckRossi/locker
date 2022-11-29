@@ -5,6 +5,7 @@ final class Aluno extends Pessoa {
     private $rm;
     private $curso;
     private $purl;
+    private $ativo;
 
     public function __construct() {
         parent::__construct();
@@ -22,6 +23,10 @@ final class Aluno extends Pessoa {
         return $this->purl;
     }
     
+    public function getAtivo(){
+        return $this->ativo;
+    }
+    
     public function setRm($rm) {
         $this->rm = $rm;
     }
@@ -32,6 +37,10 @@ final class Aluno extends Pessoa {
 
     public function setPurl($purl) {
         $this->purl = $purl;
+    }
+
+    public function setAtivo($ativo) {
+        $this->ativo = $ativo;
     }
 
    
