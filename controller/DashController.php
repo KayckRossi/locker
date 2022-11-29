@@ -92,7 +92,7 @@
             
              
 
-            echo '<pre>' , print_r($data) , '</pre>';
+            //echo '<pre>' , print_r($data) , '</pre>';
             
             
 
@@ -105,13 +105,13 @@
             
 
 
-            echo '<pre>' , print_r($aluguel) , '</pre>';
+           // echo '<pre>' , print_r($aluguel) , '</pre>';
         
             $attAluguel = new AluguelDAO();
 
             $attAluguel->Attupdate($aluguel);
 
-            echo '<pre>' , print_r($attAluguel) , '</pre>';
+            //echo '<pre>' , print_r($attAluguel) , '</pre>';
 
         }
 

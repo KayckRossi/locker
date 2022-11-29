@@ -55,52 +55,52 @@
                 </button>
               </div>
               <div class="modal-body">
-                
-                <form  action='/dash-cad-aluno' method='POST'>
 
-                    <div class="form-group">
-                      <label for="recebe-nome" class="col-form-label">Nome:</label>
-                      <input type="text" name="nome" class="form-control" id="recebe-name">
-                    </div>
+                <form action='/dash-cad-aluno' method='POST'>
 
-                    <div class="form-group">
-                      <label for="recebe-sobrenome" class="col-form-label">Sobrenome:</label>
-                      <input type="text" name="sobrenome" class="form-control" id="recebe-sobrenome">
-                    </div>
+                  <div class="form-group">
+                    <label for="recebe-nome" class="col-form-label">Nome:</label>
+                    <input type="text" name="nome" class="form-control" id="recebe-name">
+                  </div>
 
-                    <div class="form-group">
-                      <label for="recebe-email" class="col-form-label">Email:</label>
-                      <input type="email" name="email" class="form-control" id="recebe-email">
-                    </div>
-               
-                    <div class="form-group">
-                      <label for="recebe-rm" class="col-form-label">RM:</label>
-                      <input type="number" name="rm" class="form-control" id="recebe-rm">
-                    </div>
+                  <div class="form-group">
+                    <label for="recebe-sobrenome" class="col-form-label">Sobrenome:</label>
+                    <input type="text" name="sobrenome" class="form-control" id="recebe-sobrenome">
+                  </div>
 
-                    <div class="form-group">
-                      <label for="cadastro-cpf" class="col-form-label">CPF:</label>
-                      <input type="number" name="cpf" class="form-control" id="cadastro-cpf">
-                    </div>
+                  <div class="form-group">
+                    <label for="recebe-email" class="col-form-label">Email:</label>
+                    <input type="email" name="email" class="form-control" id="recebe-email">
+                  </div>
 
-                    <div class="form-group">
-                      <label for="recebe-contato" class="col-form-label">Contato:</label>
-                      <input type="" name="telefone" class="form-control" id="recebe-contato">
-                    </div>
+                  <div class="form-group">
+                    <label for="recebe-rm" class="col-form-label">RM:</label>
+                    <input type="number" name="rm" class="form-control" id="recebe-rm">
+                  </div>
 
-                    <div class="form-group">
-                      <label for="recebe-senha" class="col-form-label">Senha:</label>
-                      <input type="number" name="senha" class="form-control" id="recebe-senha">
-                    </div>
+                  <div class="form-group">
+                    <label for="cadastro-cpf" class="col-form-label">CPF:</label>
+                    <input type="number" name="cpf" class="form-control" id="cadastro-cpf">
+                  </div>
 
-                  
-                        
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" name="cadastrar" class="btn btn-success">Cadastrar</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                    </div>
-                </form>
+                  <div class="form-group">
+                    <label for="recebe-contato" class="col-form-label">Contato:</label>
+                    <input type="" name="telefone" class="form-control" id="recebe-contato">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recebe-senha" class="col-form-label">Senha:</label>
+                    <input type="number" name="senha" class="form-control" id="recebe-senha">
+                  </div>
+
+
+
+              </div>
+              <div class="modal-footer">
+                <button type="submit" name="cadastrar" class="btn btn-success">Cadastrar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+              </div>
+              </form>
             </div>
           </div>
         </div>
@@ -136,7 +136,7 @@
               <div class="modal-footer">
                 <button type="submit" name="excluir" class="btn btn-success">Excluir</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                
+
               </div>
             </div>
           </div>
@@ -268,10 +268,131 @@
 
             <tbody>
 
+              <?php foreach ($counterStudent as $countS) { ?>
 
-              
-              
+                <?php echo "<tr>" ?>
+                <td> <?php echo $countS->getNome(); ?> </td>
+                <td> <?php echo $countS->getSobrenome(); ?> </td>
+                <td> <?php echo $countS->getRm(); ?> </td>
+                <td> <?php echo $countS->getCpf(); ?> </td>
+                <td> <?php echo $countS->getEmail(); ?> </td>
+                <td> <?php echo $countS->getTelefone(); ?> </td>
+                
+
+                <td>
+                 
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#TabelaAtualizar">Alterar</button>
+                  </form>
+                </td>
+
+                <td>
                
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ExcluirTabela">Excluir</button>
+                  </form>
+                </td>
+
+
+
+                <!-- Começo Modal Atualizar Tabela aluno-->
+
+        <div class="modal fade" id="TabelaAtualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="Label-atualizar">Atualizar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Salvar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <form>
+
+                    <div class="form-group">
+                      <label for="recebe-nome" class="col-form-label">Nome:</label>
+                      <input type="text" class="form-control" id="recebe-name">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recebe-sobrenome" class="col-form-label">Sobrenome:</label>
+                      <input type="text" class="form-control" id="recebe-sobrenome">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recebe-email" class="col-form-label">Email:</label>
+                      <input type="text" class="form-control" id="recebe-email">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recebe-rm" class="col-form-label">RM:</label>
+                      <input type="text" class="form-control" id="recebe-rm">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="cadastro-cpf" class="col-form-label">CPF:</label>
+                      <input type="number" class="form-control" id="cadastro-cpf">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recebe-contato" class="col-form-label">Contato:</label>
+                      <input type="number" class="form-control" id="recebe-contato">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recebe-senha" class="col-form-label">Senha:</label>
+                      <input type="number" class="form-control" id="recebe-senha">
+                    </div>
+
+                  </form>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+                <button type="button" class="btn btn-danger">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Final Modal Atualizar Tabela Aluno -->
+
+
+          <!-- Começo modal-apagar/tabela -->
+
+          <div class="modal fade" id="ExcluirTabela" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="Label-Excluir">Excluir</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Salvar">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+
+                                            <div class="form-group">
+                                                <h2>Confirmar exclusão do armário do sistema?</h2>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Final modal-apagar/tabela -->
+
+              <?php "</tr>";
+              }  ?>
+
+
+
+
+
 
             </tbody>
 
@@ -279,7 +400,7 @@
 
 
 
-            </table>
+          </table>
         </div>
 
 
