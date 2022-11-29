@@ -3,9 +3,162 @@
 class AlunoController {
 
     public static function cadastrar() {
+
+        require_once 'adm-session.php';
         
         if (isset($_POST['cadastrar'])) {
-            //echo 'Validação:<br><pre>';
+
+            include_once 'connection/Connection.php';
+            include_once 'model/Pessoa.php';
+            include_once 'model/Aluno.php';
+            include_once 'dao/AlunoDAO.php';
+            include_once 'controller/Filter.php';
+        
+            $filter = new Filter();
+        
+            $filters = array(
+                'cpf' => array('filter' => FILTER_CALLBACK, 'options' => array($filter, 'validateCPF')),
+                'email' => FILTER_VALIDATE_EMAIL,
+                'senha' => array('filter' => FILTER_CALLBACK, 'options' => array($filter, 'validatePassword')),  
+                'nome' => array('filter' => FILTER_CALLBACK, 'options' => array($filter, 'validateName')),
+                'sobrenome' => array('filter' => FILTER_CALLBACK, 'options' => array($filter, 'validateName')),
+                'telefone' => array('filter' => FILTER_CALLBACK, 'options' => array($filter, 'validatePhone')),
+                'rm' => FILTER_VALIDATE_INT
+            );
+        
+            $data = $filter->validate($_POST, $filters);
+        
+            echo 'Validação:<br><pre>' , var_dump($data) , '</pre>';
+        
+            $filters = array(
+                'cpf' => FILTER_UNSAFE_RAW,
+                'email' => FILTER_SANITIZE_EMAIL,
+                'senha' => FILTER_UNSAFE_RAW,  
+                'nome' => FILTER_SANITIZE_SPECIAL_CHARS,
+                'sobrenome' => FILTER_SANITIZE_SPECIAL_CHARS,
+                'telefone' => FILTER_UNSAFE_RAW,
+                'rm' => FILTER_SANITIZE_NUMBER_INT
+            );
+        
+            $data = $filter->sanitize($_POST, $filters);
+        
+            echo 'Sanitização:<br><pre>' , var_dump($data) , '</pre>';
+            
+            $aluno = new Aluno();
+        
+            $aluno->setCpf($data['cpf']);
+            $aluno->setEmail($data['email']);
+            $aluno->setSenha($data['senha']);
+            $aluno->setNome($data['nome']);
+            $aluno->setSobrenome($data['sobrenome']);
+            $aluno->setTelefone($data['telefone']);
+            $aluno->setRm($data['rm']);
+            
+            $alunodao = new AlunoDAO();
+
+            $alunodao->create($aluno);
+        
+        }
+        
+        header('Location: /adm/dashboard/listar-aluno');
+        die();
+
+    }
+
+    public static function listar() {
+        
+        require_once 'adm-session.php';
+        
+        include_once 'connection/Connection.php';
+        include_once 'model/Pessoa.php';
+        include_once 'model/Aluno.php';
+        include_once 'dao/AlunoDAO.php';
+        include_once 'controller/Filter.php';
+
+        $alunodao = new AlunoDAO();
+
+        $alunos = $alunodao->readAll();
+        
+        //echo '<pre>' , var_dump($alunos) , '</pre>';
+
+        include 'view/dashboard/listar-aluno.php';
+        
+    }
+
+    public static function alterar() {
+
+        require_once 'adm-session.php';
+    
+        if (isset($_POST['alterar'])) {
+
+            include_once 'connection/Connection.php';
+            include_once 'model/Pessoa.php';
+            include_once 'model/Aluno.php';
+            include_once 'dao/AlunoDAO.php';
+            include_once 'controller/Filter.php';
+        
+            $data = $_POST;
+        
+            $aluno = new Aluno();
+
+            $aluno->setNome($data['nome']);
+            $aluno->setSobrenome($data['sobrenome']);
+            $aluno->setCpf($data['cpf']);
+            $aluno->setRm($data['rm']);
+            $aluno->setEmail($data['email']);
+            $aluno->setSenha($data['senha']);
+            $aluno->setTelefone($data['telefone']);
+            $aluno->setId($data['id']);
+
+            $alunodao = new AlunoDAO();
+
+            $alunodao->update($aluno);
+            
+        }
+        
+        header('Location: /adm/dashboard/listar-aluno');
+        die();
+
+    }
+
+    public static function excluir() {
+        
+        require_once 'adm-session.php';
+
+        if (isset($_POST['excluir'])) {
+
+            include_once 'connection/Connection.php';
+            include_once 'model/Pessoa.php';
+            include_once 'model/Aluno.php';
+            include_once 'dao/AlunoDAO.php';
+            include_once 'controller/Filter.php';
+
+            $data = $_POST;
+
+            echo '<br><pre>' , var_dump($data) , '</pre>'; 
+
+            $aluno = new Aluno();
+            
+            $aluno->setId($data['id']);
+
+            echo '<br><pre>' , var_dump($aluno) , '</pre>';
+
+            $alunodao = new AlunoDAO();
+
+            $alunodao->delete($aluno);
+
+        }
+
+        header('Location: /adm/dashboard/listar-aluno');
+        die();
+
+    }
+
+//Aluno --------------------------------------------------
+
+public static function alunoCadastrar() {
+
+        if (isset($_POST['cadastrar'])) {
 
             include_once 'connection/Connection.php';
             include_once 'model/Pessoa.php';
@@ -89,7 +242,8 @@ class AlunoController {
 
     }
 
-    public static function selecionar() {
+
+    public static function alunoSelecionar() {
 
         require_once 'session.php';
         
@@ -113,30 +267,10 @@ class AlunoController {
 
     }
 
-    public static function listar() {
-        
-        require_once 'adm-session.php';
-        
-        include_once 'connection/Connection.php';
-        include_once 'model/Pessoa.php';
-        include_once 'model/Aluno.php';
-        include_once 'dao/AlunoDAO.php';
-        include_once 'controller/Filter.php';
+    public static function alunoAlterar() {
 
-        $alunodao = new AlunoDAO();
+        require_once 'session.php';
 
-        $alunos = $alunodao->readAll();
-        
-        //echo '<pre>' , var_dump($alunos) , '</pre>';
-
-        include 'view/dashboard/listar-aluno.php';
-        
-    }
-
-    public static function alterar() {
-
-        require_once 'adm-session.php';
-    
         if (isset($_POST['alterar'])) {
 
             include_once 'connection/Connection.php';
@@ -168,23 +302,18 @@ class AlunoController {
             $data = $filter->sanitize($_POST, $filters);
         
             echo 'Sanitização:<br><pre>' , var_dump($data) , '</pre>';
-               
+            
             $aluno = new Aluno();
         
             $aluno->setSenha($data['senha']);
             $aluno->setNome($data['nome']);
             $aluno->setSobrenome($data['sobrenome']);
             $aluno->setTelefone($data['telefone']);
-
-            if (isset($_SESSION['authenticate'])) {
-                $aluno->setId($_SESSION['id']);
-            } else {
-                $aluno->setId($data['id']);
-            }
+            $aluno->setId($_SESSION['id']);
                     
             $alunodao = new AlunoDAO();
 
-            $alunodao->update($aluno);
+            $alunodao->studentUpdate($aluno);
             
         }
         
@@ -192,39 +321,4 @@ class AlunoController {
         die();
 
     }
-
-    public static function excluir() {
-        
-        require_once 'adm-session.php';
-
-        if (isset($_POST['excluir'])) {
-
-            include_once 'connection/Connection.php';
-            include_once 'model/Pessoa.php';
-            include_once 'model/Aluno.php';
-            include_once 'dao/AlunoDAO.php';
-            include_once 'controller/Filter.php';
-
-            $data = $_POST;
-
-            echo '<br><pre>' , var_dump($data) , '</pre>'; 
-
-            $aluno = new Aluno();
-            
-            $aluno->setId($data['id']);
-
-            echo '<br><pre>' , var_dump($aluno) , '</pre>';
-
-            $alunodao = new AlunoDAO();
-
-            $alunodao->delete($aluno);
-
-        }
-
-        header('Location: /adm/dashboard/listar-aluno');
-        die();
-
-    }
-
 }
-
