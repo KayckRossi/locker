@@ -133,25 +133,66 @@
 
 
 
-        <div class="col-md-9 .col-md-push-3"></div>
+        <!-- <div class="col-md-9 .col-md-push-3"></div>
         <div class="card" style="width: 100%; margin-top: 2rem; border-radius: 1rem; ">
           <div class="card-header" style="display:flex; justify-content: center; color: black; ">
             <h4> Status totais de ARMARIOS </h4>
           </div>
           <ul class="list-group list-group-flush" style="color:black ;">
-            <li class="list-group-item">Total de armarios <?php print_r($counter->count()); ?></li>
+            <li class="list-group-item">Total de armarios
+
+              <div class="card-tabela">
+                
+                  This is some text within a card body.
+          
+              </div>
+
+
+            </li>
             <li class="list-group-item">Armarios disponiveis <?php print_r($counterDisp->countDisp()); ?></li>
             <li class="list-group-item">Armarios Alugados <?php print_r($counterAlug->countAlug()); ?></li>
             <li class="list-group-item">Armarios Indisponiveis <?php print_r($counterIndisp->countIndisp()); ?></li>
           </ul>
         </div>
+      </div> -->
+
+
+        <div class="col-md-9 .col-md-push-3"></div>
+        <div class="card" style="width: 100%; margin-top: 2rem; border-radius: 1rem;">
+          <div class="card-header" style="display:flex; justify-content: center; color: black; ">
+            <h4>Status totais de ARMARIOS</h4>
+          </div>
+          <table class="table">
+            
+
+            <tbody>
+              <tr>
+            
+                <td>Total armários <button type="button" class="btn btn-info" id="btn-total"><?php print_r($counterDisp->count()); ?></button></td>
+
+              </tr>
+              <tr>
+             
+                <td>Armarios disponiveis <button type="button" class="btn btn-success" id="btn-disponiveis"><?php print_r($counterDisp->countDisp()); ?></button></td>
+             
+              </tr>
+              <tr>
+              
+                <td>Armarios Indisponiveis <button type="button" class="btn btn-warning" id="btn-indisponiveis"><?php print_r($counterIndisp->countIndisp()); ?></button></td>
+               
+              </tr>
+
+              <tr>
+              
+                <td>Armarios Alugados <button type="button" class="btn btn-danger" id="btn-alugados"><?php print_r($counterIndisp->countIndisp()); ?></button></td>
+               
+              </tr>
+            </tbody>
+
+
+        </div>
       </div>
-
-      
-
-
-  </div>
-  </main>
+    </main>
   </div>
 
 

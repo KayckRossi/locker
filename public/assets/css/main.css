@@ -42,19 +42,22 @@ main .main-content{
     color: #3751FF;
 }
 
-.button-aprovado{
-	margin-left: 90%;
-	background-color: greenyellow;
-	padding: 4px 8px 4px 8px;
-	border-radius: 5px;
+
+#btn-total{
+	margin-left: 88rem;
+	border-width: 5px;
 }
 
-.button-negado{
-	background-color: red;
-	padding: 3px 11px 3px 11px;
-	border-radius: 5px;	
+#btn-disponiveis{
+	margin-left: 85rem;
+
 }
 
-/* .list-group-item :hover{
-	display: none;
-} */
+#btn-indisponiveis{
+	margin-left: 85rem;
+	border-width: 5px;
+}
+
+#btn-alugados{
+	margin-left: 87rem;
+}
