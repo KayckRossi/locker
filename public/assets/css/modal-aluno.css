@@ -37,6 +37,10 @@ p {
     border: 3px solid black;
 }
 
+#tabela-aluno:hover{
+    display: none;
+}
+
 #div-aluno{
     padding: 5rem;
 }

@@ -3,11 +3,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
    <link rel="stylesheet" href="public\assets\css\styleCADASTRO.css">
-   
+
     <title>Formulário Cadastro</title>
 </head>
 <body>
@@ -95,43 +97,7 @@
                         <span class="span-required">CPF invalido</span>
                     </div>
 
-                    <!-- <div class="input-box">
-                        <label for="cursos">Curso</label>
-                        <select name="cursos" id="cursos" placeholder="ESCOLHA SEU CURSO" required>
-                            <option value="administração-integral">Administração Integral</option>
-                            <option value="administração-noite">Administração Noite</option>
-                            <option value="nutrição-integral">Nutrição e Dietética Integral</option>
-                            <option value="nutrição-noite">Nutrição e Dietética Noite</option>  
-                            <option value="administração">Química Integral</option>
-                            <option value="administração">Química Noite</option>
-                            <option value="administração">Desenvolvimento de Sistemas</option>
-                        </select>
-                    </div>
-
-                    <div class="periodo-inputs">
-                        <div class="periodo-title">
-                            <h6>PERÍODO</h6>
-                        </div>
-    
-                        <div class="periodo-group">
-                            <div class="periodo-input">
-                                <input type="radio" name="periodo" id="integral">
-                                <label for="integral">Integral</label>
-                            </div>
-    
-                            <div class="periodo-input">
-                                <input type="radio" name="periodo" id="tarde">
-                                <label for="tarde">Tarde</label>
-                            </div>
-    
-                            <div class="periodo-input">
-                                <input type="radio" name="periodo" id="noite">
-                                <label for="noite">Noite</label>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    
+                                        
                 </div>
 
                 <div class="cadastrar-button">
@@ -143,6 +109,8 @@
     </div>
     
 </body>
+   
+  
 <script>
     const form = document.getElementById('Forms');
     const campos = document.querySelectorAll('.required');

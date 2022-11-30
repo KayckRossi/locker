@@ -116,7 +116,7 @@ class AlunoController {
             
         }
         
-        header('Location: /adm/dashboard/listar-aluno');
+        header('Location: /dashboard/aluno');
         die();
 
     }
@@ -218,7 +218,7 @@ public static function alunoCadastrar() {
 
             //=========================================================
      
-            echo $purl;
+            //echo $purl;
             
             $aluno = new Aluno();
         
@@ -234,8 +234,8 @@ public static function alunoCadastrar() {
             $alunodao = new AlunoDAO();
             $alunodao->create($aluno);
 
-            echo '<div class="alert alert-success">Dados Salvo com Sucesso!
-             Confira seu email para confirmar o cadastro</div>';
+            // echo 'Dados Salvo com Sucesso!
+            //  Confira seu email para confirmar o cadastro';
         
         }
         

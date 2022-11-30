@@ -15,7 +15,7 @@
                     </li>
                     <li>
                         <i class="fa-solid fa-lock"></i>
-                        <a href="#">Armarios</a>
+                        <a href="/dashboard/armario">Armarios</a>
                     </li>
                     <li>
                         <i class="fa-solid fa-comments-dollar"></i>
