@@ -18,7 +18,7 @@
             $alunodao = new AlunoDAO();
             $counterStudent = $alunodao->readAll();
 
-            echo '<pre>' , print_r($counterStudent) , '</pre>';
+            //echo '<pre>' , print_r($counterStudent) , '</pre>';
 
 
 

@@ -271,6 +271,7 @@
               <?php foreach ($counterStudent as $countS) { ?>
 
                 <?php echo "<tr>" ?>
+               
                 <td> <?php echo $countS->getNome(); ?> </td>
                 <td> <?php echo $countS->getSobrenome(); ?> </td>
                 <td> <?php echo $countS->getRm(); ?> </td>
@@ -281,21 +282,20 @@
 
                 <td>
                  
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#TabelaAtualizar">Alterar</button>
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#TabelaAtualizar<?php echo $countS->getId(); ?>">Alterar</button>
                   </form>
                 </td>
 
                 <td>
                
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ExcluirTabela">Excluir</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ExcluirTabela<?php echo $countS->getId(); ?>">Excluir</button>
                   </form>
                 </td>
 
 
-
                 <!-- Começo Modal Atualizar Tabela aluno-->
 
-        <div class="modal fade" id="TabelaAtualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="TabelaAtualizar<?php echo $countS->getId(); ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -305,7 +305,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form>
+                
                   <form>
 
                     <div class="form-group">
@@ -325,7 +325,7 @@
 
                     <div class="form-group">
                       <label for="recebe-rm" class="col-form-label">RM:</label>
-                      <input type="text" class="form-control" id="recebe-rm">
+                      <input type="text" class="form-control" id="recebe-rm" value="{<?php echo $countS->getRm(); ?>}">
                     </div>
 
                     <div class="form-group">
@@ -344,7 +344,7 @@
                     </div>
 
                   </form>
-                </form>
+              
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
@@ -353,38 +353,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Final Modal Atualizar Tabela Aluno -->
-
-
-          <!-- Começo modal-apagar/tabela -->
-
-          <div class="modal fade" id="ExcluirTabela" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="Label-Excluir">Excluir</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Salvar">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form>
-
-                                            <div class="form-group">
-                                                <h2>Confirmar exclusão do armário do sistema?</h2>
-                                            </div>
-
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Final modal-apagar/tabela -->
 
               <?php "</tr>";
               }  ?>
