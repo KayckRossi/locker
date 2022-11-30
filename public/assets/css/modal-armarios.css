@@ -1,0 +1,39 @@
+.cadastro-armario,
+.armario-excluir{
+    display:inline;
+    height: 4rem;
+    width: 10rem;
+    background-color: #007BFF;
+    flex-direction: row;
+    text-align: center;
+    justify-items: space-between;
+    margin-left: 22rem;
+    margin-right: -20rem;
+    border-radius: 10px 10px 10px 10px;
+    border: none;
+}
+
+.cadastro-armario,
+.armario-excluir, p{
+    font-size: 20px;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+#Label-cadastrar,
+#Label-Excluir {
+    color: black;
+    text-align: center;
+    justify-content: space-between;
+    padding-left: 12rem;
+    font-size: x-large;
+}
+
+.btn-modais{
+    padding-top: 2rem;
+}
+
+.btn-modais :hover{
+    background-color: #004fa3;
+}

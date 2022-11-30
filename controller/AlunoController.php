@@ -233,6 +233,9 @@ public static function alunoCadastrar() {
             
             $alunodao = new AlunoDAO();
             $alunodao->create($aluno);
+
+            echo '<div class="alert alert-success">Dados Salvo com Sucesso!
+             Confira seu email para confirmar o cadastro</div>';
         
         }
         
