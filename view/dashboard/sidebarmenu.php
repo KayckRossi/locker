@@ -22,11 +22,11 @@
                         <a href="#">Alugueis</a>
                     </li>
                     <li>
-                        <i class="fa-solid fa-gears"></i>
+                        <i class="fa-solid fa-users-gear"></i>
                         <a href="#">Funcionarios</a>
                     </li>
                     <li>
-                        <i class="fa-solid fa-gears"></i>
+                        <i class="fa-solid fa-calendar-check"></i>
                         <a href="#">Cursos</a>
                     </li>
                 </ul>

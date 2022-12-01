@@ -8,7 +8,7 @@
     font-size: x-large;
 }
 
-.btn-cadastrar,
+/* .btn-cadastrar,
 .btn-excluir,
 .btn-atualizar,
 .btn-pesquisar {
@@ -16,14 +16,13 @@
     height: 5rem;
     width: 10rem;
     background-color: #007BFF;
-    /* flex-direction: row; */
-    /* text-align: center; */
+   
     justify-items: space-between;
     margin-left: 6rem;
     border-radius: 10px 10px 10px 10px;
-}
+} */
 
-.btn-cadastrar,
+/* .btn-cadastrar,
 .btn-excluir,
 .btn-atualizar,
 .btn-pesquisar,
@@ -32,21 +31,52 @@ p {
     color: black;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
+} */
+
+.btn-cadastrar,
+.btn-excluir,
+.btn-atualizar,
+.btn-pesquisar {
+    display: inline;
+    height: 5rem;
+    width: 10rem;
+    background-color: #007BFF;
+    justify-items: space-between;
+    margin-left: 6rem;
+    border-radius: 10px 10px 10px 10px;
+    border: none;
 }
 
-#tabela-aluno{
+.btn-cadastrar,
+.btn-excluir,
+.btn-atualizar,
+.btn-pesquisar,
+p {
+    font-size: 20px;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.btns-modais :hover{
+    background-color: #004fa3;
+}
+
+
+
+#tabela-aluno {
     border-radius: 10px 10px 10px 10px;
     border: 3px solid black;
 }
 
-#tabela-aluno:hover{
+#tabela-aluno:hover {
     display: none;
 }
 
-#div-aluno{
+#div-aluno {
     padding: 5rem;
 }
 
-#Labels :hover{
+#Labels :hover {
     color: #000;
 }

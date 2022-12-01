@@ -43,7 +43,7 @@ main .main-content{
 }
 
 
-#btn-total{
+/* #btn-total{
 	margin-left: 88rem;
 	border-width: 5px;
 }
@@ -60,4 +60,8 @@ main .main-content{
 
 #btn-alugados{
 	margin-left: 87rem;
+} */
+
+#btn-tabela{
+	margin-left: 62rem;
 }

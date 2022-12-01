@@ -168,23 +168,23 @@
             <tbody>
               <tr>
             
-                <td>Total armários <button type="button" class="btn btn-info" id="btn-total"><?php print_r($counterDisp->count()); ?></button></td>
+                <td>Total armários <button type="button" class="btn btn-info" id="btn-tabela"><?php print_r($counterDisp->count()); ?></button></td>
 
               </tr>
               <tr>
              
-                <td>Armarios disponiveis <button type="button" class="btn btn-success" id="btn-disponiveis"><?php print_r($counterDisp->countDisp()); ?></button></td>
+                <td>Armarios disponiveis <button type="button" class="btn btn-success" id="btn-tabela"><?php print_r($counterDisp->countDisp()); ?></button></td>
              
               </tr>
               <tr>
               
-                <td>Armarios Indisponiveis <button type="button" class="btn btn-warning" id="btn-indisponiveis"><?php print_r($counterIndisp->countIndisp()); ?></button></td>
+                <td>Armarios Indisponiveis <button type="button" class="btn btn-warning" id="btn-tabela"><?php print_r($counterIndisp->countIndisp()); ?></button></td>
                
               </tr>
 
               <tr>
               
-                <td>Armarios Alugados <button type="button" class="btn btn-danger" id="btn-alugados"><?php print_r($counterIndisp->countIndisp()); ?></button></td>
+                <td>Armarios Alugados <button type="button" class="btn btn-danger" id="btn-tabela"><?php print_r($counterIndisp->countIndisp()); ?></button></td>
                
               </tr>
             </tbody>
