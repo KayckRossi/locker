@@ -32,13 +32,13 @@
 
 				<div class="form">
 					
-					<label for="email">Email:</label>
-					<input type="email" name="email"  class="input required" oninput="emailValidate();" >
+					<label for="email" >Email:</label>
+					<input type="email" name="email"  class="input required" placeholder="Digite seu email" oninput="emailValidate();">
 					<span class="span-required">Email invalido</span>
 				</div>
 				<div class="form">
 					<label for="senha">Senha:</label>
-					<input type="password" name="senha" class="input required" oninput="senhaValidate();" >
+					<input type="password" name="senha" class="input required" placeholder="Digite sua senha" oninput="senhaValidate();" >
 					<span class="span-required">Senha invalida</span>
 				</div>
 

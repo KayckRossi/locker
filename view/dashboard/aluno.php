@@ -243,6 +243,8 @@
         </div>
 
         <!-- Final Modal-Pesquisar -->
+
+
         <section class="tabela">
           <div class="col-md-9 .col-md-push-3"></div>
           <div class="card" style="width: 100%; margin-top: 2rem; border-radius: 1rem;">
@@ -294,12 +296,12 @@
 
 
                   <!-- Começo Modal Atualizar Tabela aluno-->
-
+                  <section> 
                   <div class="modal fade" id="TabelaAtualizar<?php echo $countS->getId(); ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="Label-atualizar">Atualizar</h5>
+                          <h5 class="modal-title" id="Label-atualizar">Alterar</h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Salvar">
                             <span aria-hidden="true">&times;</span>
                           </button>
@@ -311,37 +313,37 @@
                             <input type='hidden' name='id' value="<?php echo $countS->getId(); ?>">
 
                             <div class="form-group">
-                              <label for="recebe-nome" class="col-form-label">Nome:</label>
+                              <label for="recebe-nome" class="col-form-label" >Nome:</label>
                               <input type="text" name="nome" class="form-control" id="recebe-name" value="<?php echo $countS->getNome(); ?>">
                             </div>
 
                             <div class="form-group">
-                              <label for="recebe-sobrenome" class="col-form-label">Sobrenome:</label>
+                              <label for="recebe-sobrenome" class="col-form-label" >Sobrenome:</label>
                               <input type="text" name="sobrenome" class="form-control" id="recebe-sobrenome" value="<?php echo $countS->getSobrenome(); ?>">
                             </div>
 
                             <div class="form-group">
-                              <label for="recebe-email" class="col-form-label">Email:</label>
+                              <label for="recebe-email" class="col-form-label" ><p>Email:</label>
                               <input type="text" name="email" class="form-control" id="recebe-email" value="<?php echo $countS->getEmail(); ?> ">
                             </div>
 
                             <div class="form-group">
-                              <label for="recebe-rm" class="col-form-label">RM:</label>
+                              <label for="recebe-rm" class="col-form-label" ><p>RM:</p></label>
                               <input type="text" name="rm" class="form-control" id="recebe-rm" value="<?php echo $countS->getRm(); ?>">
                             </div>
 
                             <div class="form-group">
-                              <label for="cadastro-cpf" class="col-form-label">CPF:</label>
+                              <label for="cadastro-cpf" class="col-form-label" ><p>CPF:</p></label>
                               <input type="text" name="cpf" class="form-control" id="cadastro-cpf" value="<?php echo $countS->getCpf(); ?> ">
                             </div>
 
                             <div class="form-group">
-                              <label for="recebe-contato" class="col-form-label">Contato:</label>
+                              <label for="recebe-contato" class="col-form-label" ><p>Contato:</p></label>
                               <input type="text" name="telefone" class="form-control" id="recebe-contato" value="<?php echo $countS->getTelefone(); ?> ">
                             </div>
 
                             <div class="form-group">
-                              <label for="recebe-senha" class="col-form-label">Senha:</label>
+                              <label for="recebe-senha" class="col-form-label" ><p>Senha:</p></label>
                               <input type="text" name="senha" class="form-control" id="recebe-senha" value="<?php echo $countS->getSenha(); ?> ">
                             </div>
 
@@ -356,6 +358,8 @@
                       </div>
                     </div>
                   </div>
+
+                  <section> 
 
 
                 <?php "</tr>";

@@ -46,3 +46,7 @@ p {
 #div-aluno{
     padding: 5rem;
 }
+
+#Labels :hover{
+    color: #000;
+}
