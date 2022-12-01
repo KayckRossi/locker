@@ -30,11 +30,31 @@ switch($url) {
     break; 
        
     case '/cadastro':
-        AlunoController::cadastrar();
+        AlunoController::alunoCadastrar();
     break;
 
     case '/meu-cadastro':
-        AlunoController::selecionar();
+        AlunoController::alunoSelecionar();
+    break;
+
+    case '/alterar':
+        AlunoController::alunoAlterar();
+    break;
+
+    case '/armarios':
+        ArmarioController::listarSelecao();
+    break;
+
+    case '/checkout':
+        AluguelController::checkout();
+    break;
+
+    case '/reserva':
+        AluguelController::reserva();
+    break;
+
+    case '/adm/dashboard/cadastro-aluno':
+        AlunoController::cadastrar();
     break;
     
     case '/adm/dashboard/listar-aluno':
@@ -100,10 +120,6 @@ switch($url) {
     case '/adm/dashboard/listar-armario':
         ArmarioController::listar();
     break;
-
-    case '/armarios':
-        ArmarioController::listarSelecao();
-    break;
     
     case '/adm/dashboard/alterar-armario':
         ArmarioController::alterar();
@@ -111,14 +127,6 @@ switch($url) {
 
     case '/adm/dashboard/excluir-armario':
         ArmarioController::excluir();
-    break;
-    
-    case '/checkout':
-        AluguelController::checkout();
-    break;
-
-    case '/reserva':
-        AluguelController::reserva();
     break;
 
     case '/dashboard':
@@ -139,14 +147,12 @@ switch($url) {
 
     case '/dash-cad-aluno':
         DashAlunoController::dashAlunoCadastrar();
-    break;    
-
-    case '/dashboard/armarios':
+    break;
+    
+    case '/dashboard/armario':
         include 'view\dashboard\armarios.php';
-    break; 
-
-
-
+    break;
+    
     default:
         echo "Erro 404";
     break;

@@ -15,6 +15,14 @@
             include_once 'dao/AlunoDAO.php';
 
 
+            $alunodao = new AlunoDAO();
+            $counterStudent = $alunodao->readAll();
+
+            //echo '<pre>' , print_r($counterStudent) , '</pre>';
+
+
+
+
 
             include 'view/dashboard/aluno.php';
         }

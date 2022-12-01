@@ -13,12 +13,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background:  #201b2c;
+    background: rgb(34,193,195);
+	background: linear-gradient(45deg,
+	rgba(34,193,195,1) 0%,
+	rgba(255,212,120,1) 100%);
     font-family: 'Noto Sans', sans-serif;
 }
 
 .title{
-	color: #77ffc0;
+	color: #ffc803;
 }
 .container {
     width: 80%;
@@ -50,7 +53,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #2f2841;
+    background-color: #319190;
     padding: 3rem;
     border-radius: 20px;
     box-shadow: 0px 10px 40px #00000056
@@ -69,19 +72,20 @@ body {
 
 .login-button button{
     border: none;
-    background-color: #00ff88;
+    background-color: #ffc803;
     padding: 0.4rem 1rem;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: 800;
     text-transform: uppercase;
 }
 
 .login-button button:hover{
-    background-color:#0ae9e9;
+    background-color:#ffe791;
 }
 .login-button a{
     text-decoration: none;
-    font-weight: 500;
+
     color: #2b134b;
 }
 
@@ -90,7 +94,7 @@ body {
     display: block;
     width: 9rem; /*aqui altera a linha de baixo do nome Cadastro*/
     height: 0.4rem;
-    background-color:#77ffc0 ;
+    background-color:#ffc803;
     margin: 5 auto;
     position: absolute;
     border-radius: 10px;
@@ -108,6 +112,7 @@ body {
     flex-direction: column;
     margin-bottom: 1rem;/*Alterei aqui aumenta e diminui os espaçoes entre os campos*/
     border-radius: 10px;
+    margin-top: 1rem;
 }
 
 .input-box input{
@@ -123,7 +128,7 @@ body {
 }
 
 .input-box input:focus-visible{
-    outline: 3px solid #77ffc0;
+    outline: 3px solid #ffc803;
 }
 
 .input-box label,
@@ -131,53 +136,31 @@ body {
     font-size: 0.75;
     font-weight: 600;
     color: white;
-}
-
-.input-box input::placeholder{
-    color: #000000be;
-}
-
-.periodo-group{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0.5;
-    padding: 0 0.5rem;
-}
-
-.periodo-input{
-    display: flex;
-    align-items: center;
-}
-
-.periodo-input input{
-    margin-right: 0.35rem;
-}
-
-.periodo-input label{
-    font-size: 0.81rem;
-    font-weight: 600;
-    color:#f0ffffde;
-    
+    margin-block-end: 10px;
 }
 
 .cadastrar-button button{
     width: 100%;
     margin-top: 0.5rem;
     border: none;
-    background-color: #00ff88;
-    padding: 0.62rem;
-    border-radius: 5px;
+    background-color: #ffc803;
+    padding: 0.9rem;
+    border-radius: 15px;
     cursor: pointer;
+    font-weight: 800;
+	box-shadow: 15px 10px 40px #00000056;
+	outline: none;
+	box-sizing: border-box; 
     text-transform: uppercase;
 }
 .cadastrar-button button:hover{
-    background-color: #0ae9e9;
+    background-color:#ffe791;
 }
 .cadastrar-button button a{
-    text-decoration: none;
-    font-size: 0.93rem;
-    font-weight: 500;
-    color: #000000ef;  
+    font-size: 12pt;
+	box-shadow: 0px 10px 40px #000000;
+	outline: none;
+	box-sizing: border-box; 
 }
 
 

@@ -393,5 +393,4 @@
 
     <script src="../../public/assets/plugins/fontawesome-free-6.2.0-web/js/all.min.js"></script>
 </body>
-
 </html>

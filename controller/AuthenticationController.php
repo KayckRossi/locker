@@ -38,7 +38,8 @@ class AuthenticationController {
         
         }
 
-        include 'view/aluno/login.php';
+        //include 'view/aluno/login.php';
+        include 'view/aluno/logintest.php';
 
     }
 
