@@ -151,11 +151,15 @@ switch($url) {
     break;
     
     case '/dashboard/armario':
-        DashArmarioController::listarArmAdm();
+        DashArmarioController::listar();
     break;
 
     case '/dashboard/alterar-armario':
         DashArmarioController::alterar();
+    break;
+
+    case '/dashboard/cadastrar-armario':
+        DashArmarioController::cadastrar();
     break;
 
     default:

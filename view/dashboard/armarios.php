@@ -31,6 +31,8 @@
             <!-- inicio do Escopo da pagina -->
             <?php include 'headerdash.php'; ?>
             <!-- final-->
+
+            
             <div class="main-content">
                 <div class="container">
 
@@ -69,7 +71,7 @@
                         <div class="btn-modais">
                             <button type="button" class="cadastro-armario" data-toggle="modal" data-target="#cadastrar">Adicionar</button>
 
-                            <button type="button" class="armario-excluir" data-toggle="modal" data-target="#excluir">Excluir</button>
+                            <!-- <button type="button" class="armario-excluir" data-toggle="modal" data-target="#excluir">Excluir</button> -->
                         </div>
 
                         <!-- Começo Modal-Cadastrar -->
@@ -84,66 +86,75 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form>
-                                            <form>
+                                 <form action="/dashboard/cadastrar-armario" method="post">
+                                            
 
                                                 <div class="form-group">
-                                                    <label for="recebe-seção" class="col-form-label">Seção:</label>
-                                                    <input type="text" class="form-control" id="recebe-seção">
+                                                    <label for="seção" class="col-form-label">Seção:</label>
+                                                    <input type="text" class="form-control" name="secao" id="seção" required>
                                                 </div>
-                                                min="1" max="20" value="20"
+
+                                                
                                                 <div class="form-group">
-                                                    <label for="quantidade-armarios" class="col-form-label">Quantidade:</label>
-                                                    <input type="text" class="form-control" id="quantidade-armarios" >
+                                                    <label for="quantidadeArmario" class="col-form-label">Quantidade de armarios:</label>
+                                                    <input type="number" class="form-control" name="quantidade" id="quantidadeArmario" value="20" min="1" max="20" required>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="recebe-proximidade" class="col-form-label">Local:</label>
-                                                    <select class="form-control" id="recebe-proximidade">
-                                                        <option>Corredor Química</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                        <option>4</option>
-                                                        <option>5</option>
+                                                    <label for="proximidade" class="col-form-label">Defina um Local:</label>
+                                                    <select class="form-control" name="local" id="proximidade" required>
+                                                        
+                                                        <?php foreach ($locais as $local) { ?>
+                                                            
+                                                           <option value="<?php print $local->getLocal();?>"><?php print $local->getLocal();?></option> 
+
+                                                        <?php    }  ?>
                                                     </select>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="recebe-andar" class="col-form-label">Andar:</label>
-                                                    <select class="form-control" id="recebe-andar">
-                                                        <option>Inferior</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                        <option>4</option>
-                                                        <option>5</option>
+                                                    <label for="andar" class="col-form-label">Defina um Andar:</label>
+                                                    <select class="form-control" name="andar" id="andar" required>
+                                                    
+
+                                                        <?php foreach ($andares as $andar) { ?>
+                                                            
+                                                           <option value="<?php print $andar->getAndar();?>"><?php print $andar->getAndar();?></option> 
+
+                                                        <?php    }  ?>
+
                                                     </select>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="situacao-armario" class="col-form-label">Situação:</label>
-                                                    <select class="form-control" id="situacao-armario">
-                                                        <option>Disponivel</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                        <option>4</option>
-                                                        <option>5</option>
+                                                    <label for="situacao" class="col-form-label">Escolha uma Situação:</label>
+                                                    <select class="form-control" name="situacao" id="situacao" required>
+                                                        
+                                                     
+                                                        <?php foreach ($situacoes as $situacao) { ?>
+                                                            
+                                                           <option value="<?php print $situacao->getSituacao();?>"><?php print $situacao->getSituacao();?></option> 
+
+                                                        <?php    }  ?>                                   
+
                                                     </select>
                                                 </div>
 
-                                            </form>
-                                        </form>
+                                            
+                                        
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+                                        <button type="submit" class="btn btn-success" name="cadastrar">Cadastrar</button>
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                                     </div>
+                                </form>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Final Modal-Cadastrar -->
 
-                        <!-- Começo Modal-excluir -->
+                        <!-- Começo Modal-excluir 
 
                         <div class="modal fade" id="excluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -216,7 +227,7 @@
                             </div>
                         </div>
 
-                        <!-- Final Modal-excluir -->
+                         Final Modal-excluir -->
 
 
                     </div>
@@ -260,7 +271,6 @@
                                         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#AlterarTabela<?php echo $armario->getId(); ?>">Alterar</button>
                                     </td>
                                     <td>
-
                                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ApagarTabela<?php echo $armario->getId(); ?>">Excluir</button>
                                     </td>
 
@@ -307,10 +317,8 @@
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="Label-cadastrar">Alterar ID : <?php echo $armario->getId();?></h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Salvar">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
+                                                    <h5 class="modal-title" id="Label-cadastrar">Alterar armário ID : <?php echo $armario->getId(); ?></h5>
+
                                                 </div>
                                                 <div class="modal-body">
 
@@ -319,39 +327,39 @@
                                                         <input type='hidden' name='id' value='<?php echo $armario->getId(); ?>'>
 
                                                         <div class="form-group">
-                                                            <label for="recebe-seção<?php echo $armario->getId();?>" class="col-form-label">Seção:</label>
-                                                            <input type="text" name="secao" value='<?php echo $armario->getSecao(); ?>' class="form-control" id="recebe-seção<?php echo $armario->getId();?>">
+                                                            <label for="recebe-seção<?php echo $armario->getId(); ?>" class="col-form-label">Seção:</label>
+                                                            <input type="text" name="secao" value='<?php echo $armario->getSecao(); ?>' class="form-control" id="recebe-seção<?php echo $armario->getId(); ?>">
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="quantidade-armarios<?php echo $armario->getId();?>" class="col-form-label">Numero:</label>
-                                                            <input type="text" name="numero" value='<?php echo $armario->getNumero(); ?>' class="form-control" id="recebe-seção<?php echo $armario->getId();?>">
+                                                            <label for="quantidade-armarios<?php echo $armario->getId(); ?>" class="col-form-label">Numero:</label>
+                                                            <input type="text" name="numero" value='<?php echo $armario->getNumero(); ?>' class="form-control" id="quantidade-armarios<?php echo $armario->getId(); ?>">
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="recebe-proximidade<?php echo $armario->getId();?>" class="col-form-label">Localização:</label>
-                                                            <input type="text" name="local" value='<?php echo $armario->getLocal(); ?>' class="form-control" id="recebe-proximidade<?php echo $armario->getId();?>">
+                                                            <label for="recebe-proximidade<?php echo $armario->getId(); ?>" class="col-form-label">Localização:</label>
+                                                            <input type="text" name="local" value='<?php echo $armario->getLocal(); ?>' class="form-control" id="recebe-proximidade<?php echo $armario->getId(); ?>">
                                                         </div>
 
 
                                                         <div class="form-group">
-                                                            <label for="situacao-armario<?php echo $armario->getId();?>" class="col-form-label">Situação:</label>
-                                                            <input type="text" name="situacao" value='<?php echo $armario->getSituacao(); ?>' class="form-control" id="situacao-armario<?php echo $armario->getId();?>">
+                                                            <label for="situacao-armario<?php echo $armario->getId(); ?>" class="col-form-label">Situação:</label>
+                                                            <input type="text" name="situacao" value='<?php echo $armario->getSituacao(); ?>' class="form-control" id="situacao-armario<?php echo $armario->getId(); ?>">
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="andar-armario<?php echo $armario->getId();?>" class="col-form-label">Andar:</label>
-                                                            <input type="text" name="andar" value='<?php echo $armario->getAndar(); ?>' class="form-control" id="andar-armario<?php echo $armario->getId();?>">
+                                                            <label for="andar-armario<?php echo $armario->getId(); ?>" class="col-form-label">Andar:</label>
+                                                            <input type="text" name="andar" value='<?php echo $armario->getAndar(); ?>' class="form-control" id="andar-armario<?php echo $armario->getId(); ?>">
                                                         </div>
 
 
 
-                                                    </div>
-                                                            <div class="modal-footer">
-                                                                <button type="submit" class="btn btn-success" name="alterar">Salvar</button>
-                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                                                            </div>
-                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-success" name="alterar">Salvar</button>
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                                                </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
