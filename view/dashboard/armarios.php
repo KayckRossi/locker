@@ -36,7 +36,7 @@
                             <div class="card" style="width: 18rem; padding: 1rem; margin-top: 2rem; border-radius: 10px; ">
                                 <div class="card-body ">
                                     <h5 class="card-title text-center ">Armarios Indiponiveis</h5>
-                                    <p class="card-text text-center"></p>
+                                    <p class="card-text text-center">v</p>
 
                                 </div>
                             </div>
