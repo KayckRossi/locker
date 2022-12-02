@@ -43,7 +43,7 @@
 				</div>
 
 				
-				<button type="submit" name="entrar" class="bnt-login"><a href="#">Entrar</a></button>
+				<button type="submit" name="entrar" class="bnt-login">Entrar</a></button>
 				<button class="bnt-login"><a href="/cadastro">Cadastre-se</a></button>
 				<!-- <a href="#">esqueci minha senha</a> -->
 		</div>

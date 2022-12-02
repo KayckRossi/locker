@@ -6,9 +6,9 @@
 
 
         public static function overview(){
+            
         
-        
-            require_once 'session.php';
+            require_once 'adm-session.php';
             
             include_once 'connection/Connection.php';
             include_once 'model/Pessoa.php';
@@ -73,7 +73,7 @@
 
         public static function aceitarAluguel(){
 
-            require_once 'session.php';
+            require_once 'adm-session.php';
             
             
 
@@ -123,7 +123,7 @@
 
         public static function negarAluguel(){
 
-            require_once 'session.php';
+            require_once 'adm-session.php';
             
             
 

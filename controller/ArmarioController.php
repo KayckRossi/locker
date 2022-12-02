@@ -79,6 +79,7 @@ class ArmarioController {
         //echo '<pre>' , var_dump($armarios) , '</pre>';
        
         include 'view/dashboard/listar-armario.php';
+       
         
     }
 
@@ -195,7 +196,7 @@ class ArmarioController {
 
         }
 
-        header('Location: /adm/dashboard/listar-armario');
+        header('Location: /dashboard/armario');
         die();
 
     }

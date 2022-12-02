@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../public/assets/css/all.css">
 
+  <!-- CDN DataTables -->
+  <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="../../public/assets/plugins/bootstrap-4.5.3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../public/assets/plugins/fontawesome-free-6.2.0-web/css/all.min.css">
@@ -32,13 +35,13 @@
 
           <div class="row">
 
-            <button type="button" class="btn-cadastrar" data-toggle="modal" data-target="#cadastrar" data-whatever="@mdo">Cadastrar</button>
+            <button type="button" class="btn-cadastrar" data-toggle="modal" data-target="#cadastrar">Cadastrar</button>
 
-            <button type="button" class="btn-excluir" data-toggle="modal" data-target="#excluir" data-whatever="@mdo">Excluir</button>
+            <!-- <button type="button" class="btn-excluir" data-toggle="modal" data-target="#excluir" data-whatever="@mdo">Excluir</button>
 
             <button type="button" class="btn-atualizar" data-toggle="modal" data-target="#atualizar" data-whatever="@mdo">Atualizar</button>
 
-            <button type="button" class="btn-pesquisar" data-toggle="modal" data-target="#pesquisar" data-whatever="@mdo">Pesquisar</button>
+            <button type="button" class="btn-pesquisar" data-toggle="modal" data-target="#pesquisar" data-whatever="@mdo">Pesquisar</button> -->
 
           </div>
         </div>
@@ -107,7 +110,7 @@
 
         <!-- Final Modal-Cadastrar -->
 
-        <!-- Começo Modal-excluir -->
+        <!-- Começo Modal-excluir 
 
         <div class="modal fade" id="excluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -142,10 +145,10 @@
           </div>
         </div>
 
-        <!-- Final Modal-excluir -->
+        Final Modal-excluir 
 
 
-        <!-- Começo Modal Atualizar -->
+        Começo Modal Atualizar 
 
         <div class="modal fade" id="atualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -206,9 +209,9 @@
           </div>
         </div>
 
-        <!-- Final Modal Atualizar -->
+       Final Modal Atualizar 
 
-        <!-- Começo Modal-Pesquisar -->
+       Começo Modal-Pesquisar 
 
         <div class="modal fade" id="pesquisar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -242,7 +245,7 @@
           </div>
         </div>
 
-        <!-- Final Modal-Pesquisar -->
+      Final Modal-Pesquisar -->
         <section class="tabela">
           <div class="col-md-9 .col-md-push-3"></div>
           <div class="card" style="width: 100%; margin-top: 2rem; border-radius: 1rem;">
@@ -250,7 +253,7 @@
               <h4>Alunos Cadastrados</h4>
             </div>
 
-            <table class="table">
+            <table class="table" id="myTable">
 
               <thead class="thead-dark">
                 <tr>
@@ -278,22 +281,14 @@
                   <td> <?php echo $countS->getCpf(); ?> </td>
                   <td> <?php echo $countS->getEmail(); ?> </td>
                   <td> <?php echo $countS->getTelefone(); ?> </td>
-
-
                   <td>
-
                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#TabelaAtualizar<?php echo $countS->getId(); ?>">Alterar</button>
-
                   </td>
-
                   <td>
-
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ExcluirTabela<?php echo $countS->getId(); ?>">Excluir</button>
-
                   </td>
 
-
-                  <!-- Começo Modal Atualizar Tabela aluno-->
+                  <!-- Começo Modal Atualizar aluno Pela Tabela-->
 
                   <div class="modal fade" id="TabelaAtualizar<?php echo $countS->getId(); ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -306,7 +301,7 @@
                         </div>
                         <div class="modal-body">
 
-                          <form action="/adm/dashboard/alterar-aluno" method="POST">
+                      <form action="/adm/dashboard/alterar-aluno" method="POST">
 
                             <input type='hidden' name='id' value="<?php echo $countS->getId(); ?>">
 
@@ -345,17 +340,51 @@
                               <input type="text" name="senha" class="form-control" id="recebe-senha" value="<?php echo $countS->getSenha(); ?> ">
                             </div>
 
-
-
                         </div>
                         <div class="modal-footer">
                           <button type="submit" class="btn btn-success" name="alterar">Salvar</button>
                           <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                         </div>
-                        </form>
+                       </form>
                       </div>
                     </div>
                   </div>
+
+                      <!-- Final Modal Alterar aluno Pela Tabela -->
+
+                       <!-- Começo modal-apagar aluno Pela Tabela-->
+
+                       <div class="modal fade" id="ExcluirTabela<?php echo $countS->getId(); ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="Label-Excluir">Excluir</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Salvar">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+
+                                            <div class="form-group">
+                                                <h2>Confirmar exclusão do Aluno do Sistema?</h2>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+
+                                      <form action='/adm/dashboard/excluir-aluno' method='POST'>
+                                                <input type='hidden' name='id' value='<?php echo $countS->getId();?>'>
+                                                <button type="submit" class="btn btn-success" name="excluir">Confirmar</button>
+                                        </form>
+                                        
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Final modal-apagar aluno Pela Tabela -->
 
 
                 <?php "</tr>";
@@ -389,8 +418,17 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-
   <script src="../../public/assets/plugins/fontawesome-free-6.2.0-web/js/all.min.js"></script>
+  
+   <!-- cdn dataTables -->
+  <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <!-- JS do DataTables -->
+  <script>
+    $(document).ready(function() {
+      $('#myTable').DataTable();
+    });
+  </script>
+
 </body>
 
 </html>
