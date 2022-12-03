@@ -36,7 +36,7 @@
               <div class="card" style="width: 18rem; padding: 1rem; margin-top: 2rem; border-radius: 10px; ">
                 <div class="card-body ">
                   <h5 class="card-title text-center ">Alugueis ativos</h5>
-                  <p class="card-text text-center"><?php print_r($aluguelAtivo->countActive()); ?></p>
+                  <p class="card-text text-center"></p>
 
                 </div>
               </div>
@@ -46,7 +46,7 @@
               <div class="card" style="width: 18rem; padding: 1rem;  margin-top: 2rem; border-radius: 10px;">
                 <div class="card-body">
                   <h5 class="card-title text-center">Total de alugueis</h5>
-                  <p class="card-text text-center"><?php print_r($alunoAtivo->countActive()); ?></p>
+                  <p class="card-text text-center"></p>
 
                 </div>
               </div>
@@ -56,7 +56,7 @@
               <div class="card" style="width: 18rem; padding: 1rem;  margin-top: 2rem; border-radius: 10px;">
                 <div class="card-body">
                   <h5 class="card-title text-center">Alugueis Pendentes</h5>
-                  <p class="card-text text-center"><?php print_r($aluguelReservado->aluguelPendente()); ?></p>
+                  <p class="card-text text-center"></p>
 
                 </div>
               </div>
@@ -79,51 +79,31 @@
                 <th scope="col">ID Aluguel</th>
                 <th scope="col">Data</th>
                 <th scope="col">Situação</th>
-                <th scope="col">Situação</th>
                 <th scope="col">ID Aluno</th>
                 <th scope="col">ID Armario</th>
                 <th scope="col">ID Plano</th>
-                <th scope="col">Excluir</th>
-
               </tr>
             </thead>
 
             <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>2022-11-09 14:40:50</td>
+                <td>Ativado</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>2022-11-05 16:10:50</td>
+                <td>Ativado</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr>
 
-
-              <?php foreach ($counterRent as $countR) { ?>
-
-                <?php echo "<tr>" ?>
-                <td> <?php echo $countR[0]->getNome(); ?> </td>
-                <td> <?php echo $countR[0]->getRm() ?> </td>
-                <td> <?php echo $countR[1]->getSecao() ?><?php echo $countR[1]->getNumero() ?> </td>
-                <td> <?php echo $countR[2]->getSituacao() ?> </td>
-                <td> <?php echo $countR[3]->getPlano() ?> </td>
-                <td> <?php echo $countR[3]->getValor() ?> </td>
-
-                <td>
-                  <form action="/aceitar-aluguel" method='POST'>
-                    <input type='hidden' name='id' value='<?php echo $countR[2]->getId() ?>'>
-                    <input type='hidden' name='idArmario' value='<?php echo $countR[1]->getId() ?>'>
-
-                    <button type="submit" class="btn btn-success btn-sm" name="confirmar">Confirmar</button>
-                  </form>
-                </td>
-
-                <td>
-                  <form action="/negar-aluguel" method='POST'>
-                    <input type='hidden' name='id' value='<?php echo $countR[2]->getId() ?>'>
-                    <input type='hidden' name='idArmario' value='<?php echo $countR[1]->getId() ?>'>
-
-                    <button type="submit" class="btn btn-danger btn-sm" name="negar">Negar</button>
-                  </form>
-                </td>
-
-
-
-
-              <?php "</tr>";
-              }  ?>
 
             </tbody>
 
@@ -135,7 +115,7 @@
 
 
 
-       
+
       </div>
     </main>
   </div>
