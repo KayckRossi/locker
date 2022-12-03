@@ -19,7 +19,7 @@
                     </li>
                     <li>
                         <i class="fa-solid fa-comments-dollar"></i>
-                        <a href="#">Alugueis</a>
+                        <a href="/dashboard/aluguel">Alugueis</a>
                     </li>
                     <li>
                         <i class="fa-solid fa-gears"></i>

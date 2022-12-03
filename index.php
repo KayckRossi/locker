@@ -162,6 +162,10 @@ switch($url) {
         DashArmarioController::cadastrar();
     break;
 
+    case '/dashboard/aluguel':
+        include 'view/dashboard/alugueis.php';
+    break;
+
     default:
         echo "Erro 404";
     break;

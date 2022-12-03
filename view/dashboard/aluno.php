@@ -63,37 +63,37 @@
 
                   <div class="form-group">
                     <label for="recebe-nome" class="col-form-label">Nome:</label>
-                    <input type="text" name="nome" class="form-control" id="recebe-name">
+                    <input type="text" name="nome" class="form-control" id="recebe-nome" required>
                   </div>
 
                   <div class="form-group">
                     <label for="recebe-sobrenome" class="col-form-label">Sobrenome:</label>
-                    <input type="text" name="sobrenome" class="form-control" id="recebe-sobrenome">
+                    <input type="text" name="sobrenome" class="form-control" id="recebe-sobrenome" required>
                   </div>
 
                   <div class="form-group">
                     <label for="recebe-email" class="col-form-label">Email:</label>
-                    <input type="email" name="email" class="form-control" id="recebe-email">
+                    <input type="email" name="email" class="form-control" id="recebe-email" required>
                   </div>
 
                   <div class="form-group">
                     <label for="recebe-rm" class="col-form-label">RM:</label>
-                    <input type="number" name="rm" class="form-control" id="recebe-rm">
+                    <input type="number" name="rm" class="form-control" id="recebe-rm" required>
                   </div>
 
                   <div class="form-group">
                     <label for="cadastro-cpf" class="col-form-label">CPF:</label>
-                    <input type="number" name="cpf" class="form-control" id="cadastro-cpf">
+                    <input type="number" name="cpf" class="form-control" id="cadastro-cpf" required>
                   </div>
 
                   <div class="form-group">
                     <label for="recebe-contato" class="col-form-label">Contato:</label>
-                    <input type="" name="telefone" class="form-control" id="recebe-contato">
+                    <input type="number" name="telefone" class="form-control" id="recebe-contato" required>
                   </div>
 
                   <div class="form-group">
                     <label for="recebe-senha" class="col-form-label">Senha:</label>
-                    <input type="number" name="senha" class="form-control" id="recebe-senha">
+                    <input type="text" name="senha" class="form-control" id="recebe-senha" required>
                   </div>
 
 
@@ -307,7 +307,7 @@
 
                             <div class="form-group">
                               <label for="recebe-nome" class="col-form-label">Nome:</label>
-                              <input type="text" name="nome" class="form-control" id="recebe-name" value="<?php echo $countS->getNome(); ?>">
+                              <input type="text" name="nome" class="form-control" id="recebe-nome" value="<?php echo $countS->getNome(); ?>">
                             </div>
 
                             <div class="form-group">
@@ -317,12 +317,12 @@
 
                             <div class="form-group">
                               <label for="recebe-email" class="col-form-label">Email:</label>
-                              <input type="text" name="email" class="form-control" id="recebe-email" value="<?php echo $countS->getEmail(); ?> ">
+                              <input type="email" name="email" class="form-control" id="recebe-email" value="<?php echo $countS->getEmail(); ?> ">
                             </div>
 
                             <div class="form-group">
                               <label for="recebe-rm" class="col-form-label">RM:</label>
-                              <input type="text" name="rm" class="form-control" id="recebe-rm" value="<?php echo $countS->getRm(); ?>">
+                              <input type="number" name="rm" class="form-control" id="recebe-rm" value="<?php echo $countS->getRm(); ?>">
                             </div>
 
                             <div class="form-group">
@@ -332,7 +332,7 @@
 
                             <div class="form-group">
                               <label for="recebe-contato" class="col-form-label">Contato:</label>
-                              <input type="text" name="telefone" class="form-control" id="recebe-contato" value="<?php echo $countS->getTelefone(); ?> ">
+                              <input type="number" name="telefone" class="form-control" id="recebe-contato" value="<?php echo $countS->getTelefone(); ?> ">
                             </div>
 
                             <div class="form-group">
