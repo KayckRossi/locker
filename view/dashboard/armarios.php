@@ -380,6 +380,7 @@
 
                 </div>
                 <!-- Final tabela-alunos -->
+            </div>
         </main>
     </div>
 
