@@ -1,12 +1,12 @@
 .button-funcionario{
     display:inline;
     height: 4rem;
-    width: 18rem;
+    width: 16rem;
     background-color: #007BFF;
     flex-direction: row;
     text-align: center;
     justify-items: space-between;
-    margin-left: 27rem;
+    margin-left: 26rem;
     margin-right: -20rem;
     border-radius: 10px 10px 10px 10px;
     border: none;
