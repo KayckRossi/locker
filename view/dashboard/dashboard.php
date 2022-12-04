@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../public/assets/css/all.css">
 
-   <!-- CDN DataTables -->
-   <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+  <!-- CDN DataTables -->
+  <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="../../public/assets/plugins/bootstrap-4.5.3-dist/css/bootstrap.min.css">
@@ -29,9 +29,9 @@
       <!-- inicio do Escopo da pagina -->
       <?php include "headerdash.php" ?>
       <!-- final-->
-   
-    
-      
+
+
+
       <div class="main-content">
         <div class="container">
           <div class="row">
@@ -106,19 +106,19 @@
 
                 <td>
                   <form action="/aceitar-aluguel" method='POST'>
-                  <input type='hidden' name='id' value='<?php echo $countR[2]->getId() ?>'>
-                  <input type='hidden' name='idArmario' value='<?php echo $countR[1]->getId() ?>'>
-        
-                  <button type="submit" class="btn btn-success btn-sm" name="confirmar">Confirmar</button>
+                    <input type='hidden' name='id' value='<?php echo $countR[2]->getId() ?>'>
+                    <input type='hidden' name='idArmario' value='<?php echo $countR[1]->getId() ?>'>
+
+                    <button type="submit" class="btn btn-success btn-sm" name="confirmar">Confirmar</button>
                   </form>
                 </td>
 
                 <td>
                   <form action="/negar-aluguel" method='POST'>
-                  <input type='hidden' name='id' value='<?php echo $countR[2]->getId() ?>'>
-                  <input type='hidden' name='idArmario' value='<?php echo $countR[1]->getId() ?>'>
-        
-                  <button type="submit" class="btn btn-danger btn-sm" name="negar">Negar</button>
+                    <input type='hidden' name='id' value='<?php echo $countR[2]->getId() ?>'>
+                    <input type='hidden' name='idArmario' value='<?php echo $countR[1]->getId() ?>'>
+
+                    <button type="submit" class="btn btn-danger btn-sm" name="negar">Negar</button>
                   </form>
                 </td>
 
@@ -139,18 +139,31 @@
         <div class="col-md-9 .col-md-push-3"></div>
         <div class="card" style="width: 100%; margin-top: 2rem; border-radius: 1rem; ">
           <div class="card-header" style="display:flex; justify-content: center; color: black; ">
-            <h4> Status totais de ARMARIOS </h4>
+            <h4> Resumo da quantidade de armarios </h4>
           </div>
-          <ul class="list-group list-group-flush" style="color:black ;">
-            <li class="list-group-item">Total de armarios <?php print_r($counter->count()); ?></li>
-            <li class="list-group-item">Armarios disponiveis <?php print_r($counterDisp->countDisp()); ?></li>
-            <li class="list-group-item">Armarios Alugados <?php print_r($counterAlug->countAlug()); ?></li>
-            <li class="list-group-item">Armarios Indisponiveis <?php print_r($counterIndisp->countIndisp()); ?></li>
-          </ul>
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Armarios Totais</th>
+                      <th scope="col">Armarios Disponiveis</th>
+                      <th scope="col">Armarios Alugados</th>
+                      <th scope="col">Armarios Indisponíveis</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="color: black;" >
+                      <td><?php print_r($counterIndisp->count()); ?></td>
+                      <td><?php print_r($counterIndisp->countDisp()); ?></td>
+                      <td><?php print_r($counterIndisp->countAlug()); ?></td>
+                      <td><?php print_r($counterIndisp->countIndisp()); ?></td>
+                    </tr>
+
+                  </tbody>
+                </table>
         </div>
       </div>
 
-      
+
 
 
   </div>
@@ -169,7 +182,7 @@
 
   <!-- cdn dataTables -->
   <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-    <!-- JS do DataTables -->
+  <!-- JS do DataTables -->
   <script>
     $(document).ready(function() {
       $('#myTable').DataTable();

@@ -165,6 +165,18 @@ switch($url) {
     case '/dashboard/aluguel':
         include 'view/dashboard/alugueis.php';
     break;
+    
+    case '/footer/contato':
+        include 'view/footer/contato.php';
+    break;
+    
+    case '/footer/privacidade':
+        include 'view/footer/pprivacidade.php';
+    break;  
+
+    case '/footer/quemsomos':
+        include 'view/footer/quem.php';
+    break;  
 
     default:
         echo "Erro 404";
