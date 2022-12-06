@@ -135,13 +135,13 @@ class AlunoController {
 
             $data = $_POST;
 
-            echo '<br><pre>' , var_dump($data) , '</pre>'; 
+            //echo '<br><pre>' , var_dump($data) , '</pre>'; 
 
             $aluno = new Aluno();
             
             $aluno->setId($data['id']);
 
-            echo '<br><pre>' , var_dump($aluno) , '</pre>';
+            //echo '<br><pre>' , var_dump($aluno) , '</pre>';
 
             $alunodao = new AlunoDAO();
 
@@ -149,7 +149,7 @@ class AlunoController {
 
         }
 
-        header('Location: /adm/dashboard/listar-aluno');
+        header('Location: /dashboard/aluno');
         die();
 
     }

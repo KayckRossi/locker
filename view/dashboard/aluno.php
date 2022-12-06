@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../public/assets/css/all.css">
 
+  <!-- CDN DataTables -->
+  <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="../../public/assets/plugins/bootstrap-4.5.3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../public/assets/plugins/fontawesome-free-6.2.0-web/css/all.min.css">
@@ -31,17 +34,15 @@
         <div class="container">
 
           <div class="row">
-            <div class="btns-modais">
 
-            <button type="button" class="btn-cadastrar" data-toggle="modal" data-target="#cadastrar" data-whatever="@mdo">Cadastrar</button>
+            <button type="button" class="btn-cadastrar" data-toggle="modal" data-target="#cadastrar">Cadastrar</button>
 
-            <button type="button" class="btn-excluir" data-toggle="modal" data-target="#excluir" data-whatever="@mdo">Excluir</button>
+            <!-- <button type="button" class="btn-excluir" data-toggle="modal" data-target="#excluir" data-whatever="@mdo">Excluir</button>
 
             <button type="button" class="btn-atualizar" data-toggle="modal" data-target="#atualizar" data-whatever="@mdo">Atualizar</button>
 
-            <button type="button" class="btn-pesquisar" data-toggle="modal" data-target="#pesquisar" data-whatever="@mdo">Pesquisar</button>
+            <button type="button" class="btn-pesquisar" data-toggle="modal" data-target="#pesquisar" data-whatever="@mdo">Pesquisar</button> -->
 
-            </div>
           </div>
         </div>
 
@@ -62,37 +63,37 @@
 
                   <div class="form-group">
                     <label for="recebe-nome" class="col-form-label">Nome:</label>
-                    <input type="text" name="nome" class="form-control" id="recebe-name">
+                    <input type="text" name="nome" class="form-control" id="recebe-nome" required>
                   </div>
 
                   <div class="form-group">
                     <label for="recebe-sobrenome" class="col-form-label">Sobrenome:</label>
-                    <input type="text" name="sobrenome" class="form-control" id="recebe-sobrenome">
+                    <input type="text" name="sobrenome" class="form-control" id="recebe-sobrenome" required>
                   </div>
 
                   <div class="form-group">
                     <label for="recebe-email" class="col-form-label">Email:</label>
-                    <input type="email" name="email" class="form-control" id="recebe-email">
+                    <input type="email" name="email" class="form-control" id="recebe-email" required>
                   </div>
 
                   <div class="form-group">
                     <label for="recebe-rm" class="col-form-label">RM:</label>
-                    <input type="number" name="rm" class="form-control" id="recebe-rm">
+                    <input type="number" name="rm" class="form-control" id="recebe-rm" required>
                   </div>
 
                   <div class="form-group">
                     <label for="cadastro-cpf" class="col-form-label">CPF:</label>
-                    <input type="number" name="cpf" class="form-control" id="cadastro-cpf">
+                    <input type="number" name="cpf" class="form-control" id="cadastro-cpf" required>
                   </div>
 
                   <div class="form-group">
                     <label for="recebe-contato" class="col-form-label">Contato:</label>
-                    <input type="" name="telefone" class="form-control" id="recebe-contato">
+                    <input type="number" name="telefone" class="form-control" id="recebe-contato" required>
                   </div>
 
                   <div class="form-group">
                     <label for="recebe-senha" class="col-form-label">Senha:</label>
-                    <input type="number" name="senha" class="form-control" id="recebe-senha">
+                    <input type="text" name="senha" class="form-control" id="recebe-senha" required>
                   </div>
 
 
@@ -109,7 +110,7 @@
 
         <!-- Final Modal-Cadastrar -->
 
-        <!-- Começo Modal-excluir -->
+        <!-- Começo Modal-excluir 
 
         <div class="modal fade" id="excluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -144,10 +145,10 @@
           </div>
         </div>
 
-        <!-- Final Modal-excluir -->
+        Final Modal-excluir 
 
 
-        <!-- Começo Modal Atualizar -->
+        Começo Modal Atualizar 
 
         <div class="modal fade" id="atualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -208,9 +209,9 @@
           </div>
         </div>
 
-        <!-- Final Modal Atualizar -->
+       Final Modal Atualizar 
 
-        <!-- Começo Modal-Pesquisar -->
+       Começo Modal-Pesquisar 
 
         <div class="modal fade" id="pesquisar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -244,179 +245,166 @@
           </div>
         </div>
 
-        <!-- Final Modal-Pesquisar -->
+      Final Modal-Pesquisar -->
+        <section class="tabela">
+          <div class="col-md-9 .col-md-push-3"></div>
+          <div class="card" style="width: 100%; margin-top: 2rem; border-radius: 1rem;">
+            <div class="card-header" style="display:flex; justify-content: center; color: black; ">
+              <h4>Alunos Cadastrados</h4>
+            </div>
 
-        <!-- inicio tabela-alunos -->
+            <table class="table" id="myTable">
 
-        <div class="col-md-9 .col-md-push-3"></div>
-        <div class="card" style="width: 100%; margin-top: 2rem; border-radius: 1rem;">
-          <div class="card-header" style="display:flex; justify-content: center; color: black; ">
-            <h4>Alunos Cadastrados</h4>
-          </div>
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Sobrenome</th>
+                  <th scope="col">RM</th>
+                  <th scope="col">CPF</th>
+                  <th scope="col">E-MAIL</th>
+                  <th scope="col">Contato</th>
+                  <th scope="col">Editar</th>
+                  <th scope="col">Excluir</th>
 
-          <table class="table">
+                </tr>
+              </thead>
 
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">Sobrenome</th>
-                <th scope="col">RM</th>
-                <th scope="col">CPF</th>
-                <th scope="col">E-MAIL</th>
-                <th scope="col">Contato</th>
-                <th scope="col">Editar</th>
-                <th scope="col">Excluir</th>
+              <tbody>
 
-              </tr>
-            </thead>
+                <?php foreach ($counterStudent as $countS) { ?>
 
-            <tbody>
+                  <?php echo "<tr>" ?>
 
-              <?php foreach ($counterStudent as $countS) { ?>
+                  <td> <?php echo $countS->getNome(); ?> </td>
+                  <td> <?php echo $countS->getSobrenome(); ?> </td>
+                  <td> <?php echo $countS->getRm(); ?> </td>
+                  <td> <?php echo $countS->getCpf(); ?> </td>
+                  <td> <?php echo $countS->getEmail(); ?> </td>
+                  <td> <?php echo $countS->getTelefone(); ?> </td>
+                  <td>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#TabelaAtualizar<?php echo $countS->getId(); ?>">Alterar</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ExcluirTabela<?php echo $countS->getId(); ?>">Excluir</button>
+                  </td>
 
-                <?php echo "<tr>" ?>
+                  <!-- Começo Modal Atualizar aluno Pela Tabela-->
 
-                <td> <?php echo $countS->getNome(); ?> </td>
-                <td> <?php echo $countS->getSobrenome(); ?> </td>
-                <td> <?php echo $countS->getRm(); ?> </td>
-                <td> <?php echo $countS->getCpf(); ?> </td>
-                <td> <?php echo $countS->getEmail(); ?> </td>
-                <td> <?php echo $countS->getTelefone(); ?> </td>
+                  <div class="modal fade" id="TabelaAtualizar<?php echo $countS->getId(); ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="Label-atualizar">Atualizar</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Salvar">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
 
+                      <form action="/adm/dashboard/alterar-aluno" method="POST">
 
-                <td>
+                            <input type='hidden' name='id' value="<?php echo $countS->getId(); ?>">
 
-                  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#TabelaAtualizar<?php echo $countS->getId(); ?>">Alterar</button>
+                            <div class="form-group">
+                              <label for="recebe-nome" class="col-form-label">Nome:</label>
+                              <input type="text" name="nome" class="form-control" id="recebe-nome" value="<?php echo $countS->getNome(); ?>">
+                            </div>
 
-                </td>
+                            <div class="form-group">
+                              <label for="recebe-sobrenome" class="col-form-label">Sobrenome:</label>
+                              <input type="text" name="sobrenome" class="form-control" id="recebe-sobrenome" value="<?php echo $countS->getSobrenome(); ?>">
+                            </div>
 
-                <td>
+                            <div class="form-group">
+                              <label for="recebe-email" class="col-form-label">Email:</label>
+                              <input type="email" name="email" class="form-control" id="recebe-email" value="<?php echo $countS->getEmail(); ?> ">
+                            </div>
 
-                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ExcluirTabela<?php echo $countS->getId(); ?>">Excluir</button>
+                            <div class="form-group">
+                              <label for="recebe-rm" class="col-form-label">RM:</label>
+                              <input type="number" name="rm" class="form-control" id="recebe-rm" value="<?php echo $countS->getRm(); ?>">
+                            </div>
 
-                </td>
+                            <div class="form-group">
+                              <label for="cadastro-cpf" class="col-form-label">CPF:</label>
+                              <input type="text" name="cpf" class="form-control" id="cadastro-cpf" value="<?php echo $countS->getCpf(); ?> ">
+                            </div>
 
+                            <div class="form-group">
+                              <label for="recebe-contato" class="col-form-label">Contato:</label>
+                              <input type="number" name="telefone" class="form-control" id="recebe-contato" value="<?php echo $countS->getTelefone(); ?> ">
+                            </div>
 
-                <!-- Começo Modal Atualizar Tabela aluno-->
+                            <div class="form-group">
+                              <label for="recebe-senha" class="col-form-label">Senha:</label>
+                              <input type="text" name="senha" class="form-control" id="recebe-senha" value="<?php echo $countS->getSenha(); ?> ">
+                            </div>
 
-                <div class="modal fade" id="TabelaAtualizar<?php echo $countS->getId(); ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="Label-atualizar">Alterar</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Salvar">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" class="btn btn-success" name="alterar">Salvar</button>
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                        </div>
+                       </form>
                       </div>
-                      <div class="modal-body">
-
-                        <form action="/adm/dashboard/alterar-aluno" method="POST">
-
-                          <input type='hidden' name='id' value="<?php echo $countS->getId(); ?>">
-
-                          <div class="form-group">
-                            <label for="recebe-nome" class="col-form-label" >Nome:</label>
-                            <input type="text" name="nome" class="form-control" id="recebe-name" value="<?php echo $countS->getNome(); ?>">
-                          </div>
-
-                          <div class="form-group">
-                            <label for="recebe-sobrenome" class="col-form-label" >Sobrenome:</label>
-                            <input type="text" name="sobrenome" class="form-control" id="recebe-sobrenome" value="<?php echo $countS->getSobrenome(); ?>">
-                          </div>
-
-                          <div class="form-group">
-                            <label for="recebe-email" class="col-form-label">Email:</label>
-                            <input type="text" name="email" class="form-control" id="recebe-email" value="<?php echo $countS->getEmail(); ?> ">
-                          </div>
-
-                          <div class="form-group">
-                            <label for="recebe-rm" class="col-form-label">RM:</label>
-                            <input type="text" name="rm" class="form-control" id="recebe-rm" value="<?php echo $countS->getRm(); ?>">
-                          </div>
-
-                          <div class="form-group">
-                            <label for="cadastro-cpf" class="col-form-label">CPF:</label>
-                            <input type="text" name="cpf" class="form-control" id="cadastro-cpf" value="<?php echo $countS->getCpf(); ?> ">
-                          </div>
-
-                          <div class="form-group">
-                          <label for="recebe-contato" class="col-form-label">Contato:</label>
-                            <input type="text" name="telefone" class="form-control" id="recebe-contato" value="<?php echo $countS->getTelefone(); ?> ">
-                          </div>
-
-                          <div class="form-group">
-                            <label for="recebe-senha" class="col-form-label">Senha:</label>
-                            <input type="text" name="senha" class="form-control" id="recebe-senha" value="<?php echo $countS->getSenha(); ?> ">
-                          </div>
-
-
-
-                      </div>
-                      <div class="modal-footer">
-                        <button type="submit" class="btn btn-success" name="alterar">Salvar</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                      </div>
-                      </form>
                     </div>
                   </div>
-                </div>
 
-                <!-- Final Modal Atualizar Tabela aluno-->
+                      <!-- Final Modal Alterar aluno Pela Tabela -->
 
-                <!-- Começo Modal-excluir -->
+                       <!-- Começo modal-apagar aluno Pela Tabela-->
 
-        <div class="modal fade" id="ExcluirTabela<?php echo $countS->getId(); ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="Label-Excluir">Excluir</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Salvar">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form>
+                       <div class="modal fade" id="ExcluirTabela<?php echo $countS->getId(); ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="Label-Excluir">Excluir</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Salvar">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
 
-                <h1>Confirmar exclusão de usuario do sistema?</h1>
+                                            <div class="form-group">
+                                                <h2>Confirmar exclusão do Aluno do Sistema?</h2>
+                                            </div>
 
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
 
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="submit" name="excluir" class="btn btn-success">Excluir</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Final Modal-excluir -->
-
-
-
-
-
+                                      <form action='/adm/dashboard/excluir-aluno' method='POST'>
+                                                <input type='hidden' name='id' value='<?php echo $countS->getId();?>'>
+                                                <button type="submit" class="btn btn-success" name="excluir">Confirmar</button>
+                                        </form>
+                                        
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Final modal-apagar aluno Pela Tabela -->
 
 
-              <?php "</tr>";
-              }  ?>
+                <?php "</tr>";
+                }  ?>
 
 
 
 
 
 
-            </tbody>
+              </tbody>
 
 
 
 
 
-          </table>
-          <!-- final tabela-alunos -->
+            </table>
+        </section>
 
-        </div>
+      </div>
 
 
 
@@ -430,8 +418,15 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-
   <script src="../../public/assets/plugins/fontawesome-free-6.2.0-web/js/all.min.js"></script>
-</body>
+  
+   <!-- cdn dataTables -->
+  <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <!-- JS do DataTables -->
+  <script>
+    $(document).ready(function() {
+      $('#myTable').DataTable();
+    });
+  </script>
 
-</html>
+</body>

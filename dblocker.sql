@@ -44,12 +44,14 @@ CREATE TABLE funcionario (
 CREATE TABLE aluno (
 
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    rm INT NULL UNIQUE,
+    rm INT NOT NULL UNIQUE,
     cpf CHAR(11) NOT NULL UNIQUE,
     email VARCHAR(60) NOT NULL UNIQUE,
     senha VARCHAR(45) NOT NULL,
     nome VARCHAR(45) NOT NULL,
-    sobrenome VARCHAR(45) NOT NULL
+    sobrenome VARCHAR(45) NOT NULL,
+    purl VARCHAR(12) DEFAULT NULL,
+    ativo TINYINT(1) NOT NULL DEFAULT 0
 
 );
 
@@ -112,8 +114,7 @@ CREATE TABLE aluguel (
 
 );
 
-ALTER TABLE `aluno` ADD `purl` VARCHAR(12) NULL DEFAULT NULL AFTER `sobrenome`;
-ALTER TABLE `aluno` ADD `ativo` VARCHAR(1) NULL DEFAULT '0' AFTER `purl`;
+
 
 INSERT INTO plano (plano, valor, status) VALUES
 ('Semestral', 50.00, 1),

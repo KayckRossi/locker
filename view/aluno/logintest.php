@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE-edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="public/assets/css/footer.css">
 	<link rel="stylesheet" href="public/assets/css/logintest.css">
 	<link rel="stylesheet" href="public/assets/css/style.css">
 
@@ -43,7 +44,7 @@
 				</div>
 
 				
-				<button type="submit" name="entrar" class="bnt-login"><a href="#">Entrar</a></button>
+				<button type="submit" name="entrar" class="bnt-login">Entrar</a></button>
 				<button class="bnt-login"><a href="/cadastro">Cadastre-se</a></button>
 				<!-- <a href="#">esqueci minha senha</a> -->
 		</div>
@@ -53,7 +54,7 @@
 
 
 	</div><!--main-login-->
-	<?php include "public/footer.html" ?>
+	<?php include "public/footer-boostrap.php" ?>
 </body>
 
 <script>

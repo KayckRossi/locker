@@ -79,29 +79,43 @@
                 <th scope="col">ID Aluguel</th>
                 <th scope="col">Data</th>
                 <th scope="col">Situação</th>
+                <th scope="col">Situação</th>
                 <th scope="col">ID Aluno</th>
                 <th scope="col">ID Armario</th>
                 <th scope="col">ID Plano</th>
+                <th scope="col">Excluir</th>
+
               </tr>
             </thead>
 
             <tbody>
+
+
+
+
               <tr>
-                <th scope="row">1</th>
-                <td>2022-11-09 14:40:50</td>
-                <td>Ativado</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
+                <td> teste </td>
+                <td> teste </td>
+                <td> teste </td>
+                <td> teste </td>
+                <td> teste </td>
+                <td> teste </td>
+                <td> teste </td>
+
                 
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>2022-11-05 16:10:50</td>
-                <td>Ativado</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
+
+                <td>
+                  <form action="/negar-aluguel" method='POST'>
+                    <input type='hidden' name='id' value=''>
+                    <input type='hidden' name='idArmario' value=''>
+
+                    <button type="submit" class="btn btn-danger btn-sm" name="negar">Negar</button>
+                  </form>
+                </td>
+
+
+
+
               </tr>
 
 

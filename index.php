@@ -8,6 +8,7 @@ include 'controller/AluguelController.php';
 include 'controller/AuthenticationController.php';
 include 'controller/AdmAuthenticationController.php';
 include 'controller/DashAlunoController.php';
+include 'controller/DashArmarioController.php';
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -117,9 +118,9 @@ switch($url) {
         ArmarioController::cadastrar();
     break;
 
-    case '/adm/dashboard/listar-armario':
-        ArmarioController::listar();
-    break;
+     case '/adm/dashboard/listar-armario':
+         ArmarioController::listar();
+     break;
     
     case '/adm/dashboard/alterar-armario':
         ArmarioController::alterar();
@@ -150,9 +151,33 @@ switch($url) {
     break;
     
     case '/dashboard/armario':
-        include 'view\dashboard\armarios.php';
+        DashArmarioController::listar();
+    break;
+
+    case '/dashboard/alterar-armario':
+        DashArmarioController::alterar();
+    break;
+
+    case '/dashboard/cadastrar-armario':
+        DashArmarioController::cadastrar();
+    break;
+
+    case '/dashboard/aluguel':
+        include 'view/dashboard/alugueis.php';
     break;
     
+    case '/footer/contato':
+        include 'view/footer/contato.php';
+    break;
+    
+    case '/footer/privacidade':
+        include 'view/footer/pprivacidade.php';
+    break;  
+
+    case '/footer/quemsomos':
+        include 'view/footer/quem.php';
+    break;  
+
     default:
         echo "Erro 404";
     break;

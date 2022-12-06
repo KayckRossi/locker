@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../public/assets/css/all.css">
 
+  <!-- CDN DataTables -->
+  <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="../../public/assets/plugins/bootstrap-4.5.3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../public/assets/plugins/fontawesome-free-6.2.0-web/css/all.min.css">
@@ -72,7 +75,7 @@
           </div>
 
 
-          <table class="table">
+          <table class="table" id="myTable">
 
             <thead class="thead-dark">
               <tr>
@@ -96,7 +99,7 @@
                 <?php echo "<tr>" ?>
                 <td> <?php echo $countR[0]->getNome(); ?> </td>
                 <td> <?php echo $countR[0]->getRm() ?> </td>
-                <td> <?php echo $countR[1]->getSecao() ?><?php echo $countR[1]->getNumero() ?> </td>
+                <td> <?php echo $countR[1]->getSecao() ?><?php echo $countR[1]->getNumero()?> </td>
                 <td> <?php echo $countR[2]->getSituacao() ?> </td>
                 <td> <?php echo $countR[3]->getPlano() ?> </td>
                 <td> <?php echo $countR[3]->getValor() ?> </td>
@@ -133,66 +136,38 @@
 
 
 
-        <!-- <div class="col-md-9 .col-md-push-3"></div>
+        <div class="col-md-9 .col-md-push-3"></div>
         <div class="card" style="width: 100%; margin-top: 2rem; border-radius: 1rem; ">
           <div class="card-header" style="display:flex; justify-content: center; color: black; ">
-            <h4> Status totais de ARMARIOS </h4>
+            <h4> Resumo da quantidade de armarios </h4>
           </div>
-          <ul class="list-group list-group-flush" style="color:black ;">
-            <li class="list-group-item">Total de armarios
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Armarios Totais</th>
+                      <th scope="col">Armarios Disponiveis</th>
+                      <th scope="col">Armarios Alugados</th>
+                      <th scope="col">Armarios Indisponíveis</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="color: black;" >
+                      <td><?php print_r($counterIndisp->count()); ?></td>
+                      <td><?php print_r($counterIndisp->countDisp()); ?></td>
+                      <td><?php print_r($counterIndisp->countAlug()); ?></td>
+                      <td><?php print_r($counterIndisp->countIndisp()); ?></td>
+                    </tr>
 
-              <div class="card-tabela">
-                
-                  This is some text within a card body.
-          
-              </div>
-
-
-            </li>
-            <li class="list-group-item">Armarios disponiveis <?php print_r($counterDisp->countDisp()); ?></li>
-            <li class="list-group-item">Armarios Alugados <?php print_r($counterAlug->countAlug()); ?></li>
-            <li class="list-group-item">Armarios Indisponiveis <?php print_r($counterIndisp->countIndisp()); ?></li>
-          </ul>
-        </div>
-      </div> -->
-
-
-        <div class="col-md-9 .col-md-push-3"></div>
-        <div class="card" style="width: 100%; margin-top: 2rem; border-radius: 1rem;">
-          <div class="card-header" style="display:flex; justify-content: center; color: black; ">
-            <h4>Status totais de ARMARIOS</h4>
-          </div>
-          <table class="table">
-            
-
-            <tbody>
-              <tr>
-            
-                <td>Total armários <button type="button" class="btn btn-info" id="btn-tabela"><?php print_r($counterDisp->count()); ?></button></td>
-
-              </tr>
-              <tr>
-             
-                <td>Armarios disponiveis <button type="button" class="btn btn-success" id="btn-tabela"><?php print_r($counterDisp->countDisp()); ?></button></td>
-             
-              </tr>
-              <tr>
-              
-                <td>Armarios Indisponiveis <button type="button" class="btn btn-warning" id="btn-tabela"><?php print_r($counterIndisp->countIndisp()); ?></button></td>
-               
-              </tr>
-
-              <tr>
-              
-                <td>Armarios Alugados <button type="button" class="btn btn-danger" id="btn-tabela"><?php print_r($counterIndisp->countIndisp()); ?></button></td>
-               
-              </tr>
-            </tbody>
-
-
+                  </tbody>
+                </table>
         </div>
       </div>
-    </main>
+
+
+
+
+  </div>
+  </main>
   </div>
 
 
@@ -203,6 +178,17 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 
   <script src="../../public/assets/plugins/fontawesome-free-6.2.0-web/js/all.min.js"></script>
+
+
+  <!-- cdn dataTables -->
+  <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+  <!-- JS do DataTables -->
+  <script>
+    $(document).ready(function() {
+      $('#myTable').DataTable();
+    });
+  </script>
+
 </body>
 
 </html>
