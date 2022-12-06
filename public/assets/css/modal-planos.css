@@ -1,0 +1,31 @@
+.button-plano{
+    display:inline;
+    height: 4rem;
+    width: 16rem;
+    background-color: #007BFF;
+    flex-direction: row;
+    text-align: center;
+    justify-items: space-between;
+    margin-left: 26rem;
+    margin-right: -20rem;
+    border-radius: 10px 10px 10px 10px;
+    border: none;
+}
+
+.button-plano {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.btn-plano :hover{
+     background-color: #004fa3;
+}
+
+h5 {
+    color: black;
+}
+h5 :hover{
+    display: none;
+}

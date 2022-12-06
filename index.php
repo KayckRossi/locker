@@ -165,6 +165,18 @@ switch($url) {
     case '/dashboard/aluguel':
         include 'view/dashboard/alugueis.php';
     break;
+
+    case '/dashboard/funcionario':
+        include 'view/dashboard/funcionarios.php';
+    break;
+
+    case '/dashboard/curso':
+        include 'view/dashboard/cursos.php';
+    break;
+
+    case '/dashboard/plano':
+        include 'view/dashboard/planos.php';
+    break;
     
     case '/footer/contato':
         include 'view/footer/contato.php';

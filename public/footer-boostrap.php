@@ -15,7 +15,7 @@
             <ul>
                 <li><a href="/footer/contato">Fale conosco</a></li>
             </ul>
-        <!-- </div>
+         </div>
         <div class="social-media">
             <h4>Redes sociais</h4>
             <ul>
@@ -23,7 +23,7 @@
                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                 <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
                 <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-            </ul> -->
+            </ul> 
         </div>
         <div>
             <a href="/"><img src="../public/assets/img/locketec.png" alt="Locketec: Locação de armários escolares"></a>

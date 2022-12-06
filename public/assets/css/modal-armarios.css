@@ -8,7 +8,7 @@
     text-align: center;
     justify-items: space-between;
     margin-left: 22rem;
-    margin-right: -20rem;
+    /* margin-right: -20rem; */
     border-radius: 10px 10px 10px 10px;
     border: none;
 }
@@ -32,6 +32,7 @@
 
 .btn-modais{
     padding-top: 2rem;
+    margin-left: 8rem;
 }
 
 .btn-modais :hover{
