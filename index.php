@@ -9,6 +9,7 @@ include 'controller/AuthenticationController.php';
 include 'controller/AdmAuthenticationController.php';
 include 'controller/DashAlunoController.php';
 include 'controller/DashArmarioController.php';
+include 'controller/DashFuncionarioController.php';
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -167,7 +168,11 @@ switch($url) {
     break;
 
     case '/dashboard/funcionario':
-        include 'view/dashboard/funcionarios.php';
+        DashFuncionarioController::dashFuncionario();
+    break;
+
+    case '/dashboard/cadastrar-funcionario':
+        DashFuncionarioController::cadastrar();
     break;
 
     case '/dashboard/curso':
