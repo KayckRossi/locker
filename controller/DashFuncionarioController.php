@@ -92,6 +92,68 @@ Class DashFuncionarioController{
 
     }
 
+    public static function alterar() {
+
+        require_once 'adm-session.php';
+
+        if (isset($_POST['alterar'])) {
+
+            include_once 'connection/Connection.php';
+            include_once 'model/Pessoa.php';
+            include_once 'model/Funcionario.php';
+            include_once 'dao/FuncionarioDAO.php';
+            include_once 'controller/Filter.php';
+                    
+            /*             $filter = new Filter();
+        
+            $filters = array(
+                'senha' => array('filter' => FILTER_CALLBACK, 'options' => array($filter, 'validatePassword')),  
+                'nome' => array('filter' => FILTER_CALLBACK, 'options' => array($filter, 'validateName')),
+                'sobrenome' => array('filter' => FILTER_CALLBACK, 'options' => array($filter, 'validateName')),
+                'telefone' => array('filter' => FILTER_CALLBACK, 'options' => array($filter, 'validatePhone'))
+            );
+        
+            $data = $filter->validate($_POST, $filters);
+        
+            echo 'Validação:<br><pre>' , var_dump($data) , '</pre>';
+        
+            $filters = array(
+                'senha' => FILTER_UNSAFE_RAW,  
+                'nome' => FILTER_SANITIZE_SPECIAL_CHARS,
+                'sobrenome' => FILTER_SANITIZE_SPECIAL_CHARS,
+                'telefone' => FILTER_UNSAFE_RAW
+            );
+        
+            $data = $filter->sanitize($_POST, $filters);
+        */
+            $data = $_POST;
+            
+            //echo 'Data:<br><pre>' , var_dump($data) , '</pre>'; 
+            //echo 'Session:<br><pre>' , var_dump($_SESSION) , '</pre>'; 
+               
+            $funcionario = new Funcionario();
+
+            $funcionario->setId($data['id']);
+            $funcionario->setCpf($data['cpf']);
+            $funcionario->setEmail($data['email']);
+            $funcionario->setNome($data['nome']);
+            $funcionario->setSobrenome($data['sobrenome']);
+            $funcionario->setTelefone($data['telefone']);
+            $funcionario->setFuncao($data['funcao']);
+            $funcionario->setPrivilegio($data['privilegio']);
+                    
+            $funcionariodao = new FuncionarioDAO();
+
+           //echo 'Funcionario:<br><pre>' , var_dump($funcionario) , '</pre>';
+           
+            $funcionariodao->update($funcionario);
+            
+        }
+
+        header('Location: /dashboard/funcionario');
+        die();
+        
+    }
 
 
 

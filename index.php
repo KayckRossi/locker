@@ -175,6 +175,10 @@ switch($url) {
         DashFuncionarioController::cadastrar();
     break;
 
+    case '/dashboard/alterar-funcionario':
+        DashFuncionarioController::alterar();
+    break;
+
     case '/dashboard/curso':
         include 'view/dashboard/cursos.php';
     break;
