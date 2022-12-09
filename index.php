@@ -179,6 +179,10 @@ switch($url) {
         DashFuncionarioController::alterar();
     break;
 
+    case '/dashboard/excluir-funcionario':
+        DashFuncionarioController::excluir();
+    break;
+
     case '/dashboard/curso':
         include 'view/dashboard/cursos.php';
     break;

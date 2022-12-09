@@ -158,91 +158,73 @@
                                     <td> <?php echo $funcionario->getFuncao(); ?> </td>
                                     <td> <?php echo $funcionario->getPrivilegio(); ?> </td>
                                   
-                                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#alterar" data-whatever="@mdo">Alterar</button></td>
-                                    <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ExcluirTabela" data-whatever="@mdo">Apagar</button></td>
+                                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#alterarTabela<?php echo $funcionario->getId(); ?>">Alterar</button></td>
+                                    <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ExcluirTabela<?php echo $funcionario->getId(); ?>">Apagar</button></td>
 
 
 
                                                 <!-- Começo Modal-Alterar -->
 
-                                                                <div class="modal fade" id="alterar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal fade" id="alterarTabela<?php echo $funcionario->getId(); ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                     <div class="modal-dialog" role="document">
                                                                         <div class="modal-content">
                                                                             <div class="modal-header">
-                                                                                <h5 class="modal-title" id="Label-cadastrar">Atualizar</h5>
+                                                                                <h5 class="modal-title" id="Label-Atualizar">Atualizar</h5>
                                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Salvar">
                                                                                     <span aria-hidden="true">&times;</span>
                                                                                 </button>
                                                                             </div>
                                                                             <div class="modal-body">
 
-                                                                                <form action='/dash-cad-funcionario' method='POST'>
+                                                                                <form action="/dashboard/alterar-funcionario" method='POST'>
                                                                                          
+                                                                                    <input type="hidden" name="id" value="<?php echo $funcionario->getId(); ?>">
                                                                                     
                                                                                     <div class="form-group">
-                                                                                        <label for="recebe-nome" class="col-form-label">
-                                                                                            <h5>Nome:</h5>
-                                                                                        </label>
-                                                                                        <input type="text" name="nome" class="form-control" id="recebe-name">
+                                                                                        <label for="altera-nome" class="col-form-label">Nome:</label>                                                                                    
+                                                                                        <input type="text" name="nome" class="form-control" id="altera-nome" value="<?php echo $funcionario->getNome(); ?>">
                                                                                     </div>
 
                                                                                     <div class="form-group">
-                                                                                        <label for="recebe-privielgio" class="col-form-label">
-                                                                                            <h5>Privilegio:</h5>
-                                                                                        </label>
-                                                                                        <input type="text" name="sobrenome" class="form-control" id="recebe-privilegio">
+                                                                                        <label for="altera-sobrenome" class="col-form-label">Sobrenome:</label>                                                                                        
+                                                                                        <input type="text" name="sobrenome" class="form-control" id="altera-sobrenome" value="<?php echo $funcionario->getSobrenome(); ?>">
                                                                                     </div>
 
                                                                                     <div class="form-group">
-                                                                                        <label for="recebe-email" class="col-form-label">
-                                                                                            <h5>Email:</h5>
-                                                                                        </label>
-                                                                                        <input type="email" name="email" class="form-control" id="recebe-email">
+                                                                                        <label for="altera-contato" class="col-form-label">Contato:</label>
+                                                                                        <input type="text" name="telefone" class="form-control" id="altera-contato" value="<?php echo $funcionario->getTelefone(); ?>">
+                                                                                    </div>
+
+
+                                                                                    <div class="form-group">
+                                                                                        <label for="altera-email" class="col-form-label">Email:</label>
+                                                                                        <input type="email" name="email" class="form-control" id="altera-email" value="<?php echo $funcionario->getEmail(); ?>">
                                                                                     </div>
 
                                                                                     <div class="form-group">
-                                                                                        <label for="recebe-rm" class="col-form-label">
-                                                                                            <h5>RM:</h5>
-                                                                                        </label>
-                                                                                        <input type="number" name="rm" class="form-control" id="recebe-rm">
+                                                                                        <label for="altera-cpf" class="col-form-label">CPF:</label>
+                                                                                        <input type="text" name="cpf" class="form-control" id="altera-cpf" value="<?php echo $funcionario->getCpf(); ?>">
+                                                                                    </div>
+                                                    
+                                                                                
+                                                                                    <div class="form-group">
+                                                                                        <label for="altera-funcao" class="col-form-label">Função:</label>
+                                                                                        <input type="text" name="funcao" class="form-control" id="altera-funcao" value="<?php echo $funcionario->getFuncao(); ?>">
                                                                                     </div>
 
                                                                                     <div class="form-group">
-                                                                                        <label for="cadastro-cpf" class="col-form-label">
-                                                                                            <h5>CPF:</h5>
-                                                                                        </label>
-                                                                                        <input type="number" name="cpf" class="form-control" id="cadastro-cpf">
-                                                                                    </div>
-
-                                                                                    <div class="form-group">
-                                                                                        <label for="recebe-contato" class="col-form-label">
-                                                                                            <h5>Contato:</h5>
-                                                                                        </label>
-                                                                                        <input type="" name="telefone" class="form-control" id="recebe-contato">
-                                                                                    </div>
-
-                                                                                    <div class="form-group">
-                                                                                        <label for="recebe-senha" class="col-form-label">
-                                                                                            <h5>Senha:</h5>
-                                                                                        </label>
-                                                                                        <input type="number" name="senha" class="form-control" id="recebe-senha">
-                                                                                    </div>
-
-                                                                                    <div class="form-group">
-                                                                                        <label for="recebe-contato" class="col-form-label">
-                                                                                            <h5>Função:</h5>
-                                                                                        </label>
-                                                                                        <input type="" name="telefone" class="form-control" id="recebe-contato">
+                                                                                        <label for="altera-privilegio" class="col-form-label">Privilegio</label>
+                                                                                        <input type="text" name="privilegio" class="form-control" id="altera-privilegio" value="<?php echo $funcionario->getPrivilegio(); ?>">
                                                                                     </div>
 
 
 
                                                                             </div>
-                                                                            <div class="modal-footer">
-                                                                                <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
-                                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                                                                            </div>
-                                                                            </form>
+                                                                                        <div class="modal-footer">
+                                                                                            <button type="submit" class="btn btn-success" name="alterar">Salvar</button>
+                                                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                                                                                        </div>
+                                                                                </form>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -251,7 +233,7 @@
 
                                                                 <!-- Começo modal-apagar/funcionario -->
 
-                                                                <div class="modal fade" id="ExcluirTabela" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal fade" id="ExcluirTabela<?php echo $funcionario->getId(); ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                     <div class="modal-dialog" role="document">
                                                                         <div class="modal-content">
                                                                             <div class="modal-header">
@@ -262,18 +244,22 @@
                                                                             </div>
                                                                             <div class="modal-body">
 
-                                                                                <form action="/adm/dashboard/excluir-funcionario" method="post">
-                                                                                <input type='hidden' name='id' value="<?php echo $funcionario->getId(); ?>">
+                                                                                
+                                                                                
                                                                                 
                                                                                     <div class="form-group">
 
                                                                                         <h5>Confirmar exclusão do funcionario do sistema?</h5>
                                                                                     </div>
 
-                                                                                </form>
+                                                                               
                                                                             </div>
                                                                             <div class="modal-footer">
-                                                                                <button type="button" class="btn btn-success">Excluir</button>
+
+                                                                            <form action="/dashboard/excluir-funcionario" method="post">
+                                                                                <input type="hidden" name="id" value="<?php echo $funcionario->getId(); ?>">
+                                                                                <button type="submit" class="btn btn-success" name="excluir">Excluir</button>
+                                                                            </form>    
                                                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                                                                             </div>
                                                                         </div>

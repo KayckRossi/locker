@@ -144,7 +144,7 @@ Class DashFuncionarioController{
                     
             $funcionariodao = new FuncionarioDAO();
 
-           //echo 'Funcionario:<br><pre>' , var_dump($funcionario) , '</pre>';
+           echo 'Funcionario:<br><pre>' , var_dump($funcionario) , '</pre>';
            
             $funcionariodao->update($funcionario);
             
@@ -155,11 +155,42 @@ Class DashFuncionarioController{
         
     }
 
+    public static function excluir() {
+        
+        require_once 'adm-session.php';
+
+        if (isset($_POST['excluir'])) {
+
+            include_once 'connection/Connection.php';
+            include_once 'model/Pessoa.php';
+            include_once 'model/Funcionario.php';
+            include_once 'dao/FuncionarioDAO.php';
+            include_once 'controller/Filter.php';
+
+            $data = $_POST;
+
+            //echo '<br><pre>' , var_dump($data) , '</pre>'; 
+
+            $funcionario = new Funcionario();
+
+            $funcionario->setId($data['id']);
+
+            //echo '<br><pre>' , var_dump($funcionario) , '</pre>';
+
+            $funcionariodao = new FuncionarioDAO();
+
+            $funcionariodao->delete($funcionario);
+
+        }
+
+        header('Location: /dashboard/funcionario');
+        die();
+
 
 
 
 }
 
-
+}
 
 ?>
