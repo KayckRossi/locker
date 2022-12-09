@@ -10,6 +10,7 @@ include 'controller/AdmAuthenticationController.php';
 include 'controller/DashAlunoController.php';
 include 'controller/DashArmarioController.php';
 include 'controller/DashFuncionarioController.php';
+include 'controller/DashCursoController.php';
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -27,9 +28,6 @@ switch($url) {
         AuthenticationController::sair();
     break;
 
-    case '/confirmaremail':
-        include 'view/confirmaremail.php';
-    break; 
        
     case '/cadastro':
         AlunoController::alunoCadastrar();
@@ -163,9 +161,6 @@ switch($url) {
         DashArmarioController::cadastrar();
     break;
 
-    case '/dashboard/aluguel':
-        include 'view/dashboard/alugueis.php';
-    break;
 
     case '/dashboard/funcionario':
         DashFuncionarioController::dashFuncionario();
@@ -184,7 +179,27 @@ switch($url) {
     break;
 
     case '/dashboard/curso':
-        include 'view/dashboard/cursos.php';
+        DashCursoController::listar();
+    break;
+
+    case '/dashboard/curso-excluir':
+        DashCursoController::excluir();
+    break;
+
+    case '/dashboard/curso-cadastrar':
+        DashCursoController::cadastrar();
+    break;
+
+    case '/dashboard/curso-alterar':
+        DashCursoController::alterar();
+    break;
+
+    case '/confirmaremail':
+        include 'view/confirmaremail.php';
+    break; 
+    
+    case '/dashboard/aluguel':
+        include 'view/dashboard/alugueis.php';
     break;
 
     case '/dashboard/plano':
