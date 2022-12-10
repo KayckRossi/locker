@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../public/assets/css/all.css">
 
+  <!-- CDN DataTables -->
+  <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="../../public/assets/plugins/bootstrap-4.5.3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../public/assets/plugins/fontawesome-free-6.2.0-web/css/all.min.css">
@@ -19,6 +22,7 @@
     <?php include "sidebarmenu.php" ?>
     <!--Final do  menu  principa da esquerda -->
 
+ 
 
     <!-- Main = Conteudo principal da pagina -->
     <main>
@@ -35,8 +39,8 @@
             <div class="col-sm">
               <div class="card" style="width: 18rem; padding: 1rem; margin-top: 2rem; border-radius: 10px; ">
                 <div class="card-body ">
-                  <h5 class="card-title text-center ">Alugueis ativos</h5>
-                  <p class="card-text text-center"></p>
+                  <h5 class="card-title text-center">Alugueis ativos</h5>
+                  <p class="card-text text-center"><?php print_r($aluguelAtivo->countActive()); ?></p>
 
                 </div>
               </div>
@@ -46,7 +50,7 @@
               <div class="card" style="width: 18rem; padding: 1rem;  margin-top: 2rem; border-radius: 10px;">
                 <div class="card-body">
                   <h5 class="card-title text-center">Total de alugueis</h5>
-                  <p class="card-text text-center"></p>
+                  <p class="card-text text-center"><?php print_r($AluguelTotal->count()); ?></p>
 
                 </div>
               </div>
@@ -56,7 +60,7 @@
               <div class="card" style="width: 18rem; padding: 1rem;  margin-top: 2rem; border-radius: 10px;">
                 <div class="card-body">
                   <h5 class="card-title text-center">Alugueis Pendentes</h5>
-                  <p class="card-text text-center"></p>
+                  <p class="card-text text-center"><?php print_r($aluguelReservado->aluguelPendente()); ?></p>
 
                 </div>
               </div>
@@ -71,58 +75,48 @@
             <h4>Lista de Alugueis</h4>
           </div>
 
+            <div class="table-responsive">
+            <table class="table table-bordered" id="myTable">
 
-          <table class="table">
-
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">ID Aluguel</th>
-                <th scope="col">Data</th>
-                <th scope="col">Situação</th>
-                <th scope="col">Situação</th>
-                <th scope="col">ID Aluno</th>
-                <th scope="col">ID Armario</th>
-                <th scope="col">ID Plano</th>
-                <th scope="col">Excluir</th>
-
-              </tr>
-            </thead>
-
-            <tbody>
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Nome</th>
+                  <th scope="col">RM</th>
+                  <th scope="col">Contato</th>
+                  <th scope="col">E-mail</th>
+                  <th scope="col">Data</th>
+                  <th scope="col">Situação</th>
+                  <th scope="col">Armario</th>
+                  <th scope="col">Plano</th>
 
 
 
+                </tr>
+              </thead>
 
-              <tr>
-                <td> teste </td>
-                <td> teste </td>
-                <td> teste </td>
-                <td> teste </td>
-                <td> teste </td>
-                <td> teste </td>
-                <td> teste </td>
+              <tbody>
 
-                
-
-                <td>
-                  <form action="/negar-aluguel" method='POST'>
-                    <input type='hidden' name='id' value=''>
-                    <input type='hidden' name='idArmario' value=''>
-
-                    <button type="submit" class="btn btn-danger btn-sm" name="negar">Negar</button>
-                  </form>
-                </td>
+                <?php foreach ($counterRent as $countR) { ?>
+                  <?php echo "<tr>" ?>
+                  <td><?php echo $countR[2]->getId(); ?></td>
+                  <td><?php echo $countR[0]->getNome(); ?></td>
+                  <td><?php echo $countR[0]->getRm(); ?></td>
+                  <td><?php echo $countR[0]->getTelefone(); ?></td>
+                  <td><?php echo $countR[0]->getEmail(); ?></td>
+                  <td><?php echo $countR[2]->getdata(); ?></td>
+                  <td><?php echo $countR[2]->getSituacao(); ?></td>
+                  <td><?php echo $countR[1]->getSecao(); ?><?php echo $countR[1]->getNumero(); ?></td>
+                  <td><?php echo $countR[3]->getPlano(); ?></td>
 
 
+                <?php "</tr>";
+                }  ?>
 
+              </tbody>
 
-              </tr>
-
-
-            </tbody>
-
-          </table>
-
+            </table>
+            </div>
         </div>
 
 
@@ -142,6 +136,15 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 
   <script src="../../public/assets/plugins/fontawesome-free-6.2.0-web/js/all.min.js"></script>
+
+    <!-- cdn dataTables -->
+    <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+  <!-- JS do DataTables -->
+  <script>
+    $(document).ready(function() {
+      $('#myTable').DataTable();
+    });
+  </script>
 </body>
 
 </html>

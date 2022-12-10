@@ -11,6 +11,7 @@ include 'controller/DashAlunoController.php';
 include 'controller/DashArmarioController.php';
 include 'controller/DashFuncionarioController.php';
 include 'controller/DashCursoController.php';
+include 'controller/DashAluguelController.php';
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -194,13 +195,13 @@ switch($url) {
         DashCursoController::alterar();
     break;
 
+    case '/dashboard/aluguel':
+        DashAluguelController::listar();
+    break;
+
     case '/confirmaremail':
         include 'view/confirmaremail.php';
     break; 
-    
-    case '/dashboard/aluguel':
-        include 'view/dashboard/alugueis.php';
-    break;
 
     case '/dashboard/plano':
         include 'view/dashboard/planos.php';
