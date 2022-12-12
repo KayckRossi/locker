@@ -246,7 +246,7 @@ class AluguelDAO {
 
     }
 
-/*     public function count() {
+     public function count() {
 
         try {
 
@@ -266,7 +266,10 @@ class AluguelDAO {
 
         }
 
-    } */
+    } 
+
+
+
 
     public function countRent(){
 
@@ -276,7 +279,7 @@ class AluguelDAO {
 
             $sql = 'SELECT aluno.nome AS AlunoNome, aluno.rm as AlunoRm, armario.secao as ArmarioSecao,
             armario.numero as ArmarioNum, armario.situacao AS ArmarioSituacao, armario.id as ArmarioID, 
-            aluguel.situacao as AluguelSituacao, aluguel.id AS AluguelID, plano.plano as Plano, plano.valor AS PlanoValor 
+            aluguel.situacao as AluguelSituacao, aluguel.id AS AluguelID, plano.plano as Plano, plano.valor AS PlanoValor
             FROM aluguel
             INNER JOIN plano ON aluguel.id_plano = plano.id
             INNER JOIN aluno ON aluguel.id_aluno = aluno.id 
@@ -301,7 +304,7 @@ class AluguelDAO {
 
             foreach ($data as $row) {
 
-                $list[] = $this->tableList($row);
+                $list[] = $this->tableListGeral($row);
 
             }
 
@@ -315,11 +318,12 @@ class AluguelDAO {
         }
     }
 
-    private function tableList($row) {
+    private function tableListGeral($row) {
 
         $aluno = new Aluno();
         $aluno->setNome($row['AlunoNome']);
         $aluno->setRm($row['AlunoRm']);
+        
 
         $armario = new Armario();
         $armario->setId($row['ArmarioID']);
@@ -338,6 +342,90 @@ class AluguelDAO {
         return  array($aluno, $armario, $aluguel, $plano);
 
     }
+    
+  
+
+    public function countAll(){
+
+        try {
+
+
+
+            $sql = 'SELECT aluno.nome AS AlunoNome, aluno.rm as AlunoRm, telefone_aluno.telefone as Contato, armario.secao as ArmarioSecao
+            , aluguel.data as DataAluguel,  aluno.email as AlunoEmail , aluno.sobrenome as AlunoSobre,
+            armario.numero as ArmarioNum, armario.situacao AS ArmarioSituacao, armario.id as ArmarioID, 
+              aluguel.situacao as AluguelSituacao, aluguel.id AS AluguelID, plano.plano as Plano, plano.valor AS PlanoValor 
+              FROM aluguel
+              INNER JOIN telefone_aluno on aluguel.id_aluno = telefone_aluno.id_aluno
+              INNER JOIN plano ON aluguel.id_plano = plano.id
+              INNER JOIN aluno ON aluguel.id_aluno = aluno.id 
+              INNER JOIN armario on aluguel.id_armario = armario.id;';
+
+            // $sql = 'SELECT aluno.nome AS AlunoNome, aluno.rm as AlunoRm, armario.secao as ArmarioSecao,
+            // armario.numero as ArmarioNum, armario.situacao AS ArmarioSituacao, armario.id as ArmarioID, 
+            // aluguel.situacao as AluguelSituacao, aluguel.id AS AluguelID 
+            // FROM aluguel
+            // INNER JOIN aluno ON aluguel.id_aluno = aluno.id 
+            // INNER JOIN armario on aluguel.id_armario = armario.id WHERE aluguel.situacao = "reservado"';
+
+            // $sql = 'SELECT aluno.nome, aluno.rm, armario.secao, armario.numero, aluguel.situacao 
+            // FROM aluguel INNER JOIN aluno ON aluguel.id_aluno = aluno.id 
+            // INNER JOIN armario on aluguel.id_armario = armario.id';
+
+            $stmt = Connection::getConnection()->prepare($sql);
+
+            $stmt->execute();
+
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($data as $row) {
+
+                $list[] = $this->tableListAlugueis($row);
+
+            }
+
+
+            return $list;
+
+        } catch (Exception $e) {
+
+            echo 'Erro ao tentar contar aluguel.<br>' . $e . '<br>';
+
+        }
+    }
+
+      
+    private function tableListAlugueis($row) {
+
+        $aluno = new Aluno();
+        $aluno->setEmail($row['AlunoEmail']);
+        $aluno->setTelefone($row['Contato']);
+        $aluno->setNome($row['AlunoNome']);
+        $aluno->setRm($row['AlunoRm']);
+        $aluno->setSobrenome($row['AlunoSobre']);
+
+        $armario = new Armario();
+        $armario->setId($row['ArmarioID']);
+        $armario->setSecao($row['ArmarioSecao']);
+        $armario->setNumero($row['ArmarioNum']);
+        $armario->setSituacao($row['ArmarioSituacao']);
+
+        $aluguel = new Aluguel();
+        $aluguel->setData($row['DataAluguel']);
+        $aluguel->setSituacao($row['AluguelSituacao']);
+        $aluguel->setId($row['AluguelID']);
+
+        $plano = new Plano();
+        $plano->setPlano($row['Plano']);
+        $plano->setValor($row['PlanoValor']);
+
+        return  array($aluno, $armario, $aluguel, $plano);
+
+    }  
+
+
+
+    
 
 
     public function Attupdate(Aluguel $aluguel) {

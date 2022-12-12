@@ -20,18 +20,18 @@ class ConfEmail
 
             //verifica se existe sessao ativa - se sim; retornar para home
              if (isset($_SESSION['authenticate'])) {
-                 header('Location: /');
+                 header('Location: /login');
                  return false;
              }
 
             //verifica se existe na url string um purl
             if (!isset($purl)) {
-                header('Location: /');
+                header('Location: /login');
                 return false;
             }
             //verifica se o purl é valido 
             if (strlen($purl)  != 12) {
-                header('Location: /');
+                header('Location: /login');
                 return false;
             }
         } catch (Exception $e) {

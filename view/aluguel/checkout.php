@@ -83,6 +83,6 @@
         </div>
     </section>
 
-    <?php include "public/footer.html" ?>
+    <?php include "public/footer-boostrap.php" ?>
 </body>
 </html>

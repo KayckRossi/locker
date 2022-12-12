@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../public/assets/css/style.css">
+ 
     <link rel="stylesheet" href="../../public/assets/css/all.css">
 
     <!-- CDN DataTables -->
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="../../public/assets/plugins/bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../public/assets/plugins/fontawesome-free-6.2.0-web/css/all.min.css">
-    <link rel="stylesheet" href="../../public/assets/css/modal-armarios.css">
+   
     <title>LockEtec</title>
 </head>
 
@@ -70,8 +70,6 @@
 
                         <div class="btn-modais">
                             <button type="button" class="cadastro-armario" data-toggle="modal" data-target="#cadastrar">Adicionar</button>
-
-                            <!-- <button type="button" class="armario-excluir" data-toggle="modal" data-target="#excluir">Excluir</button> -->
                         </div>
 
                         <!-- Começo Modal-Cadastrar -->

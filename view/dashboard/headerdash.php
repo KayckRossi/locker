@@ -1,7 +1,26 @@
 <header>
 
-                <a href="dashboard.php">Geral</a>
+    <?php $url = str_replace("/dashboard/", "", $_SERVER["REQUEST_URI"]); ?>
 
-                <a class="adm" href="#"><i class="fa-regular fa-circle-user"></i>Administração</a>
+    <?php
+            if (isset($_SESSION['admAuthenticate'])) {
+                        $adm = $_SESSION['nome'] ?>
+
+                            <form action="/adm/sair" method="post">
+
+                                <button type="submit" name="sair" class="btn btn-warning btn-sm">Sair</button>
+
+                            </form>
+                  
+          <?php  } else {
+                 header('Location: /login');
+                 die();
+                            
+            }
+            ?>
+            
+                <a href="#"><?php echo $url  ?></a>
+                
+                <a class="adm" href="#">Ola,  <?php echo ($adm) ?></a>
 
 </header>

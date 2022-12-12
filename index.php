@@ -9,6 +9,10 @@ include 'controller/AuthenticationController.php';
 include 'controller/AdmAuthenticationController.php';
 include 'controller/DashAlunoController.php';
 include 'controller/DashArmarioController.php';
+include 'controller/DashFuncionarioController.php';
+include 'controller/DashCursoController.php';
+include 'controller/DashAluguelController.php';
+include 'controller/DashPlanoController.php';
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -26,9 +30,6 @@ switch($url) {
         AuthenticationController::sair();
     break;
 
-    case '/confirmaremail':
-        include 'view/confirmaremail.php';
-    break; 
        
     case '/cadastro':
         AlunoController::alunoCadastrar();
@@ -130,7 +131,7 @@ switch($url) {
         ArmarioController::excluir();
     break;
 
-    case '/dashboard':
+    case '/dashboard/overview':
         DashController::overview();
     break;
     
@@ -162,9 +163,62 @@ switch($url) {
         DashArmarioController::cadastrar();
     break;
 
-    case '/dashboard/aluguel':
-        include 'view/dashboard/alugueis.php';
+
+    case '/dashboard/funcionario':
+        DashFuncionarioController::dashFuncionario();
     break;
+
+    case '/dashboard/cadastrar-funcionario':
+        DashFuncionarioController::cadastrar();
+    break;
+
+    case '/dashboard/alterar-funcionario':
+        DashFuncionarioController::alterar();
+    break;
+
+    case '/dashboard/excluir-funcionario':
+        DashFuncionarioController::excluir();
+    break;
+
+    case '/dashboard/curso':
+        DashCursoController::listar();
+    break;
+
+    case '/dashboard/curso-excluir':
+        DashCursoController::excluir();
+    break;
+
+    case '/dashboard/curso-cadastrar':
+        DashCursoController::cadastrar();
+    break;
+
+    case '/dashboard/curso-alterar':
+        DashCursoController::alterar();
+    break;
+
+    case '/dashboard/aluguel':
+        DashAluguelController::listar();
+    break;
+
+    case '/dashboard/plano':
+       DashPlanoController::listar();
+    break;
+
+    case '/dashboard/plano-excluir':
+        DashPlanoController::excluir();
+    break;
+
+    case '/dashboard/plano-cadastrar':
+        DashPlanoController::cadastrar();
+    break;
+
+    case '/dashboard/plano-alterar':
+        DashPlanoController::alterar();
+    break;
+
+    case '/confirmaremail':
+        include 'view/confirmaremail.php';
+    break; 
     
     case '/footer/contato':
         include 'view/footer/contato.php';

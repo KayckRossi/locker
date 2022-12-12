@@ -7,7 +7,7 @@
                 <ul>
                     <li>
                         <i class="fa-solid fa-house"></i>
-                        <a href="/dashboard">Geral</a>
+                        <a href="/dashboard/overview">Geral</a>
                     </li>
                     <li>
                         <i class="fa-solid fa-user-graduate"></i>
@@ -23,15 +23,15 @@
                     </li>
                     <li>
                         <i class="fa-solid fa-gears"></i>
-                        <a href="#">Funcionarios</a>
+                        <a href="/dashboard/funcionario">Funcionarios</a>
                     </li>
                     <li>
                         <i class="fa-solid fa-school"></i>
-                        <a href="#">Cursos</a>
+                        <a href="/dashboard/curso">Cursos</a>
                     </li>
                     <li>
                         <i class="fa-solid fa-calendar-check"></i>
-                        <a href="#">Planos</a>
+                        <a href="/dashboard/plano">Planos</a>
                     </li>
                 </ul>
                  </div>

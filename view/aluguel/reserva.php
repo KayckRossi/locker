@@ -12,6 +12,6 @@
     <?php include "public/header.php" ?>
 
 
-    <?php include "public/footer.html" ?>
+    <?php include "public/footer-boostrap.php" ?>
 </body>
 </html>

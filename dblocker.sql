@@ -95,7 +95,8 @@ CREATE TABLE plano (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     plano VARCHAR(30) NOT NULL,
     valor DECIMAL(6, 2) NOT NULL,
-    status TINYINT(1) NOT NULL
+    status TINYINT(1) NOT NULL,
+    duracao TINYINT(2) NOT NULL
 
 );
 
@@ -115,6 +116,8 @@ CREATE TABLE aluguel (
 );
 
 
+
+ALTER TABLE `plano` ADD `duracao` TINYINT(2) NOT NULL AFTER `status`;
 
 INSERT INTO plano (plano, valor, status) VALUES
 ('Semestral', 50.00, 1),
