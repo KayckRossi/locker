@@ -12,6 +12,7 @@ include 'controller/DashArmarioController.php';
 include 'controller/DashFuncionarioController.php';
 include 'controller/DashCursoController.php';
 include 'controller/DashAluguelController.php';
+include 'controller/DashPlanoController.php';
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -130,7 +131,7 @@ switch($url) {
         ArmarioController::excluir();
     break;
 
-    case '/dashboard':
+    case '/dashboard/overview':
         DashController::overview();
     break;
     
@@ -199,13 +200,25 @@ switch($url) {
         DashAluguelController::listar();
     break;
 
+    case '/dashboard/plano':
+       DashPlanoController::listar();
+    break;
+
+    case '/dashboard/plano-excluir':
+        DashPlanoController::excluir();
+    break;
+
+    case '/dashboard/plano-cadastrar':
+        DashPlanoController::cadastrar();
+    break;
+
+    case '/dashboard/plano-alterar':
+        DashPlanoController::alterar();
+    break;
+
     case '/confirmaremail':
         include 'view/confirmaremail.php';
     break; 
-
-    case '/dashboard/plano':
-        include 'view/dashboard/planos.php';
-    break;
     
     case '/footer/contato':
         include 'view/footer/contato.php';

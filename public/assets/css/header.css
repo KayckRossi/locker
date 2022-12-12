@@ -7,6 +7,7 @@
     height: 90px;
     padding: 0 30px;
     border: 1px solid rgba(0,0,0,.0625);
+    
 }
 
 .flex-dashboard header a{ /*altera tamamho do h2 "Geral"*/
@@ -14,20 +15,17 @@
     font-weight: bold;
     text-decoration: none; 
     color: #72777a;
-    height: 30px;
+    height: 50px;
     width: 100px;
+    pointer-events: none;
+    cursor: default;
+
 }
 
 .flex-dashboard header .adm{ /*altera tamamho do h2 "adm"*/
-    font-size: 1rem;
+    font-size: 20px;
     text-decoration: none; 
     color: #72777a;
-    height: 30px;
+    height: 20px;
     width: 100px;
-}
-.flex-dashboard header svg{
-    color: #6e8efb;
-    height: 30px;
-    width:  35px;
-    padding-left: 2rem;/* padding para alterar a posição do icone*/
 }

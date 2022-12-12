@@ -32,7 +32,7 @@ class AdmAuthenticationController {
             $data = $admauthenticationdao->authenticate($login->getEmail());
             
             if ($login->login($data)) {         
-                header('Location: /dashboard');
+                header('Location: /dashboard/overview');
                 die();
             }
         

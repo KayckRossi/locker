@@ -26,7 +26,15 @@
             </ul> 
         </div>
         <div>
-            <a href="/"><img src="../public/assets/img/locketec.png" alt="Locketec: Locação de armários escolares"></a>
+            <a href="/login"><img src="../public/assets/img/locketec.png" alt="Locketec: Locação de armários escolares"></a>
         </div>
+
+              
     </div>
+            <!-- Copyright -->
+             <div style="background-color: rgba(0, 0, 0, 0.2); text-align: center; color: white; font-size: 20px;">
+              
+                <a class="text-white" > © 2022 Copyright: Locketec</a>
+            </div>
+            <!-- Copyright -->
 </footer>

@@ -78,7 +78,7 @@
         </form>
     </section>
     
-    <?php include "public/footer.html" ?>
+    <?php include "public/footer-boostrap.php" ?>
 
     <script>
         const div = document.querySelectorAll(".disponível");

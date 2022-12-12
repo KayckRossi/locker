@@ -115,7 +115,7 @@
 
         }
 
-              header('Location: /dashboard');
+              header('Location: /dashboard/overview');
               die();
             
 
@@ -165,7 +165,7 @@
 
         }
 
-              header('Location: /dashboard');
+              header('Location: /dashboard/overview');
               die();
             
 

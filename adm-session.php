@@ -7,7 +7,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 //session_regenerate_id();
 
 if (!isset($_SESSION['admAuthenticate'])) {
-    header('Location: /');
+    header('Location: /adm/login');
     die();
 }
 

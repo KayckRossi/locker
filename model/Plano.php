@@ -5,6 +5,7 @@ class Plano {
     private $id;
     private $plano;
     private $valor;
+    private $duracao;
     private $status;
 
     function __construct() {
@@ -25,6 +26,9 @@ class Plano {
     public function getStatus() {
         return $this->status;
     }
+    public function getDuracao(){
+        return $this->duracao;
+    }
 
     public function setId($id) {
         $this->id = $id;
@@ -40,6 +44,10 @@ class Plano {
     
     public function setStatus($status) {
         $this->status = $status;
+    }
+
+    public function setDuracao($duracao) {
+        $this->duracao = $duracao;
     }
 
 }
