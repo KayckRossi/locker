@@ -13,14 +13,15 @@
 .btn-atualizar,
 .btn-pesquisar {
     display:inline;
-    height: 5rem;
-    width: 10rem;
+    height: 4rem;
+    width: 15rem;
     background-color: #007BFF;
     flex-direction: row;
     text-align: center;
     justify-items: space-between;
-    margin-left: 6rem;
+    margin-left: 28rem;
     border-radius: 10px 10px 10px 10px;
+    border: none;
 }
 
 .btn-cadastrar,

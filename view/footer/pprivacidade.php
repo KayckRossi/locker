@@ -16,14 +16,14 @@
 <body>
     <?php include "public/header.php"?>
 
-
+<br><br>
     <h1 class="card-title">Política de privacidade  </h1>
 
     <p><br>Este site é mantido e operado por LockEtec.</p>
 
 <!-- 1. -->
 
-<div class="container">
+<div class="container" style="border-style:dashed; border-color:black;">
 
 
     <p><br><strong> 1. </strong><strong> Dados que coletamos e motivos da coleta</strong></p>
@@ -111,8 +111,10 @@
     <p>Reservamo-nos o direito de modificar, a qualquer momento, as presentes normas, especialmente para adaptá-las às eventuais alterações feitas em nosso site, seja pela disponibilização de novas funcionalidades, seja pela supressão ou modificação daquelas já existentes.</p>
     <p>Sempre que houver uma modificação, nossos usuários serão notificados acerca da mudança.</p>
 
-</div>
+    
 
+</div>
+<br><br>
 <?php include "public/footer-boostrap.php" ?>
 
 </body>

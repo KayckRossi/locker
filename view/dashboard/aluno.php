@@ -332,7 +332,7 @@
 
                             <div class="form-group">
                               <label for="recebe-contato" class="col-form-label">Contato:</label>
-                              <input type="number" name="telefone" class="form-control" id="recebe-contato" value="<?php echo $countS->getTelefone(); ?> ">
+                              <input type="text" name="telefone" class="form-control" id="recebe-contato" value="<?php echo $countS->getTelefone(); ?> ">
                             </div>
 
                             <div class="form-group">

@@ -117,12 +117,10 @@ CREATE TABLE aluguel (
 
 
 
-ALTER TABLE `plano` ADD `duracao` TINYINT(2) NOT NULL AFTER `status`;
-
-INSERT INTO plano (plano, valor, status) VALUES
-('Semestral', 50.00, 1),
-('Anual', 100.00, 1),
-('Promocional', 40.00, 1);
+INSERT INTO plano (plano, valor, status, duracao) VALUES
+('Semestral', 50.00, 1, 6),
+('Anual', 100.00, 1, 12),
+('Promocional', 40.00, 1, 4);
 
 
 INSERT INTO curso (codigo_curso, nome, duracao) VALUES
