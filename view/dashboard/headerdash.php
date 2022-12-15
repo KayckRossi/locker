@@ -8,7 +8,7 @@
 
                             <form action="/adm/sair" method="post">
 
-                                <button type="submit" name="sair" class="btn btn-warning btn-sm">Sair</button>
+                                <button type="submit" name="sair" class="btn btn-warning btn-sm" id="btn-sair">Sair</button>
 
                             </form>
                   
@@ -19,8 +19,8 @@
             }
             ?>
             
-                <a href="#"><?php echo $url  ?></a>
+                <a href="#"><?php echo ucfirst($url)  ?></a>
                 
-                <a class="adm" href="#">Ola,  <?php echo ($adm) ?></a>
+                <a class="adm" href="#">Olá,  <?php echo ($adm) ?></a>
 
 </header>

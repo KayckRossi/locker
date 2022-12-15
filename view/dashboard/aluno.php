@@ -35,7 +35,11 @@
 
           <div class="row">
 
-            <button type="button" class="btn-cadastrar" data-toggle="modal" data-target="#cadastrar">Cadastrar</button>
+            <div class="btn-modais">
+
+              <button type="button" class="btn-cadastrar" data-toggle="modal" data-target="#cadastrar">Cadastrar</button>
+
+            </div>
 
             <!-- <button type="button" class="btn-excluir" data-toggle="modal" data-target="#excluir" data-whatever="@mdo">Excluir</button>
 
@@ -301,7 +305,7 @@
                         </div>
                         <div class="modal-body">
 
-                      <form action="/adm/dashboard/alterar-aluno" method="POST">
+                          <form action="/adm/dashboard/alterar-aluno" method="POST">
 
                             <input type='hidden' name='id' value="<?php echo $countS->getId(); ?>">
 
@@ -345,46 +349,46 @@
                           <button type="submit" class="btn btn-success" name="alterar">Salvar</button>
                           <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                         </div>
-                       </form>
+                        </form>
                       </div>
                     </div>
                   </div>
 
-                      <!-- Final Modal Alterar aluno Pela Tabela -->
+                  <!-- Final Modal Alterar aluno Pela Tabela -->
 
-                       <!-- Começo modal-apagar aluno Pela Tabela-->
+                  <!-- Começo modal-apagar aluno Pela Tabela-->
 
-                       <div class="modal fade" id="ExcluirTabela<?php echo $countS->getId(); ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="Label-Excluir">Excluir</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Salvar">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form>
-
-                                            <div class="form-group">
-                                                <h2>Confirmar exclusão do Aluno do Sistema?</h2>
-                                            </div>
-
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-
-                                      <form action='/adm/dashboard/excluir-aluno' method='POST'>
-                                                <input type='hidden' name='id' value='<?php echo $countS->getId();?>'>
-                                                <button type="submit" class="btn btn-success" name="excluir">Confirmar</button>
-                                        </form>
-                                        
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                                    </div>
-                                </div>
-                            </div>
+                  <div class="modal fade" id="ExcluirTabela<?php echo $countS->getId(); ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="Label-Excluir">Excluir</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Salvar">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
                         </div>
-                        <!-- Final modal-apagar aluno Pela Tabela -->
+                        <div class="modal-body">
+                          <form>
+
+                            <div class="form-group">
+                              <h2>Confirmar exclusão do Aluno do Sistema?</h2>
+                            </div>
+
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+
+                          <form action='/adm/dashboard/excluir-aluno' method='POST'>
+                            <input type='hidden' name='id' value='<?php echo $countS->getId(); ?>'>
+                            <button type="submit" class="btn btn-success" name="excluir">Confirmar</button>
+                          </form>
+
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Final modal-apagar aluno Pela Tabela -->
 
 
                 <?php "</tr>";
@@ -419,10 +423,10 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
   <script src="../../public/assets/plugins/fontawesome-free-6.2.0-web/js/all.min.js"></script>
-  
-   <!-- cdn dataTables -->
+
+  <!-- cdn dataTables -->
   <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-    <!-- JS do DataTables -->
+  <!-- JS do DataTables -->
   <script>
     $(document).ready(function() {
       $('#myTable').DataTable();

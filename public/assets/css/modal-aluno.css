@@ -14,12 +14,12 @@
 .btn-pesquisar {
     display:inline;
     height: 4rem;
-    width: 15rem;
+    width: 18rem;
     background-color: #007BFF;
     flex-direction: row;
     text-align: center;
     justify-items: space-between;
-    margin-left: 28rem;
+    margin-left: 18rem;
     border-radius: 10px 10px 10px 10px;
     border: none;
 }
@@ -29,8 +29,10 @@
 .btn-atualizar,
 .btn-pesquisar,
 p {
-    font-size: 1rem;
-    color: #fff;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
 }
 
 #tabela-aluno{
@@ -42,6 +44,10 @@ p {
     display: none;
 }
 
-#div-aluno{
+/* #div-aluno{
     padding: 5rem;
+} */
+
+.btn-modais :hover{
+    background-color: #004fa3;
 }
