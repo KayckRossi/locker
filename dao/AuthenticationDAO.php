@@ -6,9 +6,9 @@ class AuthenticationDAO {
 
         try {
 
-            $sql = 'SELECT id, email, senha, nome
+            $sql = 'SELECT id, email, senha, nome, ativo
             FROM aluno
-            WHERE email = :email';
+            WHERE email = :email and ativo = 1';
 
             $stmt = Connection::getConnection()->prepare($sql);
 

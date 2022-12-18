@@ -578,3 +578,18 @@ div.revisao div.resumo p {
     border-radius: 0 12px 12px 0;
     text-align: end;
 }
+
+@media (max-width: 1600px) {
+    .login-wrapper{
+        width: 60%px;
+    }
+
+    .plano label {
+        padding: 2rem 0;
+        font-size: .8rem;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+} 
+
+

@@ -50,9 +50,16 @@ p{
 .text{
   margin-left: 20%;
 
-
 }
 
+.card-title{
+  color: rgb(48, 45, 47);
+}
+
+.card-text{
+  color:black;
+  font-weight: 500;
+}
 
 
 

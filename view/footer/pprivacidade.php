@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/assets/css/style.css">
+    
     <link rel="stylesheet" href="/public/assets/css/pprivacidade.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/public/assets/css/style.css">
+    
 
 
     <title>Politica de privacidade</title>
@@ -17,13 +17,13 @@
     <?php include "public/header.php"?>
 
 <br><br>
-    <h1 class="card-title">Política de privacidade  </h1>
+    <h1 class="card-title text-center" >Política de privacidade  </h1>
 
-    <p><br>Este site é mantido e operado por LockEtec.</p>
+    <p class="card-text text-center"><br>Este site é mantido e operado por LockEtec.</p>
 
 <!-- 1. -->
 
-<div class="container" style="border-style:dashed; border-color:black;">
+    <div class="container" style="border-style:dashed; border-color:black;">
 
 
     <p><br><strong> 1. </strong><strong> Dados que coletamos e motivos da coleta</strong></p>
@@ -116,6 +116,7 @@
 </div>
 <br><br>
 <?php include "public/footer-boostrap.php" ?>
+
 
 </body>
 </html>

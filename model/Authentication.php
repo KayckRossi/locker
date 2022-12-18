@@ -3,6 +3,7 @@ class Authentication {
 
     private $email;
     private $senha;
+    private $ativo;
 
     public function __construct() {
     }
@@ -21,6 +22,14 @@ class Authentication {
     
     public function setSenha($senha) {
         $this->senha = $senha;
+    }
+
+    public function setAtivo($ativo){
+        $this->ativo = $ativo;
+    }
+
+    public function getAtivo(){
+        return $this->ativo;
     }
 
     private function checkCredentials($user) {
