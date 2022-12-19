@@ -70,7 +70,7 @@ header nav button {
     padding: .4rem;
     border-radius: .2rem;
     background-color: #ffc803;
-    color: #fff;
+    color: #424242;
     font-family: var(--primary-font);
     font-size: .9rem;
     font-weight: 600;
@@ -100,6 +100,7 @@ section {
     width: 70%;
     height: 100%;
     margin: 0 auto;
+    margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -210,6 +211,8 @@ section.login h1 {
     flex-direction: column;
     justify-content: center;
 }
+
+
 
 .login-wrapper h2 {
     padding: 0 0 1.5rem;
@@ -554,7 +557,7 @@ div.revisao div.resumo p {
 }
 
 .plano label {
-    padding: 2rem;
+    padding: 2rem 0;
     font-size: 1rem;
     font-weight: 600;
     white-space: nowrap;
@@ -579,9 +582,12 @@ div.revisao div.resumo p {
     text-align: end;
 }
 
+/* Media ------------------------------------------------------------ */
+
 @media (max-width: 1600px) {
-    .login-wrapper{
-        width: 60%px;
+
+    .login-wrapper {
+        width: 390px;
     }
 
     .plano label {
@@ -590,6 +596,5 @@ div.revisao div.resumo p {
         white-space: nowrap;
         cursor: pointer;
     }
-} 
 
-
+}

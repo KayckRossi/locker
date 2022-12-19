@@ -25,21 +25,23 @@
 <body>
     <?php include "public/header.php" ?>
 
+    <section class="login">
+        <div class="login-header">
+            <h1>Pedido</h1>
+        </div>
+        <div class="login-wrapper">
+            <?php
 
-    <?php
-    if (!isset($erro)) { ?>
-        <div class="container text-center" style="border-style:dashed; border-color:black;">
+            foreach ($msgs as $msg) {
+                echo "<h2>{$msg}</h2>";
+            }
 
-        <strong><p>Parabéns por alugar um armário em nosso sistema</p></strong><br>
-        <strong><p>Se dirija a secretaria para realizar o pagamento</p></strong><br>
-        <strong><p>Caso o pagamento não seja efetuado em até 48 horas</p></strong><br>
-        <strong><p>O seu aluguel será negado e o armário ficará disponível novamente para escolha no menu</p></strong><br>
+            ?>
 
-       </div>
 
-    <?php }else {
-        echo ($erro);
-    } ?>
+<!--             <button type="submit" name="confirmar">Voltar</button>
+ -->        </div>
+    </section>
              
 
 

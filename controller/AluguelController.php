@@ -94,19 +94,34 @@ class AluguelController {
             
             //echo '<pre>' , var_dump($alugueis) , '</pre>';
 
-             if (!($armario->getSituacao() === 'disponível')) {
-                     $erro =  'Infelizmente o armário não encontra-se mais disponível.';
-                 return;    
-             }
+            if (!($armario->getSituacao() === 'disponível')) {
 
-             if ($alugueis) {
-                 foreach ($alugueis as $aluguel) {
-                     if ($aluguel->getSituacao() === 'ativo' || $aluguel->getSituacao() === 'reservado') {
-                        $erro =  'Você já possui aluguel reservado ou ativo';                        
-                         return;        
-                     }
-                 }
-             }
+                $msgs[0] = 'Infelizmente o armário escolhido não encontra-se mais disponível.';
+                $msgs[1] = 'Volte para a tela de armários para escolher um novo armário.';
+
+                goto view;
+
+            }
+
+            if ($alugueis) {
+                foreach ($alugueis as $aluguel) {
+                    if ($aluguel->getSituacao() === 'ativo') {
+
+                        $msgs[0] = 'Você já possui um aluguel ativo.';
+                        $msgs[1] = 'Não é permitido ter mais de um aluguel ativo.';
+
+                        goto view;
+
+                    } else if ($aluguel->getSituacao() === 'reservado') {
+
+                        $msgs[0] = 'Você já está com uma reserva de armário ativa.';
+                        $msgs[1] = 'Sua reserva está aguardando pagamento ou aprovação.';
+
+                        goto view;
+
+                    }
+                }
+            }
 
             $aluguel = new Aluguel();
 
@@ -123,11 +138,18 @@ class AluguelController {
             $armariodao->update($armario);
             
             //echo '<pre>' , var_dump($aluguel) , '</pre>';
-    
+
+            $msgs[0] = 'Sua solicitação foi processada com sucesso.';
+            $msgs[1] = 'Dirija-se à secretaria para realizar o pagamento e garantir sua reserva.';
+            $msgs[2] = 'Estamos aguardando o seu pagamento.';
+            $msgs[3] = 'Seu armário permanecerá reservado por 48h.';
+
         }
 
+        view:
         include 'view/aluguel/reserva.php';
 
     }
+
 
 }
