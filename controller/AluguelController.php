@@ -92,19 +92,18 @@ class AluguelController {
 
             $alugueis = $alugueldao->readAllFromAluno($aluno->getId());
             
-            echo '<pre>' , var_dump($alugueis) , '</pre>';
+            //echo '<pre>' , var_dump($alugueis) , '</pre>';
 
              if (!($armario->getSituacao() === 'disponível')) {
-                     echo 'Infelizmente o armário não encontra-se mais disponível.';
-                 return;
+                     $erro =  'Infelizmente o armário não encontra-se mais disponível.';
+                 return;    
              }
 
              if ($alugueis) {
                  foreach ($alugueis as $aluguel) {
                      if ($aluguel->getSituacao() === 'ativo' || $aluguel->getSituacao() === 'reservado') {
-                         echo 'Você já possui aluguel reservado ou ativo';
-
-                     return;
+                        $erro =  'Você já possui aluguel reservado ou ativo';                        
+                         return;        
                      }
                  }
              }
@@ -123,8 +122,8 @@ class AluguelController {
 
             $armariodao->update($armario);
             
-            echo '<pre>' , var_dump($aluguel) , '</pre>';
-
+            //echo '<pre>' , var_dump($aluguel) , '</pre>';
+    
         }
 
         include 'view/aluguel/reserva.php';

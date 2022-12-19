@@ -1,3 +1,8 @@
+<?php
+session_start();
+session_unset();
+session_destroy();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,33 +27,34 @@
 
 		</div>
 
-		<form action="/login" method="post">
-		<div class="pt-direita-login">
+                    <form action="/login" method="post">
+                            <div class="pt-direita-login">
 
-			<div class="card-login">
+                                <div class="card-login">
 
-				<h1>Login</h1>
+                                    <h1>Login</h1>
 
-				
+                                    
 
-				<div class="form">
-					
-					<label for="email">Email:</label>
-					<input type="email" name="email"  class="input required" oninput="emailValidate();" >
-					<span class="span-required">Email invalido</span>
-				</div>
-				<div class="form">
-					<label for="senha">Senha:</label>
-					<input type="password" name="senha" class="input required" oninput="senhaValidate();" >
-					<span class="span-required">Senha invalida</span>
-				</div>
+                                    <div class="form">
+                                        
+                                        <label for="email">Email:</label>
+                                        <input type="email" name="email" class="input required" oninput="emailValidate();" >
+                                        <span class="span-required">Email invalido</span>
+                                    </div>
 
-				
-				<button type="submit" name="entrar" class="bnt-login">Entrar</a></button>
-				<button class="bnt-login"><a href="/cadastro">Cadastre-se</a></button>
-				<!-- <a href="#">esqueci minha senha</a> -->
-		</div>
-		</form>
+                                    <div class="form">
+                                        <label for="senha">Senha:</label>
+                                        <input type="password" name="senha" class="input required" oninput="senhaValidate();" >
+                                        <span class="span-required">Senha invalida</span>
+                                    </div>
+                                    
+                                    <button type="submit" name="entrar" class="bnt-login">Entrar</a></button>
+                                    <button class="bnt-login"><a href="/cadastro">Cadastre-se</a></button>
+                                    <!-- <a href="#">esqueci minha senha</a> -->
+                                </div>
+                            </div>
+                    </form>
 
 		
 

@@ -42,7 +42,7 @@
                             <div class="card" style="width: 18rem; padding: 1rem; margin-top: 2rem; border-radius: 10px; ">
                                 <div class="card-body ">
                                     <h5 class="card-title text-center">Armarios Disponiveis</h5>
-                                    <p class="card-text text-center"><?php print_r($counterDisp->countDisp()); ?></p>
+                                    <h5 class="card-text text-center"><?php print_r($counterDisp->countDisp()); ?></h5>
 
                                 </div>
                             </div>
