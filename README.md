@@ -51,15 +51,15 @@ Você pode [acessar o código-fonte do projeto](https://github.com/ErickGX/locke
 - Baixe o arquivo principal e vá ate a raiz do projeto.
 - Abra o XAMPP e clique em SHELL, no janela use o comando mysql -u root -p.
 - agora va dentro da raiz do projeto e abra o arquivo dblocker.sql e copie todo o codigo e cole na janela shell aberta e de enter, banco de dados criado.
-- Insira o comando php -S localhost:8000.
-- Vá ao seu navegador e insira a url localhost:8000 na barra de endereço.
+- Insira o comando php -S localhost:8080.
+- Vá ao seu navegador e insira a url localhost:8080 na barra de endereço.
 - Voce sera redirecionado a tela de login, clique no botão de cadastro.
 - Se cadastre usando um email valido, após o cadastro vá na sua caixa e clique no link de verificação.
 - Após verificar o email , vá até a tela de login e entre com os dados já cadastrados e você sera redirecionado a tela de seleção de armários.
 - Selecione o andar e escolha o armário desejado, clique em avançar.
 - Escolha o plano de aluguel e revise as informações do armário antes de alugar, e confirme o aluguel.
 - A Solicitação terá de ser aprovada no painel administrativo.
-- Acesse a url localhost:8000/adm/login e utilize o login de teste->: login: teste1@gmail.com / senha: 12345678
+- Acesse a url localhost:8080/adm/login e utilize o login de teste->: login: teste1@gmail.com / senha: 12345678
 - Tenha acesso ao painel administrativo.
 
 

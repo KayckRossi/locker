@@ -1,7 +1,3 @@
---mysql -u root -p
-
---DROP DATABASE IF EXISTS dblocker;
-
 CREATE DATABASE IF NOT EXISTS dblocker;
 
 USE dblocker;
@@ -394,4 +390,4 @@ INSERT INTO armario (secao, numero, local, andar, situacao) VALUES
 ('B', 19, 'corredor química', 'inferior', 'indisponível'),
 ('B', 20, 'corredor química', 'inferior', 'indisponível');
 
---SET AUTOCOMMIT = 0;
+INSERT INTO `funcionario` (`id`, `cpf`, `email`, `senha`, `nome`, `sobrenome`, `funcao`, `privilegio`) VALUES (NULL, '12345678900', 'teste1@gmail.com', '12345678', 'Admin', 'teste', 'Administrador', 'Todos');
