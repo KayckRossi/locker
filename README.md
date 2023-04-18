@@ -19,7 +19,7 @@ O sistema permite a reserva de um armário específico em um bloco de armários 
 - ``PHP 8.0``
 - ``SQL - MARIA DB``
 - ``HTML5/CSS3``
-- ``Framework: Boostrap 4``
+- ``Framework: Bootstrap 4``
 - ``Javascript``
 - ``Paradigma de orientação a objetos``
 - ``Padrão Data Acess Object (DAO)``
