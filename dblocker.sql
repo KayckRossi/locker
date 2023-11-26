@@ -1,7 +1,3 @@
---mysql -u root -p
-
---DROP DATABASE IF EXISTS dblocker;
-
 CREATE DATABASE IF NOT EXISTS dblocker;
 
 USE dblocker;
@@ -117,12 +113,10 @@ CREATE TABLE aluguel (
 
 
 
-ALTER TABLE `plano` ADD `duracao` TINYINT(2) NOT NULL AFTER `status`;
-
-INSERT INTO plano (plano, valor, status) VALUES
-('Semestral', 50.00, 1),
-('Anual', 100.00, 1),
-('Promocional', 40.00, 1);
+INSERT INTO plano (plano, valor, status, duracao) VALUES
+('Semestral', 50.00, 1, 6),
+('Anual', 100.00, 1, 12),
+('Promocional', 40.00, 1, 4);
 
 
 INSERT INTO curso (codigo_curso, nome, duracao) VALUES
@@ -396,5 +390,5 @@ INSERT INTO armario (secao, numero, local, andar, situacao) VALUES
 ('B', 19, 'corredor química', 'inferior', 'indisponível'),
 ('B', 20, 'corredor química', 'inferior', 'indisponível');
 
-INSERT INTO funcionario (id, cpf, email, senha, nome, sobrenome, funcao, privilegio) VALUES (NULL, '12345678900', 'teste1@gmail.com', '12345678', 'Admin', 'teste', 'Administrador', 'Todos');
---SET AUTOCOMMIT = 0;
+INSERT INTO `funcionario` (`id`, `cpf`, `email`, `senha`, `nome`, `sobrenome`, `funcao`, `privilegio`) VALUES (NULL, '12345678900', 'teste1@gmail.com', '12345678', 'Admin', 'teste', 'Administrador', 'Todos');
+ #kek

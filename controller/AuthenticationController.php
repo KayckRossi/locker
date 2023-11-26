@@ -26,15 +26,16 @@ class AuthenticationController {
 
             $login->setEmail($_POST['email']);
             $login->setSenha($_POST['senha']);
+            $login->setAtivo('1');
         
             $authenticationdao = new AuthenticationDAO();
 
             $data = $authenticationdao->authenticate($login->getEmail());
             
             if ($login->login($data)) {         
-                header('Location: /meu-cadastro');
+                header('Location: /armarios');
                 die();
-            }
+            } else {}
         
         }
 

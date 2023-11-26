@@ -20,6 +20,7 @@ body {
     font-family: 'Noto Sans', sans-serif;
 }
 
+
 .title{
 	color: #ffc803;
 }
@@ -282,8 +283,21 @@ input[type="number"] {
         flex-direction: column;
         overflow-y: scroll;
         flex-wrap: nowrap;
-        max-height: 10rem;
+        max-height: 20rem;
         padding-right: 5rem;
+    }
+
+    .form {
+        height: 90%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #319190;
+        padding: 3rem;
+        border-radius: 20px;
+        box-shadow: 0px 10px 40px #00000056
     }
 }
 

@@ -135,7 +135,7 @@
                 <div class="col-md-4">
                     <div class="card profile-card-3">
                         <div class="background-block">
-                            <img src="../../public/assets/img/selva.jpg" alt="profile-sample1" class="background" />
+                            <img src="../../public/assets/img/espaço.jpg" alt="profile-sample1" class="background" />
                         </div>
                         <div class="profile-thumb-block">
                             <img src="../../public/assets/img/erickG.jpg" alt="profile-image" class="profile" />
@@ -157,7 +157,7 @@
                         </div>
                         <div class="card-content">
                             <h2>Kayck Rossi<small>Desenvolvedor Estudante</small></h3>
-                                <div class="icon-block"><a href="https://github.com/KayckRossi"><i class="fab fa-github"></i></a><a href="#"> <i class="fab fa-linkedin"></i></a></div>
+                                <div class="icon-block"><a href="https://github.com/KayckRossi"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/kayck-rossi-a87344249/"> <i class="fab fa-linkedin"></i></a></div>
                         </div>
                     </div>
                 </div>
@@ -175,14 +175,14 @@
                 <div class="col-md-4">
                     <div class="card profile-card-3">
                         <div class="background-block">
-                            <img src="../../public/assets/img/espaço.jpg" alt="profile-sample1" class="background" />
+                            <img src="../../public/assets/img/vapor.png " alt="profile-sample1" class="background" />
                         </div>
                         <div class="profile-thumb-block">
-                            <img src="../../public/assets/img/AL.jpg" alt="profile-image" class="profile" />
+                            <img src="../../public/assets/img/ana.jpeg" alt="profile-image" class="profile" />
                         </div>
                         <div class="card-content">
                             <h2> Ana Luiza<small>Desenvolvedor Estudante</small></h3>
-                                <div class="icon-block"><a href="https://github.com/analuh25"><i class="fab fa-github"></i></a><a href="#"> <i class="fab fa-linkedin"></i></a></div>
+                                <div class="icon-block"><a href="https://github.com/analuh25"><i class="fab fa-github"></i></a><a href="https://www.facebook.com/analuiza.pena.35"> <i class="fab fa-facebook"></i></a></div>
                         </div>
                     </div>
                 </div>
@@ -193,7 +193,7 @@
                             <img src="../../public/assets/img/cidade.jpg" alt="profile-sample1" class="background" />
                         </div>
                         <div class="profile-thumb-block">
-                            <img src="../../public/assets/img/GK.jpg" alt="profile-image" class="profile" />
+                            <img src="../../public/assets/img/guilherme.jpeg" alt="profile-image" class="profile" />
                         </div>
                         <div class="card-content">
                             <h2>Guilherme Kishida<small>Desenvolvedor Estudante</small></h3>
@@ -205,10 +205,10 @@
                 <div class="col-md-4">
                     <div class="card profile-card-3">
                         <div class="background-block">
-                            <img src="../../public/assets/img/praia.jpg" alt="profile-sample1" class="background" />
+                            <img src="../../public/assets/img/amanhecer.jpg" alt="profile-sample1" class="background" />
                         </div>
                         <div class="profile-thumb-block">
-                            <img src="../../public/assets/img/KO.jpg" alt="profile-image" class="profile" />
+                            <img src="../../public/assets/img/kayk.jpeg" alt="profile-image" class="profile" />
                         </div>
                         <div class="card-content">
                             <h2>Kayk Oliveira<small>Desenvolvedor Estudante</small></h3>

@@ -7,11 +7,10 @@
     
     <link rel="stylesheet" href="/public/assets/css/contato.css">
     <link rel="stylesheet" href="/public/assets/css/footer.css">
-    <link rel="stylesheet" href="/../../public/assets/css/style.css">
     
-    
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-   
+    <link rel="stylesheet" href="/../../public/assets/css/style.css">
 
     <title>Fale conosco</title>
 </head>
@@ -42,14 +41,14 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="form_name">Primeiro nome *</label>
-                            <input id="form_name" type="text" name="name" class="form-control" placeholder="Digite o seu primeiro nome" required="required" data-error="Firstname is required.">
+                            <input id="form_name" type="text" name="nome" class="form-control" placeholder="Digite o seu primeiro nome" required="required" data-error="Nome é Obrigatório.">
                             
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="form_lastname">Sobrenome *</label>
-                            <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Digite seu sobrenome" required="required" data-error="Lastname is required.">
+                            <input id="form_lastname" type="text" name="sobrenome" class="form-control" placeholder="Digite seu sobrenome" required="required" data-error="Sobrenome é Obrigatório.">
                                                             </div>
                     </div>
                 </div>
@@ -57,7 +56,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="form_email">Email *</label>
-                            <input id="form_email" type="email" name="email" class="form-control" placeholder="Digite seu email" required="required" data-error="Valid email is required.">
+                            <input id="form_email" type="email" name="email" class="form-control" placeholder="Digite seu email" required="required" data-error="Email válido é Obrigatório.">
                             
                         </div>
                     </div>
@@ -66,8 +65,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="form_message">Message *</label>
-                            <textarea id="form_message" name="message" class="form-control" placeholder="Escreva sua mensagem." rows="4" required="required" data-error="Please, leave us a message."></textarea
+                            <label for="form_message">Messagem *</label>
+                            <textarea id="form_message" name="messagem" class="form-control" placeholder="Escreva sua mensagem." rows="4" required="required" data-error="Please, leave us a message."></textarea
                                 >
                             </div>
 
@@ -76,8 +75,7 @@
 
                     <div class="col-md-12">
                         
-                        <input type="submit" class="btn btn-success btn-send  pt-2 btn-block
-                            " value="Enviar Mensagem" >
+                        <button type="submit" class="btn btn-success btn-send  pt-2 btn-block">Enviar mensagem</button>
                     
                 </div>
           

@@ -4,7 +4,9 @@
         <ul>
             <?php
             if (isset($_SESSION['authenticate'])) {
-                echo    "<li><p>Olá, {$_SESSION['nome']}</p></li>
+                echo   "<li><a href='/armarios'>Menu armarios</a></li>
+                        <li><a href='/meu-cadastro'>Meu Perfil</a></li>
+                        <li><p>Olá, {$_SESSION['nome']}</p></li>
                         <li>
                             <form action='/sair' method='POST'>
                                 <button type='submit' name='sair'>Sair</button>

@@ -40,7 +40,7 @@
               <div class="card" style="width: 18rem; padding: 1rem; margin-top: 2rem; border-radius: 10px; ">
                 <div class="card-body ">
                   <h5 class="card-title text-center">Alugueis ativos</h5>
-                  <p class="card-text text-center"><?php print_r($aluguelAtivo->countActive()); ?></p>
+                  <h5 class="card-text text-center"><?php print_r($aluguelAtivo->countActive()); ?></h5>
 
                 </div>
               </div>
@@ -50,7 +50,7 @@
               <div class="card" style="width: 18rem; padding: 1rem;  margin-top: 2rem; border-radius: 10px;">
                 <div class="card-body">
                   <h5 class="card-title text-center">Total de alugueis</h5>
-                  <p class="card-text text-center"><?php print_r($AluguelTotal->count()); ?></p>
+                  <h5 class="card-text text-center"><?php print_r($AluguelTotal->count()); ?></h5>
 
                 </div>
               </div>
@@ -60,7 +60,7 @@
               <div class="card" style="width: 18rem; padding: 1rem;  margin-top: 2rem; border-radius: 10px;">
                 <div class="card-body">
                   <h5 class="card-title text-center">Alugueis Pendentes</h5>
-                  <p class="card-text text-center"><?php print_r($aluguelReservado->aluguelPendente()); ?></p>
+                  <h5 class="card-text text-center"><?php print_r($aluguelReservado->aluguelPendente()); ?></h5>
 
                 </div>
               </div>

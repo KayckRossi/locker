@@ -1,13 +1,13 @@
 .button-curso{
     display:inline;
     height: 4rem;
-    width: 16rem;
+    width: 18rem;
     background-color: #007BFF;
     flex-direction: row;
     text-align: center;
     justify-items: space-between;
     margin-left: 26rem;
-    margin-right: -20rem;
+    margin-right: -22rem;
     border-radius: 10px 10px 10px 10px;
     border: none;
 }
