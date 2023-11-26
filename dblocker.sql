@@ -396,4 +396,5 @@ INSERT INTO armario (secao, numero, local, andar, situacao) VALUES
 ('B', 19, 'corredor química', 'inferior', 'indisponível'),
 ('B', 20, 'corredor química', 'inferior', 'indisponível');
 
+INSERT INTO funcionario (id, cpf, email, senha, nome, sobrenome, funcao, privilegio) VALUES (NULL, '12345678900', 'teste1@gmail.com', '12345678', 'Admin', 'teste', 'Administrador', 'Todos');
 --SET AUTOCOMMIT = 0;
